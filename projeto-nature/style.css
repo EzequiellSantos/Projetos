@@ -28,10 +28,11 @@ a:hover{
 header{
     text-align: center;
     margin: auto;
-    background-image: linear-gradient(to bottom, #00a2ff 50%,#00499c ) ;
+    background-image: linear-gradient(to bottom, #1875b3 ,#3c3c3f  ) ;
    /*  background: #0f0bfd; */
     box-shadow: 0em 0em 3.0em 0.1em rgba(0, 0, 0, 0.24);
     color: #fff;
+  
 }
 
 header > h1 {
@@ -41,6 +42,7 @@ header > h1 {
     font-size: 5vw;
     padding-left: 20px;
     padding-right: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
@@ -58,6 +60,7 @@ section{
     padding-left: 30px;
     line-height: 2.0em;
     font-size: 3.5vw;
+    font-family: cursive;
 }
 
 section#img{
@@ -82,10 +85,11 @@ section#img > p{
 
 footer{
     /* background-color: #0d0d1d; #2f00ff */
-    background-image: linear-gradient(to right, #0d0d1d, #008cff);
+    background-image: linear-gradient(to right, #2f2f3a, #0c4d83);
     color: rgb(163, 163, 163);
     padding: 9px;
     text-align: center;
+    font-family: cursive;
 }
 
 a.link {
