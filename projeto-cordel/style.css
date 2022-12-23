@@ -33,6 +33,7 @@ header > h1{
     font-variant: small-caps;
     font-size: 7vw; 
     font-family: var(--fonte02);
+    letter-spacing: 2px;
 }
 
 header > p{
