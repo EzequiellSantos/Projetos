@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Shadows+Into+Light&family=Sriracha&display=swap');
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
@@ -19,10 +21,12 @@ html,body{
 a{
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover{
     color:rgba(255, 255, 255, 0.781);
+    text-decoration: underline;
 }
 
 header{
@@ -42,7 +46,7 @@ header > h1 {
     font-size: 5vw;
     padding-left: 20px;
     padding-right: 20px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Passion One', cursive;
 
 }
 
@@ -60,7 +64,7 @@ section{
     padding-left: 30px;
     line-height: 2.0em;
     font-size: 3.7vw;
-    font-family: cursive;
+    font-family:  'Sriracha', cursive;
 }
 
 section#img{
@@ -89,7 +93,8 @@ footer{
     color: rgb(163, 163, 163);
     padding: 9px;
     text-align: center;
-    font-family: cursive;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2.5px;
 }
 
 a.link {
