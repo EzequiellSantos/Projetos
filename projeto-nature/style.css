@@ -28,7 +28,8 @@ a:hover{
 header{
     text-align: center;
     margin: auto;
-    background-image: linear-gradient(to bottom, #00a2ff, #0f0bfd);
+    background-image: linear-gradient(to bottom, #00a2ff 50%,#00499c ) ;
+   /*  background: #0f0bfd; */
     box-shadow: 0em 0em 3.0em 0.1em rgba(0, 0, 0, 0.24);
     color: #fff;
 }
