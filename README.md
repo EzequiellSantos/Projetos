@@ -5,6 +5,5 @@ Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
 
 .
 
- Projeto Cordel do Poema de Milton Duarte {"{cangaço}": "{https://raw.githubusercontent.com/EzequiellSantos/projeto-poemas/main/pacote-d012/imagens/ico.webp}"}
-
+ Projeto Cordel do Poema de Milton Duarte :cangaço:
  <a href="https://ezequiellsantos.github.io/projeto-poemas/projeto-cordel/index.html" target="_blank">Acessar o site</a>
