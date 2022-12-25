@@ -12,12 +12,12 @@ Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
  # projeto-curiosidades
  Origem do Robô Android :iphone:🟢
 
- <a href="https://ezequiellsantos.github.io/projetos/projeto-android">Acessar Site</a> 
+ <a href="https://ezequiellsantos.github.io/projetos/projeto-android/index.html">Acessar Site</a> 
 
  .
 
 Origem do Facebook :iphone::large_blue_circle::globe_with_meridians:
 
-<a href="https://ezequiellsantos.github.io/projetos/projeto-facebook/">Acessar Site</a>
+<a href="https://ezequiellsantos.github.io/projetos/projeto-facebook/index.html">Acessar Site</a>
  
 
