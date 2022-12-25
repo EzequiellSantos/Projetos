@@ -13,7 +13,7 @@ Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
  # projeto-curiosidades
  Origem do Robô Android :iphone:🟢
 
- <a href="https://ezequiellsantos.github.io/projetos/projeto-android/index.html">Acessar Site</a> 
+ <a href="https://ezequiellsantos.github.io/projetos/projeto-androidd/index.html">Acessar Site</a> 
 
  .
 
