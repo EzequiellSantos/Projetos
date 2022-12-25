@@ -10,14 +10,14 @@ Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
  <a href="https://ezequiellsantos.github.io/projeto-poemas/projeto-cordel/index.html" target="_blank">Acessar o site</a>
 
  # projeto-curiosidades
- Origem do Robô Android
+ Origem do Robô Android :iphone:🟢
 
- <a href="">Acessar Site</a> :iphone:🟢
+ <a href="https://ezequiellsantos.github.io/projetos/projeto-android">Acessar Site</a> 
 
  .
 
-Origem do Facebook
+Origem do Facebook :iphone::large_blue_circle::globe_with_meridians:
 
-<a href="">Acessar Site</a>
+<a href="https://ezequiellsantos.github.io/projetos/projeto-facebook/">Acessar Site</a>
  
 
