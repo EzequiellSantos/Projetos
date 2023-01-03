@@ -4,7 +4,7 @@ Minhas Redes Sociais  :smile:
 <a href="https://ezequiellsantos.github.io/Projetos/projeto-social/index.html">Acessar</a>
 
 
-# projeto-poemas
+# Projeto-Poemas
 Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
 
 <a href="https://ezequiellsantos.github.io/Projetos/projeto-nature/index.html">Acessar Site</a>
@@ -16,7 +16,7 @@ Projeto Vê Tudo Isso do Poema de Minha Autoria :seedling::leaves:
  <a href="https://ezequiellsantos.github.io/Projetos/projeto-cordel/index.html">Acessar o site</a>
 
 
- <h1 id="projeto-poemas">projeto-curiosidades</h1>
+ <h1 id="projeto-poemas">Projeto-Curiosidades</h1>
  Com o <a href="https://cursoemvideo.com">Curso em Vídeo</a>, Origem do Robô Android :iphone:🟢
  
 
