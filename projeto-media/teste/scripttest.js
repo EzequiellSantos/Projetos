@@ -44,8 +44,12 @@ const materia = [
 
 prompt.focus()
 function clicou(){
-    var notas = 0
-    for ( var Mat = 1  ; Mat <=16 ; Mat++){
+    var input = document.createElement('input')
+    input.setAttribute("type","number")
+
+    res.innerHTML ='<input type="number">'
+   /* var notas = 0
+     for ( var Mat = 1  ; Mat <=16 ; Mat++){
         notas += Number(prompt(`Qual a nota ${materia[Mat - 1]}`))
     }
 
@@ -59,4 +63,5 @@ function clicou(){
     }else{
         res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
     }
+     */
 }

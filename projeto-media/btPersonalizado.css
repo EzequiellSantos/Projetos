@@ -7,6 +7,7 @@
 }
 
 body {
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     /* display: grid;
     place-items: center; */
@@ -131,7 +132,6 @@ p{
 
 p.bubl{
     text-align: center;
-    margin-left: 80px;
 }
 
 p.botao{   
