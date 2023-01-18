@@ -41,10 +41,8 @@ const materia = [
 
 ]
 
-var notas = 0
-
 function clicou(){
-    
+    var notas = 0
     for ( var Mat = 1  ; Mat <=16 ; Mat++){
         notas += Number(prompt(`Qual a nota ${materia[Mat - 1]}`))
     }
@@ -52,9 +50,11 @@ function clicou(){
     var total = notasfrm / 16
 
     if(total < 6){
-        res.innerHTML = `<p> Sua média final é <mark class='nobix'>${total}</mark></p>`
+        res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${total}</mark></p>`
     }else if(total < 8){
-        res.innerHTML = `<p> Sua média final é <mark class="nobix">${total}</mark></p>`
+        res.innerHTML += `<p> Sua média final é: <mark class="intr">${total}</mark></p>`
+    }else{
+        res.innerHTML += `<p> Sua média final é: <mark class="bix">${total}</mark></p>`
     }
     
 }
