@@ -19,6 +19,7 @@ for (var i = 0; i < bubls.length; i++) {
 
 var ver = document.getElementById('ver')
 var res = document.getElementById('res')
+var input = document.getElementById('input')
 ver.addEventListener('click', clicou)
 
 const materia = [
@@ -38,9 +39,10 @@ const materia = [
     'RET:',
     'Socio:',
     'Formação Cidadã Undefined_:'
-
+    
 ]
 
+prompt.focus()
 function clicou(){
     var notas = 0
     for ( var Mat = 1  ; Mat <=16 ; Mat++){
