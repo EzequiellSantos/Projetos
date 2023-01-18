@@ -46,15 +46,16 @@ function clicou(){
     for ( var Mat = 1  ; Mat <=16 ; Mat++){
         notas += Number(prompt(`Qual a nota ${materia[Mat - 1]}`))
     }
-    var notasfrm = Number.parseFloat(notas.toFixed(2))
-    var total = notasfrm / 16
+
+    var total = notas / 16
+    var totalfrm = parseFloat(total.toFixed(2))
 
     if(total < 6){
-        res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${total}</mark></p>`
-    }else if(total < 8){
-        res.innerHTML += `<p> Sua média final é: <mark class="intr">${total}</mark></p>`
+        res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${totalfrm}</mark></p>`
+    }else if(total < 8.5){
+        res.innerHTML += `<p> Sua média final é: <mark class="intr">${totalfrm}</mark></p>`
     }else{
-        res.innerHTML += `<p> Sua média final é: <mark class="bix">${total}</mark></p>`
+        res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
     }
     
 }
