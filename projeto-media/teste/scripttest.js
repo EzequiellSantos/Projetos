@@ -42,26 +42,40 @@ const materia = [
     
 ]
 
-prompt.focus()
 function clicou(){
     var input = document.createElement('input')
     input.setAttribute("type","number")
 
-    res.innerHTML ='<input type="number">'
-   /* var notas = 0
-     for ( var Mat = 1  ; Mat <=16 ; Mat++){
-        notas += Number(prompt(`Qual a nota ${materia[Mat - 1]}`))
+    
+    var notas = 0
+    for ( var Mat = 1  ; Mat <=16 ; Mat++){
+       res.innerHTML ='<input type="number">'
+       input.focus() 
+       notas = input
     }
 
     var total = notas / 16
-    var totalfrm = parseFloat(total.toFixed(2))
 
-    if(total < 6){
+
+
+
+
+/////////////////////////////////////////////
+
+
+    /* res.innerText = `${total}` */
+
+
+
+
+
+    /* var totalfrm = parseFloat(total.toFixed(2)) */
+    /* if(total < 6){
         res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${totalfrm}</mark></p>`
     }else if(total < 8.5){
         res.innerHTML += `<p> Sua média final é: <mark class="intr">${totalfrm}</mark></p>`
     }else{
         res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
-    }
-     */
+    } */
+     
 }
