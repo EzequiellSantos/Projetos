@@ -56,7 +56,9 @@ function clicou(){
         res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${totalfrm}</mark></p>`
     }else if(total < 8.5){
         res.innerHTML += `<p> Sua média final é: <mark class="intr">${totalfrm}</mark></p>`
-    }else{
+    }else if (total <= 10){
         res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
+    }else{
+        res.innerHTML += `<p> Sua média final é: <mark class="bix">10.00</mark></p>`
     }
 }
