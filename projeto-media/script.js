@@ -38,7 +38,7 @@ const materia = [
     'Quim:',
     'RET:',
     'Socio:',
-    'Formação Cidadã Undefined_:'
+    'Formação Cidadã Undefined_ :'
     
 ]
 
@@ -46,7 +46,7 @@ prompt.focus()
 function clicou(){
     var notas = 0
     for ( var Mat = 1  ; Mat <=16 ; Mat++){
-        notas += Number(prompt(`Qual a nota ${materia[Mat - 1]}`))
+        notas += Number(prompt(`Qual a nota de ${materia[Mat - 1]}`))
     }
 
     var total = notas / 16
