@@ -52,13 +52,15 @@ function clicou(){
     var total = notas / 16
     var totalfrm = parseFloat(total.toFixed(2))
 
-    if(total < 6){
-        res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${totalfrm}</mark></p>`
-    }else if(total < 8.5){
-        res.innerHTML += `<p> Sua média final é: <mark class="intr">${totalfrm}</mark></p>`
-    }else if (total <= 10){
-        res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
+    if(total <=10){
+       if(total < 6){
+        res.innerHTML += `<p> Sua média final é: <mark class='nobix'>${totalfrm}</mark></p><hr class="mnr">`
+       }else if(total < 8.5){
+        res.innerHTML += `<p> Sua média final é: <mark class="intr">${totalfrm}</mark></p><hr class="mnr">`
+       }else{
+        res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p><hr class="mnr">`
+       }
     }else{
-        res.innerHTML += `<p> Sua média final é: <mark class="bix">10.00</mark></p>`
+        res.innerHTML = '<p><mark class="nobix">Sua nota Ultrapassou 10.00 verifique os dados novamente</mark></p><hr class="mnr">'
     }
 }
