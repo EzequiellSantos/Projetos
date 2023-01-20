@@ -18,27 +18,21 @@ for (var i = 0; i < bubls.length; i++) {
 }
 
 ///////////////////////////
-//var body = document.getElementsByTagName('body')
+
+
 var ver = document.getElementById('ver')
 var res = document.getElementById('res')
 var input = document.getElementById('input')
 
 ver.addEventListener('click', clicou)
-//body.addEventListener('load', carregou)
-
-//function carregou(){
     
-    var p1 = document.getElementsByTagName('p')[0]
-    if(materias > 1){
-    p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matérias</p>`}else if(materias == 1){
-        p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matéria</p>`
-    }else{
-        p1.innerHTML = '<p>[ERROR_]</p>'
-    }
-//}
-
-
-
+var p1 = document.getElementsByTagName('p')[0]
+if(materias > 1){
+p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matérias</p>`}else if(materias == 1){
+    p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matéria</p>`
+}else{
+    p1.innerHTML = '<p>[ERROR_]</p>'
+}
 
 const materia = [
     /* 'AI:',
