@@ -168,15 +168,19 @@ a{
     background-color:#151515;
 
     text-decoration: none;
-    color: white;
+    color: rgb(95, 95, 95);
     font-weight: normal;
-    font-size: 1.2em;
+    font-size: 1em;
     border-radius: 14px;
     transition: all 0.8s;
 }
 
 a:hover{
-    text-decoration: underline;
+    color: rgb(160, 160, 160);
+}
+
+a:active{
+    color: white;
     background-color: #313131;
     transform: scale(0.9);
     border-radius: 20px;
