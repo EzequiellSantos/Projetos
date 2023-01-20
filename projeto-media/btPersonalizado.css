@@ -273,6 +273,7 @@ img{
     text-align: left;
     margin: 500px 0px 20px 20px;
     max-width: 50px;
+    max-height: 80px;
     transition: all 0.6s;
 }
 
