@@ -184,7 +184,7 @@ a.link-1:active{
     background-color: #313131;
     transform: scale(0.9);
     border-radius: 20px;
-    transition: transform 0.7s, border-radius 0.4s, background-color 0.5s ;
+    transition: transform 0.7s, border-radius 0.4s, background-color 0.5s, width 0.7s, height 0.7s ;
 }
 
 a.link-2{  
