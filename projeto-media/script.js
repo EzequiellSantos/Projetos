@@ -17,7 +17,7 @@ for (var i = 0; i < bubls.length; i++) {
 
 ///////////////////////////
 
-/* var ver = document.getElementById('ver')
+var ver = document.getElementById('ver')
 var res = document.getElementById('res')
 var input = document.getElementById('input')
 ver.addEventListener('click', clicou)
@@ -63,4 +63,4 @@ function clicou(){
     }else{
         res.innerHTML = '<p><mark class="nobix">Sua nota Ultrapassou 10.00 verifique os dados novamente</mark></p><hr class="mnr">'
     }
-} */
+} 
