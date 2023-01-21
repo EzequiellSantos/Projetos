@@ -61,6 +61,6 @@ function clicou(){
         res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p><hr class="mnr">`
        }
     }else{
-        res.innerHTML = '<p>A sua nota <mark class="nobix">Ultrapassou 10.00</mark><br> verifique os dados novamente</p><hr class="mnr">'
+        res.innerHTML = '<p>A sua nota <mark class="nobix">Ultrapassou 10.00</mark><br><br> verifique os dados novamente</p><hr class="mnr">'
     }
 } 
