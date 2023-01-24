@@ -269,6 +269,7 @@ span.nome-aluno{
 
 
 img{
+    background-color: #ffffff00;
     display: block;
     text-align: left;
     margin: 500px 0px 20px 20px;
@@ -280,6 +281,11 @@ img{
 img:active{
     margin-left: 100px;
     transition: all 0.2s;
+}
+
+img, a, p, #res ::selection{
+    color: white;
+    background-color: #ffffff00;
 }
 
 

@@ -31,7 +31,7 @@ if(materias > 1){
 p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matérias</p>`}else if(materias == 1){
     p1.innerHTML = `<p class="p1">Para Cursos Com <span class="quant">${materias}</span> Matéria</p>`
 }else{
-    p1.innerHTML = '<p>[ERROR_]</p>'
+    p1.innerHTML = '<p>[ERROR_1]</p>'
 }
 
 const materia = [
@@ -95,8 +95,10 @@ function clicou(){
         }else if(total <= 10){
             res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
         }
-    }else{
+    }else if(total > 10){
         res.innerHTML = '<p>A sua nota <mark class="nobix">Ultrapassou 10.00</mark> verifique os dados novamente</p><hr class="mnr">'
+    }else{
+        res.innerHTML += '<p><mark class="nobix">[ERROR_2]</mark><br><br> Atualize a Página e insira os dados novamente</p>'
     }
      
 }
