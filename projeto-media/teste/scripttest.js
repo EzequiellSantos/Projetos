@@ -95,10 +95,8 @@ function clicou(){
         }else if(total <= 10){
             res.innerHTML += `<p> Sua média final é: <mark class="bix">${totalfrm}</mark></p>`
         }
-    }else if(total > 10){
-        res.innerHTML = '<p>A sua nota <mark class="nobix">Ultrapassou 10.00</mark> verifique os dados novamente</p><hr class="mnr">'
     }else{
-        res.innerHTML += '<p><mark class="nobix">[ERROR_2]</mark><br><br> Atualize a Página e insira os dados novamente</p>'
+        res.innerHTML = '<p>A sua nota <mark class="nobix">Ultrapassou 10.00</mark> verifique os dados novamente</p><hr class="mnr">'
     }
      
 }
