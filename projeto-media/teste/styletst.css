@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 body{
-    background-image: url('space-g69998e9af_1920.jpg');
+    /* background-image: url('space-g69998e9af_1920.jpg'); */
+    background-color: rgb(41, 41, 41);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -48,6 +49,7 @@ p{
 }
 
 input.nas{
+    margin-top: 10px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -118,6 +120,10 @@ div#res{
     transition: background-color 0.8s, color 0.2s, trasnform 0.8s;
 }
 
+#ver:active{
+   background-color:  rgb(15, 100, 150);
+}
+
 .ver-2{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: right;
@@ -137,6 +143,11 @@ div#res{
     color: white;
     transition: background-color 0.8s, color 0.2s, trasnform 0.8s;
 }
+
+.ver-2:active{
+    background-color: rgb(12, 49, 119) ;
+}
+
 
 #slct{
     padding: 12px 3px 4px 6px;
