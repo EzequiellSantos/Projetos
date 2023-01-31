@@ -1,26 +1,38 @@
-var input = document.getElementById('input')
-var ver = document.getElementById('ver')
+
+var add = document.getElementById('ver')
 var res = document.getElementById('res')
-var saida = document.getElementById('saida')
-ver.addEventListener('click', clicou)
+var add_2 = document.getElementById('finl')
+var res_2 = document.getElementById('res_2')
+
+var arry = []
+
+
+add.addEventListener('click', clicou)
+add_2.addEventListener('click', finalizar)
+
 
 function clicou(){
-    /* 
+    var num = document.getElementById('num')
 
-    var valor = (Number(input.value) * 2) / 2
-    res.innerText = `${valor}` 
-    
-    */
-    var notas = 0
-    for(var mat = 1 ; mat <= 2 ; mat ++){
+    arry.push(Number(num.value))
+    res_2.innerText = ''
+    res.innerHTML += `<div id="del">Valor ${num.value} add</div>`
 
-        /* notas += saida.innerHTML = '<input type="number" inputmode="decimal">' */
-
-        notas += Number(prompt('digite a nota'))
-    }
-
-    var total = notas / 2
-    res.innerText = `${total}`
+    num.value = ''
+    num.focus()
 
 
+}
+
+var del = document.getElementById('del')
+del.addEventListener('click', deletou)
+
+
+ function deletou (){
+        res.innerHTML = `>>>${arry.pop()}`
+}
+
+function finalizar(){
+    let tot = arry.length
+    res_2.innerHTML += `${tot}<br>`
 }
