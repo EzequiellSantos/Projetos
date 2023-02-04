@@ -1,7 +1,7 @@
 var mat =  
     [   "mat",
         "geo",
-        "mat",
+        "filo",
         "his",
         "tec",
         "pika",
@@ -14,7 +14,7 @@ var mat =
 class Notas {
      
     constructor(){
-        this.id = 0
+        this.id = 0 
         this.arrayNotas = [0]
     }
 
