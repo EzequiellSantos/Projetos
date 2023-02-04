@@ -16,7 +16,6 @@ class Notas {
         this.listaTabela();
         this.cancelar();
         foco.focus()
-
     }
 
     listaTabela(){
@@ -38,10 +37,12 @@ class Notas {
 
             let imgDelete = document.createElement('img')
             imgDelete.src = 'excluir.png';
+            imgDelete.setAttribute("onclick","notas.deletou("+this.arrayNotas[i].id+")")
 
             td_acoes.appendChild(imgEdit);
             td_acoes.appendChild(imgDelete);
 
+            console.log(this.arrayNotas)
         }
     }
 
@@ -79,14 +80,18 @@ class Notas {
     cancelar (){
         document.getElementById('numero').value = ''
     }
+    deletou(id){
+
+        let tbody = document.getElementById('tbody');
+
+        for(let i = 0; i < this.arrayNotas.length; i++){
+            if( this.arrayNotas[i].id == id){
+                this.arrayNotas.splice(i, 1);
+                tbody.deleteRow(i)
+            }
+        }
+    }
 }
 
 var notas= new Notas();
 
-function calculou(){
-    alert("calculou")
-}
-
-function deletou(){
-    alert('deletou')
-}
