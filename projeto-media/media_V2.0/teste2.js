@@ -52,7 +52,7 @@ function finalizou (){
         
         for(let pos in arry){
             soma += arry[pos]
-            media += soma / tot
+            media = soma / tot
             if(arry[pos] > maior)
                 maior = arry[pos]
             
