@@ -14,8 +14,8 @@ var mat =
 class Notas {
      
     constructor(){
-        this.id = 0 
-        this.arrayNotas = [0]
+        this.id = 1
+        this.arrayNotas = []
     }
 
     adicionou (){
@@ -35,14 +35,14 @@ class Notas {
         let tbody = document.getElementById('tbody')
         tbody.innerText = ''
 
-        for(let i = 1 ; i < this.arrayNotas.length; i++){
+        for(let i = 0 ; i < this.arrayNotas.length; i++){
             let tr = tbody.insertRow();
 
             let td_id = tr.insertCell();
             let td_nota = tr.insertCell();
             let td_acoes = tr.insertCell();
             
-            td_id.innerText = `${mat[i - 1]}`;
+            td_id.innerText = this.arrayNotas[i].id;
             td_nota.innerText = this.arrayNotas[i].valorDanota;
 
             let imgEdit = document.createElement('img');
@@ -97,7 +97,7 @@ class Notas {
 
         let tbody = document.getElementById('tbody');
 
-        for(let i = 1; i < this.arrayNotas.length; i++){
+        for(let i = 0; i < this.arrayNotas.length; i++){
             if( this.arrayNotas[i].id == id){
                 this.arrayNotas.splice(i, 1);
                 tbody.deleteRow(i)
