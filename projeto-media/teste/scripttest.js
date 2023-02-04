@@ -82,9 +82,6 @@ function clicou(){
     var notas = 0
     for ( var Mat = 1  ; Mat <= materias; Mat++){
         notas += Number(prompt(`Qual a nota de ${materia[Mat - 1]}`))
-
-        window.prompt.value = ''
-        prompt.focus()
     }
 
     var total = notas / materias
