@@ -69,7 +69,6 @@ class Notas {
 
     lerDados(){
         let notas = {}
-        var soma = ''
 
         notas.id = this.id
         notas.valorDanota = document.getElementById('numero').value;
