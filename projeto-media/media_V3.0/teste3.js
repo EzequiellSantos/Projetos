@@ -38,12 +38,15 @@ class Notas {
         for(let i = 0 ; i < this.arrayNotas.length; i++){
             let tr = tbody.insertRow();
 
-            let td_id = tr.insertCell();
+            /* let td_id = tr.insertCell(); */
+            let td_mat = tr.insertCell();
             let td_nota = tr.insertCell();
             let td_acoes = tr.insertCell();
             
-            td_id.innerText = this.arrayNotas[i].id;
+            /* td_id.innerText = this.arrayNotas[i].id; */
             td_nota.innerText = this.arrayNotas[i].valorDanota;
+
+            td_mat.innerText = mat[i + 1]
 
             let imgEdit = document.createElement('img');
             imgEdit.src = 'editar.png';
@@ -66,10 +69,10 @@ class Notas {
 
     lerDados(){
         let notas = {}
+        var soma = ''
 
         notas.id = this.id
         notas.valorDanota = document.getElementById('numero').value;
-
 
         return notas 
         

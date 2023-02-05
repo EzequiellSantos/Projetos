@@ -20,13 +20,14 @@
             <input type="number"  id="numero" placeholder=" Digite aqui">
             <button onclick="notas.adicionou ()">Adicionar</button>
             <button onclick="notas.cancelar ()">Cancelar</button>
-            <button>Média</button>
+            <button onclick="calculou ()">Média</button>
             <button>Excluir</button>
         </div>
         <div class="resultado">
             <table>
                 <thead>
                     <tr>
+                        <th>Matéria</th>
                         <th>Nota</th>
                     </tr>
                 </thead>
@@ -34,6 +35,7 @@
                    
                 </tbody>
             </table>
+            <div id="res"></div>
         </div>
     </section>
     <footer>
