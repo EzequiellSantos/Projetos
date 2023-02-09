@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styletst_2.css">
+    <title>Calculadora de média de notas</title>
+</head>
+<body>
+        <h1>Calculadora de média de notas</h1>
+    
+        <form>
+          <input type="number" id="noteInput">
+          <button type="button" id="addNote">Adicionar nota</button>
+        </form>
+    
+        <ul id="notes"></ul>
+    
+        <p>Média: <span id="average"></span></p>
+    
+        <script>
+          const noteInput = document.querySelector("#noteInput");
+          const addNoteButton = document.querySelector("#addNote");
+          const notesList = document.querySelector("#notes");
+          const averageElement = document.querySelector("#average");
+            
+          let notes = [];
+           
+          addNoteButton.addEventListener("click", () => {
+            const note = parseFloat(noteInput.value);
+            if (!isNaN(note)) {
+              notes.push(note);
+              noteInput.value = "";
+              renderNotes();
+            }
+          });
+    
+          function renderNotes() {
+            notesList.innerHTML = "";
+            noteInput.focus()
+            for (let i = 0; i < notes.length; i++) {
+              const note = notes[i];
+              const noteElement = document.createElement("li");
+              noteElement.innerText = note;
+    
+              const editButton = document.createElement("button");
+              editButton.innerText = "Editar";
+              editButton.addEventListener("click", () => {
+                noteInput.value = note;
+                notes.splice(i, 1);
+                renderNotes();
+              });
+              noteElement.appendChild(editButton);
+    
+              const deleteButton = document.createElement("button");
+              deleteButton.innerText = "Excluir";
+              deleteButton.addEventListener("click", () => {
+                notes.splice(i, 1);
+                renderNotes();
+              });
+              noteElement.appendChild(deleteButton);
+    
+              notesList.appendChild(noteElement);
+            }
+            updateAverage();
+          }
+    
+          function updateAverage() {
+            let sum = 0;
+            for (const note of notes) {
+              sum += note;
+            }
+            const average = sum / 16;
+            averageElement.innerText = average.toFixed(2);
+          }
+        </script>
+</body>
+</html>
+
