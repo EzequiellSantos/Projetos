@@ -39,21 +39,25 @@ section{
 }
 
 input{
-    display: grid;
-    margin: 10px 0px 10px 0px;
-    outline: 0;
+    display: block;
+    margin: auto ;
+    outline: 0 auto;
     border: 1px solid #444;
     padding: 8px;
     border-radius: 6px;
 }
 
+form{
+    text-align: right;
+}
 
 #addNote{
-    padding: 6px;
+    font-size: 1.05em;
+    padding: 13px;
     background-color: rgb(122, 155, 197);
     border: 1px solid rgb(122, 155, 197);
     border-radius: 7px;
-    margin: 10px 3px 20px 7px;
+    margin: 30px 3px 20px 7px;
     color: white;
 }
 
