@@ -1,0 +1,10 @@
+tela inicial
+    eu, o qe eu faço, o que eu pretendo ser, o que eu pretendo fazer, o que eu tenho a oferecer agora
+tela de projetos
+    links para cada projetos relacionado a um repositório diferente 
+     //o que eu vou começar
+mini tela de contato
+
+EXTRAS
+ redirecionar os links de voltar para o projeto-portfólio
+ 
