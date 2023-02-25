@@ -73,9 +73,11 @@ span{
 }
 
 #profile{
+    backdrop-filter: blur(19px);
+    padding: 30px 80px 30px 30px;
     display: inline-block;
-    width: 200px; 
-    margin-right: 17vw;
+    width: 350px; 
+    margin-right: 40px;
 }
 
 #img-profile{
@@ -88,6 +90,7 @@ span{
 
 
 .nav-profile{
+    text-align: center;
     margin-left: 30px;
     padding: 0px 0px 0px 0px;
     margin-top: 1.2em;
