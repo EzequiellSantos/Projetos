@@ -78,7 +78,9 @@ span{
     margin-right: 17vw;
 }
 
-img{
+#img-profile{
+    display: inline-block;
+    margin: auto;
     margin-left: 20px;
     border-radius: 50%;
     width: 200px;
@@ -87,8 +89,23 @@ img{
 
 .nav-profile{
     margin-left: 30px;
+    padding: 0px 0px 0px 0px;
     margin-top: 1.2em;
     line-height: 1.5em;
+}
+
+#icons-profile{
+    display:flex;
+    align-items: center;
+}
+
+#icons-profile > img{
+    width: 50px;
+}
+
+#data-profile{
+    display: flex;
+    align-items: center;
 }
 
 #p1-span{
@@ -112,7 +129,7 @@ article{
     border-radius: 10px;
 }
 
-article.article-right{
+.article-right{
     margin-left: 80px;
 }
 
