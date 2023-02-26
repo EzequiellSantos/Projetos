@@ -17,7 +17,7 @@ hr.hr-profile{
     display: inline-block;
     text-align: center;
     width: 250px;
-    margin-left: 65px;
+    margin-left: 85px;
     color: rgb(255, 255, 255);
 }
 
@@ -44,7 +44,7 @@ body{
 
 main{
     margin-top: 50px;
-    padding-left: 10px;
+    padding-left: 15px;
     color: azure;
 }
 
@@ -88,7 +88,7 @@ span{
     padding: 20px 30px 10px 10px;
     display: inline-block;
     margin: auto;
-    min-width: 350px; 
+    min-width: 400px; 
     margin-left: 10px;
     margin-bottom: 30px;
     border-radius: 25px;
@@ -98,7 +98,8 @@ span{
     display: inline-block;
     text-align: center;
     margin: auto;
-    margin-left: 70px;
+    margin-top: 20px;
+    margin-left: 110px;
     border-radius: 50%;
     width: 200px;
 }
@@ -158,8 +159,8 @@ article{
     border-radius: 10px;
 }
 
-.article-right{
-    margin-left: 80px;
+.article-left{
+    margin-right: 5vw;
 }
 
 aside{
