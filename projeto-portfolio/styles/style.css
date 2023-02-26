@@ -14,9 +14,10 @@
 }
 
 hr.hr-profile{
+    display: inline-block;
+    text-align: center;
     width: 250px;
-    margin-top: 1.5em;
-    margin-left: 5px;
+    margin-left: 65px;
     color: rgb(255, 255, 255);
 }
 
@@ -58,12 +59,22 @@ div{
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+ 
 }
 
 #home{
-    width: 800px;
+    max-width: 800px;
+    min-height: 100vh;
     display: inline-block;  
-    line-height: 1.5em;
+    line-height: 1.8em;
+    backdrop-filter: blur(19px);
+    padding: 30px 20px 30px 30px;
+    border-radius: 25px;
+    margin: 0px 0px 0px 0px;
+}
+
+#home > p{
+    max-width: 780px;
 }
 
 span{
@@ -74,16 +85,20 @@ span{
 
 #profile{
     backdrop-filter: blur(19px);
-    padding: 30px 80px 30px 30px;
+    padding: 20px 30px 10px 10px;
     display: inline-block;
-    width: 350px; 
-    margin-right: 40px;
+    margin: auto;
+    min-width: 350px; 
+    margin-left: 10px;
+    margin-bottom: 30px;
+    border-radius: 25px;
 }
 
 #img-profile{
     display: inline-block;
+    text-align: center;
     margin: auto;
-    margin-left: 20px;
+    margin-left: 70px;
     border-radius: 50%;
     width: 200px;
 }
@@ -93,8 +108,9 @@ span{
     text-align: center;
     margin-left: 30px;
     padding: 0px 0px 0px 0px;
-    margin-top: 1.2em;
     line-height: 1.5em;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #icons-profile{
@@ -103,12 +119,23 @@ span{
 }
 
 #icons-profile > img{
-    width: 50px;
+    max-width: 100px;
+    max-height: 70px;
+}
+
+img#img-mesage{
+    max-width: 40px;
+    max-height: 37px;
+}
+
+img#img-phone{
+    margin-left: 5px;
+    max-height: 50px;
 }
 
 #data-profile{
-    display: flex;
-    align-items: center;
+    margin-left: 20px;
+    text-align: left;
 }
 
 #p1-span{
@@ -116,8 +143,7 @@ span{
 }
 
 #p2-span{
-    
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0px -10px 0px;
 }
 
 article{
@@ -128,7 +154,7 @@ article{
     margin: auto;
     margin-top: 70px;
     margin-bottom: 3px;
-    width: 350px;
+    max-width: 350px;
     border-radius: 10px;
 }
 
