@@ -119,19 +119,34 @@ span{
     align-items: center;
 }
 
-#icons-profile > img{
+nav > img{
+    border-radius: 11px;
     max-width: 100px;
     max-height: 70px;
 }
 
 img#img-mesage{
+    background-color: rgba(146, 146, 146, 0.055);
+    padding: 10px 15px 10px 15px;
     max-width: 40px;
     max-height: 37px;
 }
 
 img#img-phone{
+    background-color: rgba(146, 146, 146, 0.055);
+    padding: 10px 15px 10px 15px;
     margin-left: 5px;
     max-height: 50px;
+}
+
+img#img-location{
+    background-color: rgba(146, 146, 146, 0.055);
+    padding: 10px 15px 10px 15px;
+}
+
+img#img-calendar{
+    background-color: rgba(146, 146, 146, 0.055);
+    padding: 10px 15px 10px 15px;
 }
 
 #data-profile{
