@@ -14,10 +14,8 @@
 }
 
 hr.hr-profile{
-    display: inline-block;
-    text-align: center;
+    margin-left: 59px;
     width: 250px;
-    margin-left: 85px;
     color: rgb(255, 255, 255);
 }
 
@@ -25,13 +23,17 @@ hr.hr-text{
     width: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 3.5px solid rgb(255, 72, 72);
+    border-radius: 3px;
 }
+
 
 h1{
     display: inline;
 }
 
 body{
+    background-color: #202020;
     background-image: url('../imagens/pexels-adrien-olichon-2387793.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -44,7 +46,8 @@ body{
 
 main{
     margin-top: 50px;
-    padding-left: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: azure;
 }
 
@@ -63,7 +66,7 @@ div{
 }
 
 #home{
-    max-width: 800px;
+    max-width: 780px;
     min-height: 100vh;
     display: inline-block;  
     line-height: 1.8em;
@@ -74,7 +77,8 @@ div{
 }
 
 #home > p{
-    max-width: 780px;
+    max-width: 750px;
+    text-align: justify;
 }
 
 span{
@@ -85,11 +89,10 @@ span{
 
 #profile{
     backdrop-filter: blur(19px);
-    padding: 20px 30px 10px 10px;
+    padding: 20px 20px 10px 10px;
     display: inline-block;
     margin: auto;
     min-width: 300px; 
-    margin-left: 10px;
     margin-bottom: 30px;
     border-radius: 25px;
 }
@@ -99,7 +102,7 @@ span{
     text-align: center;
     margin: auto;
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 85px;
     border-radius: 50%;
     width: 200px;
 }
@@ -127,26 +130,29 @@ nav > img{
 
 img#img-mesage{
     background-color: rgba(146, 146, 146, 0.055);
-    padding: 10px 15px 10px 15px;
-    max-width: 40px;
-    max-height: 37px;
+    padding: 13px 13px 13px 13px;
+    max-width: 35px;
+    max-height: 40px;
 }
 
 img#img-phone{
     background-color: rgba(146, 146, 146, 0.055);
-    padding: 10px 15px 10px 15px;
-    margin-left: 5px;
+    padding: 10px 15px 13px 15px;
     max-height: 50px;
 }
 
 img#img-location{
     background-color: rgba(146, 146, 146, 0.055);
-    padding: 10px 15px 10px 15px;
+    padding: 0px 14px 0px 14px;
+    width: 30px;
+    height: 60px;
 }
 
 img#img-calendar{
     background-color: rgba(146, 146, 146, 0.055);
-    padding: 10px 15px 10px 15px;
+    padding: 0px 10px 0px 10px;
+    height: 60px;
+    width: 40px;
 }
 
 #data-profile{
@@ -179,8 +185,8 @@ article{
 }
 
 aside{
-    height: 100px;
-    width: 340px;
+    height: 50px;
+    width: 300px;
     background-color: aquamarine;
     margin: 10px 0px 10px 0px;
     border-radius: 10px;
