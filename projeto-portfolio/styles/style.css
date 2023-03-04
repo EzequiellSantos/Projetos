@@ -66,14 +66,13 @@ div{
 }
 
 #home{
-    max-width: 780px;
+    min-width: 300px;
     min-height: 100vh;
     display: inline-block;  
     line-height: 1.8em;
     backdrop-filter: blur(19px);
     padding: 30px 20px 30px 30px;
     border-radius: 25px;
-    margin: 0px 0px 0px 0px;
 }
 
 #home > p{
@@ -92,7 +91,7 @@ span{
     padding: 20px 20px 10px 10px;
     display: inline-block;
     margin: auto;
-    min-width: 300px; 
+    min-width: 340px; 
     margin-bottom: 30px;
     border-radius: 25px;
 }
@@ -187,7 +186,7 @@ article{
 aside{
     height: 50px;
     width: 300px;
-    background-color: aquamarine;
+    background-color: rgba(147, 252, 217, 0.459);
     margin: 10px 0px 10px 0px;
     border-radius: 10px;
 }
