@@ -64,6 +64,21 @@ div{
  
 }
 
+nav#menu{
+    background-color: rgba(230, 230, 230, 0.63);
+    max-height: 20px;
+    padding: 10px;
+}
+
+a#link-menu{
+    text-decoration: none;
+    color: rgb(209, 52, 52);
+}
+
+a#link-menu:hover{
+    
+}
+
 section{
     display: block;
     float: none;
