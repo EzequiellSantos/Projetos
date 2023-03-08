@@ -14,7 +14,8 @@
 }
 
 hr.hr-profile{
-    margin-left: 59px;
+    margin-left: 15%;
+    margin-right: 25%;
     width: 250px;
     color: rgb(255, 255, 255);
 }
@@ -82,7 +83,7 @@ a#link-menu:hover{
 section{
     display: block;
     float: none;
-    min-width: 340px;
+    min-width: 310px;
     margin-bottom: 30px;
     flex: 1;
 }
@@ -107,6 +108,7 @@ section{
     backdrop-filter: blur(19px);
     padding: 40px 20px 20px 30px;
     border-radius: 25px;
+    font-size: 0.8em;
 }
 
 #home > p{
@@ -130,7 +132,7 @@ span{
     text-align: center;
     margin: auto;
     margin-top: 20px;
-    margin-left: 85px;
+    margin-left: 80px;
     border-radius: 50%;
     width: 200px;
 }
@@ -138,12 +140,13 @@ span{
 
 .nav-profile{
     text-align: center;
+    font-size: 0.85em;
     margin-left: 30px;
     padding: 0px 0px 0px 0px;
     line-height: 1.5em;
     margin-bottom: 30px;
     margin-top: 30px;
-    max-width: 200px;
+    min-width: 200px;
 }
 
 #icons-profile{
@@ -191,10 +194,11 @@ img#img-calendar{
 
 #p1-span{
     text-align: center;
+    margin-right: 20px;
 }
 
 #p2-span{
-    margin: 10px 0px -10px 0px;
+    margin: 10px 24px 0px 0px;
 }
 
 article{

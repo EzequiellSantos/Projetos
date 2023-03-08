@@ -1,4 +1,4 @@
-<!--# Projeto-Social
+Projeto-Mídias
 Minhas Redes Sociais  :smile:
 
 <a href="https://ezequiellsantos.github.io/Projetos/projeto-social/index.html">Acessar</a>
@@ -30,6 +30,6 @@ Origem do Facebook :iphone::large_blue_circle::globe_with_meridians:
 
  # Projeto-Media
 
-<a href="https://ezequiellsantos.github.io/Projetos/projeto-media/" target="_blank">Média Quadro de Honra</a> -->
+<a href="https://ezequiellsantos.github.io/Projetos/projeto-media/" target="_blank">Média Quadro de Honra</a> 
  
 
