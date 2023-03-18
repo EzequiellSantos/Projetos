@@ -205,9 +205,6 @@ img#img-calendar{
     margin: 10px 24px 0px 0px;
 }
 
-.article-left{
-}
-
 #project-cards{
     display: flex;
     flex-wrap: wrap;
@@ -242,7 +239,6 @@ img#img-calendar{
         height: 350px;
         width: 23vw;
     }
-
 
     .html-css-js{
         margin-top: 0px;
