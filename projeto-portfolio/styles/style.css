@@ -48,10 +48,7 @@ body > img{
 
 main{
     display: flex;
-    flex-wrap: wrap;
     margin-top: 50px;
-    margin-left: 0px;
-    margin-right: -29px;
     color: azure;
     flex-direction: row;
     align-items: stretch;
@@ -60,17 +57,7 @@ main{
 
 }
 
-div{
-    width: 400px;
-    height: 500px;
-    margin-bottom: 20px;
-    display: inline-block;
-    border-radius: 20px;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
- 
-}
 
 nav#menu{
     background-color: rgba(230, 230, 230, 0.63);
@@ -108,13 +95,13 @@ section{
     section#home{
         float: left;
         max-width: 60%;
-        margin-left: 3em;
+        margin-left: 0.5em;
     }
 
     p{
-        font-size: 0.9em;
+        font-size: 1.0em;
     }
-    
+
 }
 
 #home{
@@ -124,7 +111,6 @@ section{
     padding: 40px 20px 20px 30px;
     border-radius: 25px;
     font-size: 1.0em;
-    width: 390px;
 }
 
 #home > p{
@@ -141,6 +127,7 @@ span{
     backdrop-filter: blur(19px);
     padding: 20px 10px 20px 10px;
     border-radius: 25px;
+    margin-left: 0px;
 }
 
 #img-profile{
@@ -214,30 +201,72 @@ img#img-calendar{
 }
 
 #p2-span{
+    font-family:  monospace;
     margin: 10px 24px 0px 0px;
 }
 
-article{
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    min-height: 50px;
-    /* background-color: rgba(255, 255, 255, 0.281); */
-    margin: auto;
-    margin-top: 70px;
-    margin-bottom: 3px;
-    max-width: 350px;
-    border-radius: 10px;
+.article-left{
 }
 
-.article-left{
-    margin-right: 5vw;
+#project-cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 80px;
+    height: 370px;
+    width: 320px;
+}
+
+#cards{
+    text-align: center;
+    flex:0 1 39.33%;
+    box-sizing: border-box;
+    height: 130px;
+    width: 150px;
+}
+
+@media screen and (min-width: 768px){
+    #project-cards{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 100px;
+        height: 340;
+        width: 450px;
+    }
+
+    #cards{
+        flex: 0 0 34.33%;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        height: 350px;
+        width: 23vw;
+    }
+
+
+    .html-css-js{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .article-left{
+        margin-bottom: 20px;
+    }
+}
+
+.html-css{
+    margin-bottom: 40px;
+}
+
+.html-css-js{
+
+}
+
+.js{
+    margin-left: 40px;
 }
 
 aside{
-    height: 150px;
-    width: 240px;
     background-color: rgba(147, 252, 217, 0.459);
-    margin: 10px 0px 10px 0px;
     border-radius: 10px;
 }
