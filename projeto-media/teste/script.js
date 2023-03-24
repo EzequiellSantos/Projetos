@@ -37,6 +37,7 @@
               const editButton = document.createElement("button");
               editButton.setAttribute('class', 'edit')
               editButton.innerHTML ='<img src="editar.png">' ;
+              
               editButton.addEventListener("click", () => {
                 noteInput.value = note;
                 notes.splice(i, 1);
