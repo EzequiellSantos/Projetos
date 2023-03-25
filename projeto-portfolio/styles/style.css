@@ -13,6 +13,31 @@
     padding: 0;
 }
 
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 35px;
+    background-color: #4d4d4d96;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 35px;
+    border: 0.5px solid rgb(58, 58, 58);
+    background-image: linear-gradient(to bottom, rgb(212, 97, 97), rgb(68, 68, 68));
+}
+
+a:active{
+    background-color: #20202000;
+    color: none;
+}
+
+ p::selection, h1::selection{
+    background-color: #f85858;
+    color: rgb(255, 255, 255);
+}
+
 hr.hr-profile{
     margin-left: 15%;
     margin-right: 15%;
@@ -213,21 +238,29 @@ img#img-calendar{
     font-family: monospace;
     text-align: left;
     flex:1 0 200px;
-    height: 130px;
+    height: 110px;
+    width: 165px;
 }
 
 .txt{
+    letter-spacing: 1.0px;
+    font-size: 1.1em;
     padding: 10px 10px;
     text-align: left;
 }
 
 .link-cards{
-    padding: 0px 10px;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0px 10px 10px 10px;
     text-decoration: none;
     color: rgb(17, 224, 231);
 }
 
-
+.html-css{
+    background-image: linear-gradient(to right yellow, red);
+}
 
 @media screen and (min-width: 768px){
     #project-cards{
@@ -244,17 +277,19 @@ img#img-calendar{
         margin-left: 30px;
         margin-bottom: 20px;
         text-align: left;
+        height: 125px;
+        width: 350px;
         /* font-size: 1.0em; */
     }
 
     .txt{
         padding: 15px 0px 0px 15px;
-        font-size: 1.4em;
+        font-size: 1.5em;
     }
     
     .link-cards{
         padding: 0px 0px 30px 15px;
-        /* font-size: 1.3em; */
+        font-size: 1.3em; 
     }
     
 }
