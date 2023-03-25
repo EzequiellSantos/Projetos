@@ -79,17 +79,28 @@ main{
 }
 
 nav#menu{
-    background-color: rgba(230, 230, 230, 0.63);
-    max-height: 20px;
+    background-color: rgba(88, 88, 88, 0.63);
     padding: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 70px;
+    right: 15px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+
+#menu > hr{
+    width: 40px;
 }
 
 a#link-menu{
     text-decoration: none;
+    padding: 10px 0px;
     color: rgb(209, 52, 52);
-}
-
-a#link-menu:hover{
     
 }
 
