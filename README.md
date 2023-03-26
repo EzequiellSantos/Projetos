@@ -33,6 +33,6 @@ Origem do Facebook :iphone::large_blue_circle::globe_with_meridians:
 <a href="https://ezequiellsantos.github.io/Projetos/projeto-media/teste/index.html?" target="_blank">Média Quadro de Honra</a> 
 
 # Projeto-Portfólio
-<a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/projetos.html"
+<a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/"
  
 
