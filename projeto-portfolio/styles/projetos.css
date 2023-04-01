@@ -56,23 +56,26 @@ main{
     flex-direction: column;
     justify-content: center;
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px)
+    -webkit-backdrop-filter: blur(20px);
+
+    width: 100%;
+    overflow-x: scroll;
 }
 
 article.cards{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: nowrap;
     padding: 50px 5px 50px 5px;
 }
 
 section.links{
     background-color: rgb(219, 219, 219);
-    width: 60%;
-    margin: 10px;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
     padding: 30px;
-    border-radius: 14px;
+    border-radius: 10px;
+
 }
 
 a{
