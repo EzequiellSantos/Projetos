@@ -78,6 +78,15 @@ section.links{
 
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #555;
+    border-radius: 5px;
+}
+
 a{
     text-decoration: none;
     font-size: 1.3em;
