@@ -236,11 +236,16 @@ img#img-calendar{
     margin: 10px 24px 0px 0px;
 }
 
+#all-cards{
+    width: 100%;
+}
+
 #project-cards{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     margin-top: 80px;
+    max-width: auto;
     height: 340px;
     gap: 20px;
 }
@@ -250,7 +255,7 @@ img#img-calendar{
     text-align: left;
     flex:1 0 200px;
     height: 110px;
-    width: 165px;
+    width: 80%;
 }
 
 .txt{
@@ -279,8 +284,8 @@ img#img-calendar{
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: space-between;
-        margin-top: 100px;
-        max-width: 700px;
+        margin-top: 80px;
+        max-width: 100%;
     }
 
     #cards{
@@ -289,13 +294,13 @@ img#img-calendar{
         margin-bottom: 20px;
         text-align: left;
         height: 125px;
-        width: 350px;
+        width: 100%;
         /* font-size: 1.0em; */
     }
 
     .txt{
         padding: 15px 0px 0px 15px;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     
     .link-cards{
