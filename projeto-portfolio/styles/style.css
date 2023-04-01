@@ -107,7 +107,7 @@ a#link-menu{
 section{
     display: block;
     float: none;
-    min-width: 310px;
+    max-width: 390px;
     margin-bottom: 30px;
     flex: 1;
 }
