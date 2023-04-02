@@ -13,6 +13,7 @@
     padding: 0;
 }
 
+/* configuração da Scrollbar */
 ::-webkit-scrollbar{
     width: 15px;
 }
@@ -28,33 +29,16 @@
     background-image: linear-gradient(to bottom, rgb(212, 97, 97), rgb(68, 68, 68));
 }
 
+/* links */
 a:active{
     background-color: #20202000;
     color: none;
 }
 
- p::selection, h1::selection{
+/* Select da Página */
+p::selection, h1::selection{
     background-color: #f85858;
     color: rgb(255, 255, 255);
-}
-
-hr.hr-profile{
-    margin-left: 15%;
-    margin-right: 15%;
-    color: rgb(255, 255, 255);
-}
-
-hr.hr-text{
-    width: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 3.5px solid rgb(255, 72, 72);
-    border-radius: 4px;
-}
-
-
-h1{
-    display: inline;
 }
 
 body{
@@ -67,6 +51,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* Main Principal */
 main{
     display: flex;
     margin-top: 50px;
@@ -75,9 +61,10 @@ main{
     align-items: stretch;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
 }
 
+
+/* Configuração do Menu */
 nav#menu{
     background-color: rgba(88, 88, 88, 0.63);
     padding: 10px;
@@ -101,53 +88,26 @@ a#link-menu{
     text-decoration: none;
     padding: 10px 0px;
     color: rgb(209, 52, 52);
-    
 }
 
+
+/* Section Globais */
 section{
     display: block;
     float: none;
-    margin: 0 auto;
+    max-width: 390px;
     margin-bottom: 30px;
     flex: 1;
 }
 
-@media screen and (min-width: 600px) {
 
-    body{
-        background-image: url('../imagens/fundo_g.jpg');
-    }
-    section#profile{
-        float: left;
-        max-width: 25%;
-    }
-
-    section#home{
-        float: left;
-        max-width: 60%;
-        margin-left: 0.5em;
-    }
-
-    p{
-        font-size: 1.0em;
-    }
-
-}
-
-#home{
-    display: inline-block;
-    line-height: 1.8em;
+/* Configuração da Section PROFILE */
+#profile{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 40px 25px 20px 25px;
+    padding: 20px 10px 20px 10px;
     border-radius: 25px;
-    font-size: 0.9em;
-}
-
-#home > p{
-    text-align: justify;
-    font-size: 1.1em;
-    margin: 0 ;
+    margin-left: 0px;
 }
 
 span{
@@ -156,13 +116,6 @@ span{
     border-radius: 7px;
 }
 
-#profile{
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 20px 10px 20px 10px;
-    border-radius: 25px;
-    margin-left: 0px;
-}
 
 #img-profile{
     display:grid;
@@ -177,7 +130,6 @@ span{
     text-align: center;
     font-size: 0.85em;
     margin-left: 30px;
-    padding: 0px 0px 0px 0px;
     line-height: 1.5em;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -187,6 +139,7 @@ span{
 #icons-profile{
     display:flex;
     align-items: center;
+    width: 100%;
 }
 
 nav > img{
@@ -225,6 +178,8 @@ img#img-calendar{
 #data-profile{
     margin-left: 20px;
     text-align: left;
+    width: 100%;
+
 }
 
 #p1-span{
@@ -238,8 +193,42 @@ img#img-calendar{
     margin: 10px 24px 0px 0px;
 }
 
+hr.hr-profile{
+    margin-left: 15%;
+    margin-right: 15%;
+    color: rgb(255, 255, 255);
+}
+
+
+/* Configuração da Section HOME */
+#home{
+    display: inline-block;
+    line-height: 1.8em;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 40px 25px 20px 25px;
+    border-radius: 25px;
+    font-size: 0.9em;
+}
+
+
+hr.hr-text{
+    width: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3.5px solid rgb(255, 72, 72);
+    border-radius: 4px;
+}
+
+#home > p{
+    text-align: justify;
+    font-size: 1.1em;
+    margin: 0 ;
+}
+
 #all-cards{
-    width: 80%;
+    /* Container Cards */
+    width: 100%;
     margin: 0 auto;
     margin-top: 80px;
     overflow-x: scroll;
@@ -248,23 +237,27 @@ img#img-calendar{
     border-radius: 20px;
 }
 
+#all-cards ::-webkit-scrollbar{
+    width: 5px;
+}
 
 #project-cards{
+    /* Sub-container Cards */
     display: flex;
     flex-wrap: nowrap;
     margin-top: 80px;
     width: 100%;
     max-width: 300px;
-
     height: 200px;
 
 }
 
 #cards{
+    /* Cards */
     font-family: monospace;
     text-align: left;
     height: 120px;
-    width: auto;
+    width: 200px;
     margin-left: 20px;
 }
 
@@ -284,10 +277,32 @@ img#img-calendar{
     color: rgb(17, 224, 231);
 }
 
-.html-css{
-    background-image: linear-gradient(to right yellow, red);
+
+/* Configurações de Layout Para Dispositivos Com a Tela Acima de 600px */
+@media screen and (min-width: 600px) {
+
+    body{
+        background-image: url('../imagens/fundo_g.jpg');
+    }
+    section#profile{
+        float: left;
+        max-width: 25%;
+    }
+
+    section#home{
+        float: left;
+        max-width: 60%;
+        margin-left: 0.5em;
+    }
+
+    p{
+        font-size: 1.0em;
+    }
+
 }
 
+
+/* Configuração dos Cards Para dispositivos acima de 768px */
 @media screen and (min-width: 768px){
     #home > p{
         text-align: justify;
@@ -296,24 +311,18 @@ img#img-calendar{
         margin: 0 ;
     }
     #project-cards{
-        display: flex;
-        flex-wrap: nowrap;
         margin-top: 80px;
-        width: 93%;
+        width: 100%;
     }
 
     #cards{
-        flex: flex;
-        flex-wrap: nowrap;
         text-align: left;
         height: 125px;
-        width: 200px;
-        margin-right: 20px;
+        margin-left: 46px;
+        font-size: 1.0em;
+        width: 300px;
+        max-width: 400px;
         /* font-size: 1.0em; */
-    }
-
-    #article-cards{
-
     }
 
     .txt{
@@ -328,6 +337,7 @@ img#img-calendar{
     
 }
 
+/* Aside Globais */
 aside{
     background-color: #202020;
     box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
