@@ -107,7 +107,7 @@ a#link-menu{
 section{
     display: block;
     float: none;
-    max-width: 390px;
+    margin: 0 auto;
     margin-bottom: 30px;
     flex: 1;
 }
@@ -135,7 +135,7 @@ section{
 }
 
 #home{
-    display: inline-block;  
+    display: inline-block;
     line-height: 1.8em;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -146,6 +146,8 @@ section{
 
 #home > p{
     text-align: justify;
+    font-size: 1.1em;
+    margin: 0 ;
 }
 
 span{
@@ -237,25 +239,33 @@ img#img-calendar{
 }
 
 #all-cards{
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+    overflow-x: scroll;
+    margin-bottom: 80px;
+    box-shadow: inset 2px 2px 6px 5px rgba(0, 0, 0, 0.205);
+    border-radius: 20px;
 }
+
 
 #project-cards{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-wrap: nowrap;
     margin-top: 80px;
-    max-width: auto;
-    height: 340px;
-    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+
+    height: 200px;
+
 }
 
 #cards{
     font-family: monospace;
     text-align: left;
-    flex:1 0 200px;
-    height: 110px;
-    width: 80%;
+    height: 120px;
+    width: auto;
+    margin-left: 20px;
 }
 
 .txt{
@@ -279,23 +289,31 @@ img#img-calendar{
 }
 
 @media screen and (min-width: 768px){
+    #home > p{
+        text-align: justify;
+        font-size: 1.25em;
+        line-height: 1.6em;
+        margin: 0 ;
+    }
     #project-cards{
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-wrap: nowrap;
         margin-top: 80px;
-        max-width: 100%;
+        width: 93%;
     }
 
     #cards{
-        flex: 1 0 200px;
-        margin-left: 30px;
-        margin-bottom: 20px;
+        flex: flex;
+        flex-wrap: nowrap;
         text-align: left;
         height: 125px;
-        width: 100%;
+        width: 200px;
+        margin-right: 20px;
         /* font-size: 1.0em; */
+    }
+
+    #article-cards{
+
     }
 
     .txt{
