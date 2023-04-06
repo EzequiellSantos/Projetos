@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
 :root{
-    --cor00:#ff0000;
-    --cor01:#cc0000;
-    --cor02:#a00000;
-    --cor03:#500000;
-    --cor04:#000000;
+    --cor-main00:#ff0000;
+    --cor-main01:#cc0000;
+    --cor-pastel03:#a00000;
+    --cor-pastel04:;
+    
+    --fundo01:#500000;
+    --Fundo02:#000000;
 }
 
 *{
@@ -15,7 +17,7 @@
 
 /* configuração da Scrollbar */
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 13px;
 }
 
 ::-webkit-scrollbar-track{
@@ -237,8 +239,19 @@ hr.hr-text{
     border-radius: 20px;
 }
 
-#all-cards ::-webkit-scrollbar{
+/* estilizando a scrollbar Projetos */
+#all-cards::-webkit-scrollbar{
     width: 5px;
+}
+
+#all-cards::-webkit-scrollbar-track{
+    border-radius: 35px;
+    background-color: aqua;
+}
+
+#all-cards::-webkit-scrollbar-thumb{
+    border-radius: 35px;
+    color: rgb(71, 71, 71);
 }
 
 #project-cards{
