@@ -25,6 +25,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+    background-color: var(--fundo03);
 
     height: 100%;
     width: 100%;
@@ -69,12 +70,23 @@ main{
 aside#all-images{
     height: 150px;
     margin: 30px;
-    background-color: var(--cor);
     border-radius: 18px;
 }
 
 #images{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     margin:10px;
+    padding: 10px;
+}
+
+img{
+    max-width: 50px;
+    margin: 0px 30px 0px 30px;
+    box-shadow: 0px 15px 45px 3px rgba(186, 255, 252, 0.555);
+    border-radius: 8px;
 }
 
 #all-cards{
@@ -87,8 +99,10 @@ aside#all-images{
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(19px);
 
-    width: 98%;
+    width: 95%;
     overflow-x: scroll;
+
+    box-shadow: inset 0px 1px 16px rgba(143, 143, 143, 0.281);
 }
 
 .cards{
@@ -117,13 +131,19 @@ section.links{
     height: 5px;
 }
 
+::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 35px;
+}
+
 ::-webkit-scrollbar-thumb{
     background-color: var(--cor);
-    border-radius: 5px;
+    border-radius: 35px;
+    height: 5px;
 }
 
 a{
-    color: var(--cor);
+    color: white;
     text-decoration: none;
     font-size: 1.3em;
 }
@@ -168,6 +188,15 @@ a{
     a{
         font-size: 1.5em;
     }
+
+    #images{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        margin:10px;
+        padding: 10px;
+    }
 }
 
 footer{
@@ -175,7 +204,7 @@ footer{
     background-color: gray;
     text-align: center;
     color: white;
-    padding: 20px;
+    padding: 10px;
     margin-top: 10px;
     max-width: 200px;
     border-radius: 30px;
