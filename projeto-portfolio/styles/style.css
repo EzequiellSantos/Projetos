@@ -3,11 +3,12 @@
 :root{
     --cor-main00:#FF4848;
     --cor-main01:#C13333;
-    --cor-main03: #f85858;;
+    --cor-main03:#f85858;;
     --cor-main04:#6D1414;
 
+    --fund001:#111111;
     --fundo02:#202020;
-    --fund003:#111111;
+    --fundo03:#9292920e;
     --fundo04:#ffffff2d;    
     --fundo05:#ececec;
     
@@ -47,7 +48,7 @@ p::selection, h1::selection{
 }
 
 body{
-    background-color: #202020;
+    background-color: var(--fundo02);
     background-image: url('../imagens/fundo_p1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -154,27 +155,27 @@ nav > img{
 }
 
 img#img-mesage{
-    background-color: rgba(146, 146, 146, 0.055);
+    background-color: var(--fundo03);
     padding: 13px 13px 13px 13px;
     max-width: 35px;
     max-height: 40px;
 }
 
 img#img-phone{
-    background-color: rgba(146, 146, 146, 0.055);
+    background-color: var(--fundo03);
     padding: 10px 15px 13px 15px;
     max-height: 50px;
 }
 
 img#img-location{
-    background-color: rgba(146, 146, 146, 0.055);
+    background-color: var(--fundo03);
     padding: 0px 14px 0px 14px;
     width: 30px;
     height: 60px;
 }
 
 img#img-calendar{
-    background-color: rgba(146, 146, 146, 0.055);
+    background-color: var(--fundo03);
     padding: 0px 10px 0px 10px;
     height: 60px;
     width: 40px;
