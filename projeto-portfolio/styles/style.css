@@ -344,12 +344,13 @@ hr.hr-text{
 
     .txt{
         padding: 15px 0px 0px 15px;
-        font-size: 1.3em;
+        font-size: 1.6em;
     }
     
     .link-cards{
         padding: 0px 0px 30px 15px;
-        font-size: 1.3em; 
+        line-height: 4.0em;
+        font-size: 1.5em; 
     }
     
 }
