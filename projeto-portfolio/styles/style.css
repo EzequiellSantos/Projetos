@@ -1,13 +1,16 @@
 @charset "UTF-8";
 
 :root{
-    --cor-main00:#ff0000;
-    --cor-main01:#cc0000;
-    --cor-pastel03:#a00000;
-    --cor-pastel04:;
+    --cor-main00:#FF4848;
+    --cor-main01:#C13333;
+    --cor-main03: #f85858;;
+    --cor-main04:#6D1414;
+
+    --fundo02:#202020;
+    --fund003:#111111;
+    --fundo04:#ffffff2d;    
+    --fundo05:#ececec;
     
-    --fundo01:#500000;
-    --Fundo02:#000000;
 }
 
 *{
@@ -58,7 +61,7 @@ body{
 main{
     display: flex;
     margin-top: 50px;
-    color: azure;
+    color: var(--fundo05);
     flex-direction: row;
     align-items: stretch;
     justify-content: space-evenly;
@@ -89,7 +92,7 @@ nav#menu{
 a#link-menu{
     text-decoration: none;
     padding: 10px 0px;
-    color: rgb(209, 52, 52);
+    color: var(--cor-main01);
 }
 
 
@@ -113,7 +116,7 @@ section{
 }
 
 span{
-    background-color: rgba(255, 255, 255, 0.178);
+    background-color: var(--fundo04);
     padding: 5px;
     border-radius: 7px;
 }
@@ -196,9 +199,9 @@ img#img-calendar{
 }
 
 hr.hr-profile{
-    margin-left: 15%;
+    margin-left: 17%;
     margin-right: 15%;
-    color: rgb(255, 255, 255);
+    color: var(--fundo05);
 }
 
 
@@ -218,7 +221,7 @@ hr.hr-text{
     width: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 3.5px solid rgb(255, 72, 72);
+    border: 3.5px solid var(--cor-main03);
     border-radius: 4px;
 }
 
@@ -352,8 +355,8 @@ hr.hr-text{
 
 /* Aside Globais */
 aside{
-    background-color: #202020;
+    background-color: var(--fundo02);
     box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
     border-radius: 10px;
-    border: 0.7px solid rgba(184, 8, 8, 0.507);
+    border: 0.7px solid var(--cor-main04);
 }
