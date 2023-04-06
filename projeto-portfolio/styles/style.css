@@ -301,6 +301,7 @@ hr.hr-text{
     body{
         background-image: url('../imagens/fundo_g.jpg');
     }
+    
     section#profile{
         float: left;
         max-width: 25%;
@@ -327,6 +328,7 @@ hr.hr-text{
         line-height: 1.6em;
         margin: 0 ;
     }
+
     #project-cards{
         margin-top: 80px;
         width: 100%;
