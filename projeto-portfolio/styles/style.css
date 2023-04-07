@@ -19,17 +19,17 @@
     padding: 0;
 }
 
-/* configuração da Scrollbar */
-::-webkit-scrollbar{
+/* configuração da Scrollbar body */
+body::-webkit-scrollbar{
     width: 13px;
 }
 
-::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track-y{
     border-radius: 35px;
-    background-color: #4d4d4d96;
+    background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
     border-radius: 35px;
     border: 0.5px solid rgb(58, 58, 58);
     background-image: linear-gradient(to bottom, rgb(212, 97, 97), rgb(68, 68, 68));
@@ -49,7 +49,7 @@ p::selection, h1::selection{
 
 body{
     background-color: var(--fundo02);
-    background-image: url('../imagens/fundo_p1.jpg');
+    background-image: url('../imagens/Fundos/fundo_p.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -246,16 +246,22 @@ hr.hr-text{
 /* estilizando a scrollbar Projetos */
 #all-cards::-webkit-scrollbar{
     width: 5px;
+    height: 6px;
 }
 
 #all-cards::-webkit-scrollbar-track{
     border-radius: 35px;
-    background-color: aqua;
+    background-color: transparent;
+    transition: all 0.9s;
 }
 
 #all-cards::-webkit-scrollbar-thumb{
     border-radius: 35px;
-    color: rgb(71, 71, 71);
+    background-image: linear-gradient(to right, var(--cor-main00),  var(--fundo03));
+}
+
+#all-cards::-webkit-scrollbar-track:hover{
+    background-color: var(--fundo04);
 }
 
 #project-cards{
@@ -299,9 +305,9 @@ hr.hr-text{
 @media screen and (min-width: 600px) {
 
     body{
-        background-image: url('../imagens/fundo_g.jpg');
+        background-image: url('../imagens/Fundos/fundo_g.jpg');
     }
-    
+
     section#profile{
         float: left;
         max-width: 25%;
