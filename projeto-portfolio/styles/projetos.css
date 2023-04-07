@@ -7,6 +7,7 @@
     --fundo02: #336063; 
     --fundo03: #272727;
     --fundo04: #4d4d4d;
+    --fundo05:#6e6e6e;
     --cor: #00E4EB;
     --cor: #00EFF7; 
     --cor: #00CAD1; 
@@ -19,10 +20,28 @@
     margin: 0;
 }
 
+
+body::-webkit-scrollbar{
+    width: 12px;
+    height: 5px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 35px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--cor);
+    border-radius: 35px;
+    height: 5px;
+}
+
 p::selection, h2::selection, a::selection, img::selection{
     background-color: var(--fundo01);
 
 }
+
 
 body{
     background-image: url('../imagens/Fundos/fundo_p.jpg');  
@@ -44,7 +63,20 @@ header{
     align-items: center;
     line-height: 2.2em;
     margin: auto;
+    margin-top: 20px;
+}
 
+main{
+    width: 100%;
+    max-width: 350px;
+    margin: 8px 10px 10px 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+
+    backdrop-filter: blur(19px);
+    -webkit-backdrop-filter: blur(19px);
+    box-shadow: 2px 0.5px 5px rgba(0, 0, 0, 0.432);
 }
 
 section.head{
@@ -58,19 +90,6 @@ section.head{
     width: 50%;
     padding: 20px 80px 20px 80px;
     border-radius: 14px;
-}
-
-main{
-    width: 100%;
-    max-width: 350px;
-    margin: 0px 10px 0px 10px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 15px;
-
-    backdrop-filter: blur(19px);
-    -webkit-backdrop-filter: blur(19px);
-    box-shadow: 2px 0.5px 5px rgba(0, 0, 0, 0.432);
 }
 
 aside#all-images{
@@ -89,7 +108,7 @@ aside#all-images{
 }
 
 img{
-    max-width: 50px;
+    max-width: 65px;
     margin: 0px 30px 0px 30px;
     box-shadow: 0px 15px 45px 3px rgba(186, 255, 252, 0.555);
     border-radius: 8px;
@@ -132,24 +151,26 @@ section.links{
    
 }
 
-body::-webkit-scrollbar{
+
+#all-cards::-webkit-scrollbar{
     width: 12px;
     height: 5px;
 }
 
-body::-webkit-scrollbar-track{
+#all-cards::-webkit-scrollbar-track{
     background-color: transparent;
     border-radius: 35px;
 }
 
-body::-webkit-scrollbar-thumb{
-    background-color: var(--cor);
+#all-cards::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(to right, var(--cor), var(--fundo04));
     border-radius: 35px;
     height: 5px;
 }
 
-::selection{
-
+#all-cards::-webkit-scrollbar-track:hover{
+    background-color: var(--fundo04);
+    border-radius: 35px;
 }
 
 a{
@@ -209,7 +230,7 @@ a{
     }
 
     img{
-        max-width: 80px;
+        max-width: 100px;
         margin: 0px 30px 0px 30px;
         box-shadow: 0px 15px 45px 3px rgba(186, 255, 252, 0.555);
         border-radius: 8px;
@@ -222,9 +243,10 @@ footer{
     background-color: var(--fundo04);
     text-align: center;
     color: white;
-    padding: 10px;
+    padding: 8px;
     margin-top: 10px;
-    max-width: 200px;
+    margin-bottom: 20px;
+    max-width: 190px;
     border-radius: 30px;
     box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.37);
     transition: all 0.6s;
@@ -235,9 +257,6 @@ a.link-footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
     letter-spacing: 4px;
-<<<<<<< Updated upstream
-}
-=======
     transition: all 0.6s;
 }
 
@@ -250,4 +269,3 @@ footer:hover{
     transform: scale(1.1);
     transition: 0.6s;
 }
->>>>>>> Stashed changes
