@@ -19,8 +19,13 @@
     margin: 0;
 }
 
+p::selection, h2::selection, a::selection, img::selection{
+    background-color: var(--fundo01);
+
+}
+
 body{
-    background-image: url('../imagens/fundo_g.jpg');  
+    background-image: url('../imagens/Fundos/fundo_p.jpg');  
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -127,20 +132,24 @@ section.links{
    
 }
 
-::-webkit-scrollbar{
-    max-width: 13px;
+body::-webkit-scrollbar{
+    width: 12px;
     height: 5px;
 }
 
-::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track{
     background-color: transparent;
     border-radius: 35px;
 }
 
-::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
     background-color: var(--cor);
     border-radius: 35px;
     height: 5px;
+}
+
+::selection{
+
 }
 
 a{
@@ -151,7 +160,7 @@ a{
 
 @media screen and (min-width: 680px) {
     body{
-
+        background-image: url('../imagens/Fundos/fundo_g.jpg');  
     }
 
     main{
@@ -210,7 +219,7 @@ a{
 
 footer{
     margin: auto;
-    background-color: gray;
+    background-color: var(--fundo04);
     text-align: center;
     color: white;
     padding: 10px;
@@ -218,6 +227,7 @@ footer{
     max-width: 200px;
     border-radius: 30px;
     box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.37);
+    transition: all 0.6s;
 }
 
 a.link-footer{
@@ -225,4 +235,19 @@ a.link-footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
     letter-spacing: 4px;
+<<<<<<< Updated upstream
 }
+=======
+    transition: all 0.6s;
+}
+
+a.link-footer:hover{
+    letter-spacing: 10px;
+    transition: all 0.6s;
+}
+
+footer:hover{
+    transform: scale(1.1);
+    transition: 0.6s;
+}
+>>>>>>> Stashed changes
