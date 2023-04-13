@@ -115,7 +115,7 @@ img{
 }
 
 #all-cards{
-    background-color: rgba(56, 56, 56, 0.377);     
+    background-color: rgba(49, 49, 49, 0.178);     
     padding: 10px;
     border-radius: 20px;
     height: 270px;
@@ -124,7 +124,7 @@ img{
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(19px);
 
-    width: 95%;
+    width: 100%;
     overflow-x: scroll;
 
     box-shadow: inset 0px 1px 16px rgba(143, 143, 143, 0.281);
@@ -202,7 +202,7 @@ a{
     }
 
     #all-cards{
-        max-width: 100%;
+        max-width: 97.9%;
         height: 300px;
         padding-top: 50px;
     }
