@@ -3,16 +3,12 @@
 :root{
     --background: #14425A;
 
-    --fundo01: #10999e; 
-    --fundo02: #336063; 
+    --fundo01: #BF971F; 
+    --fundo02: #9e8910; 
     --fundo03: #272727;
     --fundo04: #4d4d4d;
     --fundo05:#6e6e6e;
-    --cor: #00E4EB;
-    --cor: #00EFF7; 
-    --cor: #00CAD1; 
-
-
+    --cor: #F1BF26; 
 }
 
 *{
