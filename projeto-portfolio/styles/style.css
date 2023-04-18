@@ -111,7 +111,7 @@ section{
 #profile{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 20px 10px 8px 10px;
+    padding: 20px 10px 20px 10px;
     border-radius: 25px;
     margin-left: 0px;
 }
@@ -183,10 +183,10 @@ img#img-calendar{
 
 #data-profile{
     margin-left: 20px;
-    margin-top: 1.5em;
+    margin-top: 0.1em;
+    margin-bottom: 0.6em;
     text-align: left;
     width: 100%;
-
 }
 
 #p1-span{
@@ -334,10 +334,6 @@ hr.hr-text{
         font-size: 1.25em;
         line-height: 1.6em;
         margin: 0 ;
-    }
-
-    #all-cards{
-        margin-top: 8em;
     }
 
     #project-cards{
