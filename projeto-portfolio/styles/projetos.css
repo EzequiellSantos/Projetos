@@ -33,9 +33,9 @@ body::-webkit-scrollbar-thumb{
     height: 5px;
 }
 
-p::selection, h2::selection, a::selection, img::selection{
+p::selection, h2::selection, a::selection,
+img::selection, span::selection, em::selection{
     background-color: var(--fundo01);
-
 }
 
 

@@ -42,8 +42,8 @@ a:active{
 }
 
 /* Select da Página */
-p::selection, h1::selection{
-    background-color: #f85858;
+*::selection{
+    background-color: var(--cor-main03);
     color: rgb(255, 255, 255);
 }
 
@@ -111,7 +111,7 @@ section{
 #profile{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 8px 10px;
     border-radius: 25px;
     margin-left: 0px;
 }
@@ -183,6 +183,7 @@ img#img-calendar{
 
 #data-profile{
     margin-left: 20px;
+    margin-top: 1.5em;
     text-align: left;
     width: 100%;
 
@@ -333,6 +334,10 @@ hr.hr-text{
         font-size: 1.25em;
         line-height: 1.6em;
         margin: 0 ;
+    }
+
+    #all-cards{
+        margin-top: 8em;
     }
 
     #project-cards{
