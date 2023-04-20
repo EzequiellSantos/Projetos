@@ -5,7 +5,26 @@ const averageElement = document.querySelector("#average");
 
 
 let notes = [];
+
+noteInput.addEventListener('keydown', function(event){
+  if(event.keyCode === 13){//validação da tecla enter(código 13)
+
+    if (noteInput.value.length == '') {
+
+      alert('Digite uma Nota!')   
   
+    }else{
+      event.preventDefault()
+      const note = parseFloat(noteInput.value);
+      if (!isNaN(note)) {
+        notes.push(note);
+        noteInput.value = "";
+        renderNotes();
+      }
+    }
+  }      
+}) 
+
 
 addNoteButton.addEventListener("click", () => {
   
