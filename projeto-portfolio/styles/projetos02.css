@@ -6,7 +6,7 @@
     --fundo01: #10999e; 
     --fundo02: #336063; 
     --fundo03: #272727;
-    --fundo04: #4d4d4db7;
+    --fundo04: #4d4d4d2a;
     --fundo05:#6e6e6eb6;
     --cor: #00CAD1; 
 }
@@ -173,6 +173,7 @@ section.links{
 
 #all-cards::-webkit-scrollbar-track:hover{
     background-color: var(--fundo04);
+    color: transparent;
     border-radius: 35px;
 }
 
