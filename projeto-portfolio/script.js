@@ -67,7 +67,8 @@ function clicou(){
     lineOne.style.transform = 'rotate(-45deg) translate(-8px, 8px)'
     lineTwo.style.opacity = '0'
     lineThree.style.transform = 'rotate(45deg) translate(-5px, -7px)'
-
+    ulMenu.style.position = 'fixed'
+    burgerMenu.style.position = 'fixed'
 }
 
 document.addEventListener('click', function(evento) {
