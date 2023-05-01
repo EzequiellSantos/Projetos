@@ -55,7 +55,14 @@ body{
     background-attachment: fixed;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
 }
+
+header{
+    width: 100vw;
+}
+
 
 
 /* Main Principal */
@@ -70,19 +77,21 @@ main{
 }
 
 
-/* Configuração do Menu */
-nav#menu{
-    background-color: rgba(88, 88, 88, 0.63);
-    padding: 10px;
+ /* Configuração do Menu */
+nav#menu{   
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    top: 70px;
-    right: 15px;
     z-index: 1;
-    border-radius: 15px;
+    height: 8vh;
+    right: 15px;
+    top: 70px;
+
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #202020;
+
 }
 
 
@@ -90,10 +99,81 @@ nav#menu{
     width: 40px;
 }
 
+ul#nav-list{
+    list-style: none;
+
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 60vh; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #202020;
+
+    transform: translateX(200%);
+    transition: transform 0.3s ease-in;
+
+    border-radius: 15px;
+}
+
+ul#nav-list.active{
+    transform: translateX(0);
+}
+
+ul#nav-list > li{
+    letter-spacing: 3px;
+    opacity: 0;
+}
+
 a#link-menu{
     text-decoration: none;
-    padding: 10px 0px;
     color: var(--cor-main01);
+}
+
+a#link-menu:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+div.mobile-menu{
+    cursor: pointer;
+    display: block;
+}
+
+div.mobile-menu  div{
+    width: 32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
+    transition: 0.1s;
+}
+
+
+.mobile-menu:active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu:active .line2{
+    opacity: 0;
+}
+
+.mobile-menu:active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+} 
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -132,7 +212,7 @@ span{
     width: 200px;
 }
 
-.nav-profile{
+.aside-profile{
     text-align: center;
     font-size: 0.85em;
     margin-left: 30px;
@@ -148,7 +228,7 @@ span{
     width: 100%;
 }
 
-nav > img{
+aside > img{
     border-radius: 11px;
     max-width: 100px;
     max-height: 70px;
@@ -329,6 +409,11 @@ hr.hr-text{
 
 /* Configuração dos Cards Para dispositivos acima de 768px */
 @media screen and (min-width: 768px){
+
+    nav#menu{
+
+    }
+
     #home > p{
         text-align: justify;
         font-size: 1.25em;
@@ -365,7 +450,7 @@ hr.hr-text{
 }
 
 /* Aside Globais */
-aside{
+aside#cards{
     background-color: var(--fundo02);
     box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
     border-radius: 10px;

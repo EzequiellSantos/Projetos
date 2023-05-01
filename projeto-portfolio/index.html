@@ -3,41 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
     <link rel="shortcut icon" href="imagens/Icons/favicon_3.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
     <title> On Portfólio</title>
 </head>
 <body>
     <header>
-
+        
     </header>
     
     <main>
-
-        <!-- <nav id="menu">
-            <a id="link-menu" href="">Home</a>
-            <hr>
-            <a id="link-menu" href="">Sobre Mim</a>
-            <hr>
-            <a id="link-menu" href="">Contato</a>
-        </nav> --> 
-
+        <nav id="menu"> 
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div> 
+            </div> 
+            <ul id="nav-list">       
+                <li><a id="link-menu" href="/">Home</a></li>
+                <!-- <hr id="hr-menu"> -->
+                <li><a id="link-menu" href="/">Sobre Mim</a></li>
+                <!-- <hr id="hr-menu"> -->
+                <li><a id="link-menu" href="/">Contato</a></li>
+            </ul>
+        </nav>
         <section id="profile">
 
             <img id="img-profile" src="imagens/Icons/me.jpg" alt="Minha Foto">
-            <nav class="nav-profile">
+            <aside class="aside-profile">
                 <p id="p1-span">Ezequiel Santos</p>
                 <p id="p2-span"><span>Desenvolvimento Web</span></p>
-            </nav>
+            </aside>
 
             <hr class="hr-profile">
 
-            <nav class="nav-profile">
+            <aside class="aside-profile">
 
                 <section id="icons-profile">
 
-                    <nav><img id="img-mesage" src="imagens/Icons/mensage.png" alt="Imagem de Mensagem"></nav>
+                    <aside><img id="img-mesage" src="imagens/Icons/mensage.png" alt="Imagem de Mensagem"></aside>
                     
                     <section id="data-profile">
                         <p>Email</p>
@@ -45,13 +50,13 @@
                     </section>
                 </section>
 
-            </nav>
+            </aside>
 
-            <nav class="nav-profile">
+            <aside class="aside-profile">
 
                 <section id="icons-profile">
 
-                    <nav><img id="img-phone" src="imagens/Icons/phone.png" alt="Imagem de  Celular"></nav>
+                    <aside><img id="img-phone" src="imagens/Icons/phone.png" alt="Imagem de  Celular"></aside>
                     
                     <section id="data-profile">
                         <p>Telefone</p>
@@ -60,13 +65,13 @@
 
                 </section>
 
-            </nav>
+            </aside>
 
-            <nav class="nav-profile">
+            <aside class="aside-profile">
 
                 <section id="icons-profile">
 
-                    <nav><img id="img-location" src="imagens/Icons/location.png" alt="Imagem de Localização"></nav>
+                    <aside><img id="img-location" src="imagens/Icons/location.png" alt="Imagem de Localização"></aside>
 
                     <section id="data-profile">
                         <p>Localização</p>
@@ -75,13 +80,13 @@
 
                 </section>
 
-            </nav>
+            </aside>
 
-            <nav class="nav-profile">
+            <aside class="aside-profile">
 
                 <section id="icons-profile">
 
-                    <nav><img id="img-calendar" src="imagens/Icons/calendar.png" alt="Imagem de Calendário"></nav>
+                    <aside><img id="img-calendar" src="imagens/Icons/calendar.png" alt="Imagem de Calendário"></aside>
 
                     <section id="data-profile">
                         <p>Aniversário</p>
@@ -90,7 +95,7 @@
 
                 </section>
 
-            </nav>
+            </aside>
 
         </section>
 
@@ -147,6 +152,6 @@
         
     </footer>
 
-    <script></script>
+    <script src="script.js"></script>
 </body>
 </html>
