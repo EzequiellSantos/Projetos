@@ -4,6 +4,7 @@
 
 *{
     margin: 0;
+    transition: all 0.5s ease-in;
 }
 
 body{
@@ -28,15 +29,6 @@ header{
     margin-top: 15px;
 }
 
-section{ 
-    margin-top: 80px;
-    margin: auto;
-    display: block;
-    border: 1px solid #444;
-    max-width: 600px;
-    padding: 50px;
-    border-radius: 15px;
-}
 
 input{
     display: block;
@@ -49,6 +41,70 @@ input{
 
 form{
     text-align: left;
+}
+
+.calculadora{
+    margin-top: 80px;
+    margin: auto;
+    display: block;
+    border: 1px solid #444;
+    max-width: 600px;
+    padding: 50px;
+    border-radius: 15px;
+}
+.calculadora.dark {
+    background-color: #f1f1f1;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.theme-toggler::before{
+    content: "";
+    height: 15px;
+    width: 30.5px;
+    position: absolute;
+    top: 20px;
+    right: 31px;
+    transform: rotate(-40deg);
+    border-radius: 0 0 100px 100px;
+    overflow: hidden;
+    background-color: #adadad;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.toggler-icon::after{
+    content: "";
+    position: absolute;
+    height: 17px;
+    width: 31px;
+    top: 8px;
+    right: 40px;
+    transform: rotate(140deg);
+    border-radius: 0 0 100px 100px;
+    background-color: rgb(19, 19, 19);
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.theme-toggler.active::before{
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s;
+}
+
+.toggler-icon.active::after{
+    background-color: rgba(97, 123, 145, 0.877);
+    transition: all 0.5s;
 }
 
 #addNote{

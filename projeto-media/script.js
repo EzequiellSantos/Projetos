@@ -2,7 +2,9 @@ const noteInput = document.querySelector("#noteInput");
 const addNoteButton = document.querySelector("#addNote");
 const notesList = document.querySelector("#notes");
 const averageElement = document.querySelector("#average");
-
+const themeToggleBtn = document.querySelector(".theme-toggler")
+const calculadora = document.querySelector(".calculadora")
+const toggleIcon = document.querySelector(".toggler-icon")
 
 let notes = [];
 
@@ -92,6 +94,16 @@ function updateAverage() {
   const average = sum / notes.length;
   averageElement.innerText = average.toFixed(2);
   //calculaando a média da todas as notas presentes
+}
+
+//mudando o tema da calculadora
+let isDark = false
+
+themeToggleBtn.onclick = () => {
+  calculadora.classList.toggle("dark")
+  themeToggleBtn.classList.toggle("active")
+  toggleIcon.classList.toggle("active")
+  isDark = !isDark
 }
 
 function reload(){

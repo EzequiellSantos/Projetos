@@ -9,28 +9,40 @@
     <title>Calculadora de média de notas</title>
 </head>
 <body>
-        <header>
-          <h1>Média de Notas</h1>
-        </header>     
-    
-        <section>
-          <form>
-            <input type="number" id="noteInput" placeholder="Digite a nota aqui">
-            <button type="button" id="addNote">Adicionar nota</button>
-          </form>
+  <header>
+    <h1>Média de Notas</h1>
+  </header>
+  
+  <nav>
+    <div class="theme-toggler">
+      <i class="toggler-icon"></i>
+    </div>
+  </nav>
 
-          <ul id="notes"></ul>
+  <section class="calculadora">
 
-          <div class="text">
-            <p>Média: <span id="average"></span></p>
-          </div>
-        </section>
+    <form>
+      <input type="number" id="noteInput" placeholder="Digite a nota aqui">
+      <button type="button" id="addNote">Adicionar nota</button>
+    </form>
 
-        <div id="reload">
-          <button class="edit" id="reset" onclick="reload ()">Limpar</button>
-        </div>
+    <ul id="notes"></ul>
 
-        <script src="script.js"></script>
+    <div class="text">
+      <p>Média: <span id="average"></span></p>
+    </div>
+
+  </section>
+
+  <div id="reload">
+    <button class="edit" id="reset" onclick="reload ()">Limpar</button>
+  </div>
+
+  <footer>
+    <p>&copy; Ezequiell Santos</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
