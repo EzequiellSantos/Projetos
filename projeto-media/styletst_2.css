@@ -74,7 +74,7 @@ form{
     width: 30.5px;
     position: absolute;
     top: 20px;
-    right: 31px;
+    right: 2px;
     transform: rotate(-40deg);
     border-radius: 0 0 100px 100px;
     overflow: hidden;
@@ -89,7 +89,7 @@ form{
     height: 17px;
     width: 31px;
     top: 8px;
-    right: 40px;
+    right: 11px;
     transform: rotate(140deg);
     border-radius: 0 0 100px 100px;
     background-color: rgb(19, 19, 19);
