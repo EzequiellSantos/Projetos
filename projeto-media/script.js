@@ -96,14 +96,30 @@ function updateAverage() {
   //calculaando a média da todas as notas presentes
 }
 
+//exibindo o toggle theme
+const menu = document.querySelector("#menu")
+menu.onclick = () =>{
+  themeToggleBtn.style.display = 'block'
+  menu.style.transition = 'all 0.01s ease'
+  menu.style.padding = '1px 1px 40px 15px'   
+}
+
+themeToggleBtn.onmouseout = () =>{
+  themeToggleBtn.style.display = 'none'
+  menu.style.transition = 'all 0.5s ease'
+  menu.style.padding = '1px 1px 5px 15px'
+}
+
+
+
 //mudando o tema da calculadora
-let isDark = false
+let isLight = true
 
 themeToggleBtn.onclick = () => {
-  calculadora.classList.toggle("dark")
+  calculadora.classList.toggle("light")
   themeToggleBtn.classList.toggle("active")
   toggleIcon.classList.toggle("active")
-  isDark = !isDark
+  isLight = !isLight  
 }
 
 function reload(){
