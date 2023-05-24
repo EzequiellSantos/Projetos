@@ -15,6 +15,12 @@ body{
     color: white;
     font-family: 'Nunito', sans-serif;
     margin: 0 10px 0 10px;
+
+    background-image: url('https://i.pinimg.com/564x/45/9d/6c/459d6c31240f92be6998b2982fc57b66.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    
 }
 
 p{
@@ -24,12 +30,14 @@ p{
 header{
     margin: auto;
     text-align: center;
-    background-color: #444;
+    /*background-color: #444;*/
     max-width: 400px;
     padding: 15px;
     border-radius: 30px;
     margin-bottom: 50px;
     margin-top: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(68, 68, 68, 0.863);
 }
 
 
@@ -60,6 +68,8 @@ form{
     padding: 50px;
     border-radius: 15px;
     transition: all 0.3s ease-in;
+    backdrop-filter: blur(8px);
+
 }
 .calculadora.light {
     background-color: #f1f1f1;
@@ -91,11 +101,12 @@ form{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #444444;
+    /*background-color: #444444cc;*/
     padding: 1px 1px 5px 15px;
     border-radius: 10px 10px;
     transition: all 0.5s ease-in;
     cursor: pointer;
+    backdrop-filter: blur(15px);
 }
 
 #menu p{
