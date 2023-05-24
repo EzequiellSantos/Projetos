@@ -101,7 +101,8 @@ const menu = document.querySelector("#menu")
 menu.onclick = () =>{
   themeToggleBtn.style.display = 'block'
   menu.style.transition = 'all 0.01s ease'
-  menu.style.padding = '1px 1px 40px 15px'   
+  menu.style.padding = '1px 1px 40px 15px'
+  bodyy.style.backgroundImage = "url('https://i.pinimg.com/564x/09/1f/68/091f682881bf905cf838cf107ac5e3f1.jpg')"
 }
 
 //ocultando o toggle theme
