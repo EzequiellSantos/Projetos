@@ -5,7 +5,7 @@ const averageElement = document.querySelector("#average");
 const themeToggleBtn = document.querySelector(".theme-toggler")
 const calculadora = document.querySelector(".calculadora")
 const toggleIcon = document.querySelector(".toggler-icon")
-
+const bodyy = document.querySelector(".body")
 let notes = [];
 
 noteInput.addEventListener('keydown', function(event){
@@ -102,7 +102,6 @@ menu.onclick = () =>{
   themeToggleBtn.style.display = 'block'
   menu.style.transition = 'all 0.01s ease'
   menu.style.padding = '1px 1px 40px 15px'
-  bodyy.style.backgroundImage = "url('https://i.pinimg.com/564x/09/1f/68/091f682881bf905cf838cf107ac5e3f1.jpg')"
 }
 
 //ocultando o toggle theme
@@ -116,6 +115,7 @@ themeToggleBtn.onmouseout = () =>{
 let isLight = true
 
 themeToggleBtn.onclick = () => {
+  bodyy.classList.toggle("light")
   calculadora.classList.toggle("light")
   themeToggleBtn.classList.toggle("active")
   toggleIcon.classList.toggle("active")
