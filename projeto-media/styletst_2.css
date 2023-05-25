@@ -84,7 +84,7 @@ form{
     padding: 50px;
     border-radius: 15px;
     transition: all 0.3s ease-in;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
 
 }
 .calculadora.light {
@@ -92,7 +92,7 @@ form{
     border: 1px solid rgba(228, 228, 228, 0.836);
     box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.212);
     transition: all 0.5s ease-in-out;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(12px);
     color: black;
 }
 
