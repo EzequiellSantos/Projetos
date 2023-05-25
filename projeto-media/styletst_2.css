@@ -82,7 +82,6 @@ form{
     border: 1px solid #444;
     max-width: 600px;
     padding: 50px;
-    margin:0px 10px 0px 10px;
     border-radius: 15px;
     transition: all 0.3s ease-in;
     backdrop-filter: blur(8px);
