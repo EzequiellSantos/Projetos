@@ -304,6 +304,7 @@ footer{
     backdrop-filter: blur(20px);
     width: 100%;
     padding: 6px;
+    margin-left: -10px;
 }
 
 footer p{
