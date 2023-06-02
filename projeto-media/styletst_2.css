@@ -38,6 +38,10 @@ body img{
     border: 1px solid rgba(228, 228, 228, 0.836);
 }
 
+.body.light > footer{
+    color: rgb(49, 49, 49);
+}
+
 p{
     margin-top: 8px;
 }
@@ -63,10 +67,11 @@ input{
     border: 1px solid #444;
     padding: 8px;
     border-radius: 6px;
+    border-color: transparent;
+    outline: none!important;
 }
 
 input:focus{
-    border: none;
     outline: 0; 
     box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.411);
 }
