@@ -11,7 +11,7 @@ let notes = [];
 noteInput.addEventListener('keydown', function(event){
   if(event.keyCode === 13){//validação da tecla enter(código 13)
 
-    if (noteInput.value.length == '') {
+    if (noteInput.value.length == '' || noteInput.value < 0) {
 
       alert('Digite uma Nota!')   
   
@@ -30,7 +30,7 @@ noteInput.addEventListener('keydown', function(event){
 
 addNoteButton.addEventListener("click", () => {
   
-  if (noteInput.value.length == '') {
+  if (noteInput.value.length == '' || noteInput.value < 0) {
 
     alert('Digite uma Nota!')   
 
@@ -104,12 +104,18 @@ menu.onclick = () =>{
   menu.style.padding = '1px 1px 40px 15px'
 }
 
+
 //ocultando o toggle theme
-themeToggleBtn.onmouseout = () =>{
-  themeToggleBtn.style.display = 'none'
-  menu.style.transition = 'all 0.5s ease'
-  menu.style.padding = '1px 1px 5px 15px'
-}
+document.addEventListener('click', function(evento) {
+  const clicadoDentroDoElemento = menu.contains(evento.target)
+
+  if(!clicadoDentroDoElemento){
+    themeToggleBtn.style.display = 'none'
+    menu.style.transition = 'all 0.5s ease'
+    menu.style.padding = '1px 1px 5px 15px'
+  }
+})
+
 
 //mudando o tema da calculadora
 let isLight = true
