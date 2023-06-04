@@ -105,7 +105,7 @@ menu.onclick = () =>{
 }
 
 
-//ocultando o toggle theme
+//ocultando o dark theme
 document.addEventListener('click', function(evento) {
   const clicadoDentroDoElemento = menu.contains(evento.target)
 
@@ -128,7 +128,7 @@ themeToggleBtn.onclick = () => {
   isLight = !isLight  
 }
 
-function reload(){
-window.location.reload(true)
 //botão limpar
+function reload(){
+  window.location.reload(true)
 }
