@@ -5,7 +5,7 @@
 
 .
 
-<a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/index.html#cards">Acessar Meu Portfólio online </a>
+<a href="https://github.com/EzequiellSantos/html-css/blob/main/exercicios/modulo04/ex025/teste.html">Acessar Meu Portfólio online </a>
 
  
 
