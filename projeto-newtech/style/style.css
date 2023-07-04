@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Helvetica;
+}
+
+header{
+    width: auto;
+    max-width: 100%;
+    padding: 10px;
+    background-color: burlywood;
+}
+
+nav{
+    margin: 10px 0px;
+}
+
+main#main-project{
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding: 5px;
+
+    background-color: rgb(218, 218, 218);
+    border-radius: 10px;
+}
+
+article#title{
+    margin: -5px -5px 0px -5px;
+    border-radius: 10px 10px 0px 0px;
+    height: 100px;
+    background-color: tomato;
+}
+
+article#all-cards{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 50px 0px;
+    padding: 0px 0px 50px 0px;
+}
+
+aside#card-news{
+    max-width: 300px;
+    margin: 0px 50px;
+}
+
+section#card{
+    background-color: aliceblue;
+    margin: 0px;
+    padding: 40px 80px 40px 25px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+section#card  a{
+    text-decoration: none;
+}
+
+section#card div{
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+div  h1{
+    margin-bottom: 10px;
+}
+
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
+
+footer p{
+    padding: 5px 0px;
+}
