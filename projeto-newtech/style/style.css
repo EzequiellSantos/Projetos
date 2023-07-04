@@ -4,15 +4,35 @@
     padding: 0;
     margin: 0;
 }
+
+:root{
+    /* darks */
+    --dark00: #3d3d3d;
+    --dark01: #424f61;
+    --dark02: #272727;
+
+    /* lights */
+    --light00: #55b1db;
+    --light01: #ff4343;
+}
+
+
 body{
     font-family: Arial, Helvetica;
+    background-color: rgb(218, 218, 218);
 }
 
 header{
     width: auto;
     max-width: 100%;
     padding: 10px;
-    background-color: burlywood;
+    background-color: var(--light00);
+    color: white;
+}
+
+header > h1{
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 nav{
@@ -27,15 +47,29 @@ main#main-project{
     margin-top: 40px;
     padding: 5px;
 
-    background-color: rgb(218, 218, 218);
+    background-image: linear-gradient(180deg, var(--dark00), var(--dark01));
     border-radius: 10px;
+    border: 0.5px solid rgb(219, 219, 219);
+
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.514);
 }
 
 article#title{
     margin: -5px -5px 0px -5px;
     border-radius: 10px 10px 0px 0px;
-    height: 100px;
-    background-color: tomato;
+    height: 90px;
+    background-color: var(--dark02);
+}
+
+article#title h1{
+    padding: 20px 0px 0px 20px;
+    color: var(--light01);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+hr.hr-title{
+    max-width: 20vw;
+    margin: 0px 0px 0px 20px;
 }
 
 article#all-cards{
@@ -56,10 +90,12 @@ aside#card-news{
 
 section#card{
     background-color: aliceblue;
-    margin: 0px;
+    margin: 20px 0px 0px 0px;
     padding: 40px 80px 40px 25px;
     text-align: left;
     border-radius: 10px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.322);
+    border: 0.5px solid rgb(218, 253, 255);
 }
 
 section#card  a{
@@ -67,15 +103,37 @@ section#card  a{
 }
 
 section#card div{
-    background-color: aquamarine;
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 5px;
+
+    width: 100%;
 }
 
 div  h1{
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
+div p{
+    margin-top: 10px;
+    line-height: 1.5em;
+}
+
+hr.hr-cards{
+    max-width: 6.5vw;
+    background-color: #55b1db;
+    border: none;
+    border-radius: 2px;
+    height: 4px;
+}
+
+#page01{
+    background-color: yellowgreen;
+}
+
+#page02{
+    background-color: steelblue;
+}
 
 footer{
     width: 100%;
@@ -86,4 +144,5 @@ footer{
 
 footer p{
     padding: 5px 0px;
+    letter-spacing: 2px;
 }
