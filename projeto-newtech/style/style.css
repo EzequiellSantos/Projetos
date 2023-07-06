@@ -44,7 +44,7 @@ main#main-project{
     height: auto;
     margin: auto;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 70px;
     padding: 5px;
 
     background-image: linear-gradient(180deg, var(--dark00), var(--dark01));
@@ -68,7 +68,7 @@ article#title h1{
 }
 
 hr.hr-title{
-    max-width: 20vw;
+    max-width: 35vw;
     margin: 0px 0px 0px 20px;
 }
 
@@ -83,36 +83,62 @@ article#all-cards{
     padding: 0px 0px 50px 0px;
 }
 
-aside#card-news{
+aside.card-news{
     max-width: 300px;
-    margin: 0px 50px;
+    max-height: 400px;
+    margin: 17px 50px;
+
+    padding: 30px 60px 20px 20px;
+    text-shadow: 0.2em 0.3em 0.4em rgba(0, 0, 0, 0.219);  
+    border-radius: 7px;  
+    border: 0.2px solid rgb(218, 253, 255);
 }
 
-section#card{
-    background-color: aliceblue;
-    margin: 20px 0px 0px 0px;
-    padding: 40px 80px 40px 25px;
+aside#android{
+    background-image: url('../android_site/imgs/fundo_android-02.png');
+    background-repeat: no-repeat;
+    background-position: top top;
+    background-size: cover;
+    background-attachment: scroll; 
+}
+
+aside#facebook{
+    background-image: url('../facebook_site/imagens/Img.site/fundo_facebook-01.png');
+    background-repeat: no-repeat;
+    background-position: top top;
+    background-size: cover;
+    background-attachment: scroll; 
+}
+
+section.card{
     text-align: left;
-    border-radius: 10px;
-    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.322);
-    border: 0.5px solid rgb(218, 253, 255);
 }
 
-section#card  a{
+section.card  a{
     text-decoration: none;
+    color: white;
 }
 
-section#card div{
-    backdrop-filter: blur(10px);
+section.card div{
+    backdrop-filter: blur(15px);
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px 10px 10px 13px;
 
-    width: 100%;
+    width: 90%;
+    box-shadow: 0.2em 0.3em 0.9em rgba(0, 0, 0, 0.432); 
 }
-
-div  h1{
+div#div-android >h1{
     margin-bottom: 3px;
+    text-shadow: 0.1em 0.2em 0.3em rgba(0, 0, 0, 0.356);
+    color: rgb(0, 255, 76);
 }
+
+div#div-facebook >h1{
+    margin-bottom: 3px;
+    text-shadow: 0.1em 0.2em 0.3em rgba(0, 0, 0, 0.356);
+    color: rgb(0, 225, 255);
+}
+
 
 div p{
     margin-top: 10px;
@@ -128,11 +154,11 @@ hr.hr-cards{
 }
 
 #page01{
-    background-color: yellowgreen;
+    background-color: rgb(0, 255, 55);
 }
 
 #page02{
-    background-color: steelblue;
+    background-color: rgb(31, 203, 233);
 }
 
 footer{
