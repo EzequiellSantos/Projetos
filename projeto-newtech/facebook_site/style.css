@@ -91,7 +91,7 @@ header{
 
 header > h1{
     font-family: var(--fonte01);
-    font-size: 4em;
+    font-size: 3.5em;
     text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.699);
     margin: 0px 0px 20px 5px;
     padding: 5px 0px 0px 5px;
