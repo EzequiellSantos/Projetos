@@ -17,6 +17,7 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 /* configuração da Scrollbar body */
@@ -374,13 +375,14 @@ hr.hr-text{
 }
 
 .txt{
+    color: var(--fundo05);
     letter-spacing: 1.0px;
     font-size: 1.1em;
     padding: 10px 10px;
     text-align: left;
 }
 
-.link-cards{
+.descrition{
     font-size: 0.85em;
     font-weight: bold;
     letter-spacing: 1px;
@@ -449,7 +451,7 @@ hr.hr-text{
         font-size: 1.6em;
     }
     
-    .link-cards{
+    .descrition{
         padding: 0px 0px 30px 15px;
         line-height: 4.0em;
         font-size: 1.5em; 
