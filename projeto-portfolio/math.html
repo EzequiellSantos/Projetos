@@ -23,7 +23,14 @@
         </article>
         
     </header>
-
+    <nav>
+        <div id="menu">
+            <img src="imagens/Icons-Math/menu-branco.png" alt="" id="img-menu">
+            <ul>
+                <li><a href="projetos_02.html"><img src="imagens/Icons-Math/icons8-casa-48.png" alt="" id="img-icon"></a></li>
+            </ul>
+        </div>
+    </nav>
     <main>
         <article>
             <aside id="main-principal">
@@ -78,20 +85,6 @@
 
     </main>
 
-    <script>
-        
-        window.addEventListener('scroll', function() {
-            var section = document.querySelector('.fixed-section');
-            var sectionOffset = section.offsetTop;
-            var scrollPosition = window.scrollY;
-
-            if (scrollPosition > sectionOffset) {
-                section.classList.add('fixed');
-            } else {
-                section.classList.remove('fixed');
-            }
-        });
-</script>
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

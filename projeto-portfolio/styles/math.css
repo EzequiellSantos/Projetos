@@ -15,6 +15,32 @@ body{
     color: white;
 }
 
+div#menu{
+    position: fixed;
+    top: 7vh;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+
+    background-color: #92d1ff48;
+}
+
+div#menu.actived{
+    width: 40px;
+    height: 90px;
+}
+
+img#img-icon{
+    display: none;
+    width: 33px;
+    padding: 4px;
+}
+
+img#img-menu{
+    max-width: 26px;
+    padding: 7px;
+}
+
 header{
     display: flex;
     align-items: center;
@@ -62,7 +88,7 @@ section.fixed-section.fixed{
     position: fixed;
     top: 10px;
 
-    width: 89%;
+    width: 80%;
     margin: 0px 6px 0px 6px;
 
     font-size: 1.8em;
@@ -170,13 +196,13 @@ div:hover > hr.hr-links{
     }
 
     section.links{
-        background-image: url('../imagens/Fundos/fundo-escuro-08.jpg');
-        /* background-color: #4ad3eb; */
+        background-image: url('');
+        background-color: #4ad3eb;
     }
 
     div.image{
-        backdrop-filter: blur(3px);
-        text-shadow: 0.05em 0.1em 0.2em rgba(255, 255, 255, 0.596);
+        backdrop-filter: blur(1px);
+/*         text-shadow: 0.05em 0.1em 0.2em rgba(255, 255, 255, 0.596); */
     }
 
     div:hover > hr.hr-links{

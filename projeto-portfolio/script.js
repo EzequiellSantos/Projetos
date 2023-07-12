@@ -1,4 +1,4 @@
-class MobileNavbar {
+/* class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
         this.mobileMenu = document.querySelector(mobileMenu)
         this.navList = document.querySelector(navList)
@@ -50,7 +50,7 @@ youtube -> Tiger Codes
 
 ////////////////////////    
 
-let burgerMenu = document.getElementsByClassName('mobile-menu')[0]
+/* let burgerMenu = document.getElementsByClassName('mobile-menu')[0]
 let lineOne = document.getElementsByTagName('div')[1]
 let lineTwo = document.getElementsByTagName('div')[2]
 let lineThree = document.getElementsByTagName('div')[3]
@@ -59,7 +59,7 @@ let ulMenu = document.getElementsByTagName('ul')[0]
 
 burgerMenu.addEventListener('mouseover', clicou)
 burgerMenu.addEventListener('', none)
-navMenu.addEventListener('mouseout', fora)
+navMenu.addEventListener('mouseout', fora) */
 
 
 /* function clicou(){
@@ -96,15 +96,50 @@ function clickOut(clickfora){
 /* if (!clicadoDentroDoElemento) 
         lineOne.style.transform = 'none'
         lineTwo.style.opacity = '1'
-        lineThree.style.transform = 'none' */
+        lineThree.style.transform = 'none' 
 
         function clicou(){
         
             ulMenu.style.position = 'fixed' 
-           /*  burgerMenu.style.position = 'fixed'  */
+           /*  burgerMenu.style.position = 'fixed'  
         }
         
+ */
 
 
+        /////////////////////////////////
 
+window.addEventListener('scroll', function() {
+    var section = document.querySelector('.fixed-section');
+    var sectionOffset = section.offsetTop;
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition > sectionOffset) {
+        section.classList.add('fixed');
+    } else {
+        section.classList.remove('fixed');
+    }
+});
+
+
+var imgMenu = document.getElementById('img-menu');
+var imgIcon = document.getElementById('img-icon');
+var menu = document.getElementById('menu');
+
+imgMenu.addEventListener('click', function() {
+    imgIcon.style.display = 'block'
+    imgIcon.style.top = '30px'
+    menu.classList.add('actived')
+    menu.style.transition = 'none'
+}) 
+
+document.addEventListener('click', function(evento) {
+    const clicadoDentroDoElemento = menu.contains(evento.target)
+  
+    if(!clicadoDentroDoElemento){
+      imgIcon.style.display = 'none'
+      menu.classList.remove('actived')
+      menu.style.transition = 'all 0.6s ease-in-out'
+    }
+  })
 
