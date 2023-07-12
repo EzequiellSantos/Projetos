@@ -10,9 +10,18 @@
 <body>
     <header>    
         <h1>Vai Uma Matemática ai?</h1>
-        <section class="title">
-            <h5>Sites para seu Dia-a-Dia</h5>
-        </section>
+        <nav>
+            <p>
+                <a style="color: rgba(255, 255, 255, 0.719) ;" href="https://github.com/EzequiellSantos" target="_blank">Ezequiell Santos</a> &copy
+            </p>
+        </nav>
+
+        <article id="articleOF-section">
+            <section class="fixed-section">
+                <h5>Sites para o seu Dia - a - Dia</h5>
+            </section>
+        </article>
+        
     </header>
 
     <main>
@@ -20,37 +29,47 @@
             <aside id="main-principal">
 
                 <a href="https://ezequiellsantos.github.io/Projetos/projeto-media/">
-                    <section class="links">
-                        <p>Calculadora de Médias</p>
-                        <hr class="hr-links">
-                    </section>
+                        <section class="links"> 
+                            <div class="image">
+                                <p>Calculadora de Médias</p>
+                                <hr class="hr-links">
+                            </div>
+                        </section>
                 </a>
 
                 <a href="https://ezequiellsantos.github.io/JavaScript/exercicios/moduloD/ex014/index.html">
                     <section class="links">
-                        <p>Tabuada</p>
-                        <hr class="hr-links">
+                        <div class="image">
+                            <p>Tabuada</p>
+                            <hr class="hr-links">
+                        </div>
                     </section>
                 </a>
 
                 <a href="https://ezequiellsantos.github.io/JavaScript/exercicios/moduloD/ex013/ex013.html">
                     <section class="links" >
-                        <p>Contador</p>
-                        <hr class="hr-links">
+                        <div class="image">
+                            <p>Contador</p>
+                            <hr class="hr-links">
+                        </div>
                     </section>
                 </a>
 
                 <a href="https://ezequiellsantos.github.io/JavaScript/exercicios/moduloE/exerc%C3%ADcios/index.html">
                     <section class="links">
-                        <p>Analisador de Números</p>
-                        <hr class="hr-links">
+                        <div class="image">
+                            <p>Analisador de Números</p>
+                            <hr class="hr-links">
+                        </div>
                     </section>
                 </a>
 
                 <a href="https://ezequiellsantos.github.io/JavaScript/exercicios/moduloC/ex010/ex-idade/index.html">
                     <section class="links">
-                        <p>Verificador de Idade</p>
-                        <hr class="hr-links">
+                        <div class="image">
+                            <p>Verificador de Idade</p>
+                            <hr class="hr-links">
+                        </div>
                     </section>
                 </a>
 
@@ -59,8 +78,20 @@
 
     </main>
 
-    <footer>
-        <a href=""><p>Ezequiell Santos &copy;</p></a>
-    </footer>
+    <script>
+        
+        window.addEventListener('scroll', function() {
+            var section = document.querySelector('.fixed-section');
+            var sectionOffset = section.offsetTop;
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > sectionOffset) {
+                section.classList.add('fixed');
+            } else {
+                section.classList.remove('fixed');
+            }
+        });
+</script>
+    </script>
 </body>
 </html>

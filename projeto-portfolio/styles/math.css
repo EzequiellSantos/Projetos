@@ -1,43 +1,81 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Ysabeau+Infant:ital,wght@0,100;0,300;0,700;1,1;1,100;1,200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
 
+
 body{
-    padding: 0px 6px 0px 6px;
-    background-image: linear-gradient(-60deg, rgb(105, 104, 104), rgb(61, 61, 61));
+    padding: 0px 10px 0px 10px;
+    background-image: linear-gradient(-40deg, #1E2025, #5a8aa1);
+    color: white;
 }
 
 header{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    margin: 15px 4px 10px 4px;
+    flex-direction: column;
+
+    margin: 15px 4px 0px 4px;
+    font-family: 'Ysabeau Infant', sans-serif;
 }
 
+header > h1{
+    font-size: 2.4em;
+}
 
-section.title{
-    position: -webkit-sticky; /* apenas chrome e webkit nightly */
-    top: 0;
-    flex: 1 0 500px;
-    margin: auto;
-    padding: 15px;
-    width: 600px;
-    max-width: 700px;
+nav{
+    margin-top: 10px;
+}
+
+nav > a{
+    color: white;
+    font-family: 'Josefin Slab', serif; 
+    letter-spacing: 3px;
+}
+
+#articleOF-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin: 20px 0px 0px 0px;
+}
+
+section.fixed-section{
+    padding: 20px;
+    height: 27px;
+
+    font-size: 2.0em;
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+section.fixed-section.fixed{
+    position: fixed;
+    top: 10px;
+
+    width: 89%;
+    margin: 0px 6px 0px 6px;
+
+    font-size: 1.8em;
     border-radius: 60px;
-    border: 0.1px solid black; 
-
-    font-size: 1.5em;
+    border: 0.1px solid rgb(235, 235, 235); 
+    backdrop-filter: blur(13px);
+    transition: width, backdrop-filter 0.6s ease-in;
 }
 
 main{
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 90px;
     
     max-width: 600px;
 }
@@ -52,44 +90,52 @@ aside#main-principal{
     flex-direction: column;
     justify-content: center;
     
-    background-color: GRAY;
-    border-radius: 12px;
+    background-color: #92A4B1;
+    border-radius: 20px;
     padding: 20px;
+}
+
+div.image{
+    backdrop-filter: blur(20px);
+    padding: 22px;
+    border-radius: 15px;
 }
 
 section.links{
     flex: 1 0 500px;
     margin: 20px 8px 20px 0px;
-    padding: 22px;
     border-radius: 15px;
-    border: 0.1px solid rgb(247, 243, 243);
+    box-shadow: 0.2em 0.3em 0.8em #1e202556; 
 
+    background-image: url('../imagens/Fundos/fundo-escuro-08.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: repeat;
+
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-weight: 300;
     font-size: 1.3em;
-
-    background-color: rgba(228, 228, 228, 0.63);
-    fill: blur(400px);
-    color: rgb(46, 46, 46);
+    color: rgb(255, 255, 255);
 }
 
 section.links:hover{
-    transform: translate(2px, 1px);
-}
-
-hr{
-    margin: -5px 0px 0px -10px;
+    transform: translate(2px, 1px); 
+    box-shadow: 0.3em 0.3em 0.5em #0c0d3571; 
 }
 
 hr.hr-links{
     width: 20px;
     border: 0;
+    border-radius: 1px;
     height: 2px;
-    background-color:aquamarine;
+    background-color:#ffffff;
     margin: 0px 0px 0px 2px;
     z-index: 1;
     animation: reset 0.8s reverse ease-in-out;
 }   
 
-section:hover > hr.hr-links{
+div:hover > hr.hr-links{
     transition: all 1s;
     animation: move 1.5s both cubic-bezier(.26, 1.02, 1, -0.62);
 }
@@ -98,7 +144,6 @@ section:hover > hr.hr-links{
     100%{
         width: 300px;
     }
-
     0%{
         width: 20px;
     }
@@ -108,38 +153,60 @@ section:hover > hr.hr-links{
    0%{
         width: 20px;
     }
-    /*  25%{
-        width: 75px;
-    }
-    50%{
-        width: 100px;
-    }
-    75%{
-        width: 125px;
-    } */
     100%{
         width: 300px;
     }
 }
 
-/* section.link::after{
-    position: absolute;
-    height: 2px;
-    width: 10px;
-    color: red;
-    top: 300px;
-    right: 10px;
-    background-color: red;
-} */
-
-footer{
-    text-align: center;
-    margin: 0px -6px 0px -6px;
-    padding: 5px;
-}
 
 @media screen and (max-width: 500px) {
-    main{
 
+    header > h1{
+        font-size: 1.8em;
+    }
+
+    section.fixed-section{
+        font-size: 1.6em;
+    }
+
+    section.links{
+        background-image: url('../imagens/Fundos/fundo-escuro-08.jpg');
+        /* background-color: #4ad3eb; */
+    }
+
+    div.image{
+        backdrop-filter: blur(3px);
+        text-shadow: 0.05em 0.1em 0.2em rgba(255, 255, 255, 0.596);
+    }
+
+    div:hover > hr.hr-links{
+    transition: all 1s;
+    animation: move 1.5s both cubic-bezier(.26, 1.02, 1, -0.62);
+}
+
+
+    @keyframes reset{
+        100%{
+            width: 90%;
+        }
+        0%{
+            width: 20px;
+        }
+    }
+    
+    @keyframes move{
+       0%{
+            width: 20px;
+        }
+        100%{
+            width: 90%;
+        }
     }
 }
+
+
+@media screen and (min-width: 755px) {
+    section.fixed-section.fixed{
+        max-width: 800px;
+    }
+} 
