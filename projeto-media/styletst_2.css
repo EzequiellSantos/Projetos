@@ -195,6 +195,14 @@ form{
     transition: all 0.5s;
 }
 
+img#img-home{
+    position: fixed;
+    top: 73px;
+    right: 9px;
+    width: 25px;
+    padding: 0.6px;
+}
+
 #addNote{
     font-size: 1.05em;
     padding: 13px;

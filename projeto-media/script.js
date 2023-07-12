@@ -101,7 +101,7 @@ const menu = document.querySelector("#menu")
 menu.onclick = () =>{
   themeToggleBtn.style.display = 'block'
   menu.style.transition = 'all 0.01s ease'
-  menu.style.padding = '1px 1px 40px 15px'
+  menu.style.padding = '1px 1px 75px 15px'
 }
 
 
