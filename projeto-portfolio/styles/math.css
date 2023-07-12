@@ -16,6 +16,7 @@ body{
 }
 
 div#menu{
+    cursor: pointer;
     position: fixed;
     top: 7vh;
     width: 40px;
