@@ -28,7 +28,7 @@ body::-webkit-scrollbar-track{
 }
 
 body::-webkit-scrollbar-thumb{
-    background-color: var(--cor);
+    background-image: linear-gradient(to bottom, var(--cor), var(--fundo05));
     border-radius: 35px;
     height: 5px;
 }
