@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+:root{
+    /* 
+        yellow
+        orange
+        red
+        Blue
+        purple
+        black
+        white
+    */
+    --colorBackgr00:;
+    --colorBackgr01:;
+    --colorBackgr02:;
+
+    --color00:;
+    --color01:;
+
+    --colorLight00:;
+    --colorLight01:;
+}
+
+
