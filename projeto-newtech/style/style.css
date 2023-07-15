@@ -24,6 +24,7 @@
     /* lights */
     --light00: #55b1db;
     --light01: #43ffe0;
+    --light02:#81cff3;
 }
 
 
@@ -46,7 +47,28 @@ header > h1{
 }
 
 nav{
-    margin: 10px 0px;
+    margin: 20px 0px 5px 0px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 50px;
+    gap: 10px;
+}
+
+a.link-nav{
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--light02);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: 1.5px solid rgba(255, 255, 255, 0.582);
+}
+
+a.link-nav:hover{
+    scale: 0.97;
+    transition: 0.3s;
 }
 
 main#main-project{
