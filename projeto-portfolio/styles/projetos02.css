@@ -3,12 +3,19 @@
 :root{
     --background: #14425A;
 
-    --fundo01: #10999e; 
+/*     --fundo01: #10999e; 
     --fundo02: #336063; 
     --fundo03: #272727;
     --fundo04: #4d4d4d2a;
     --fundo05:#6e6e6eb6;
-    --cor: #00CAD1; 
+    --cor: #00CAD1;  */
+
+    --fundo01: #BF971F; 
+    --fundo02: #9e8910; 
+    --fundo03: #272727;
+    --fundo04: #4d4d4d9f;
+    --fundo05:#6e6e6e9a;
+    --cor: #ffd147; 
 }
 
 *{
@@ -28,7 +35,7 @@ body::-webkit-scrollbar-track{
 }
 
 body::-webkit-scrollbar-thumb{
-    background-color: var(--cor);
+    background-image: linear-gradient(to bottom, var(--cor), var(--fundo04));
     border-radius: 35px;
     height: 5px;
 }

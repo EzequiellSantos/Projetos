@@ -460,13 +460,14 @@ hr.hr-text{
 }
 
 /* Aside Globais */
-aside#cards{
+#cards{
     background-color: var(--fundo02);
     box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
     border-radius: 10px;
     border: 0.7px solid var(--cor-main04);
     overflow: hidden;
     position: relative;
+    transition: all 0.1s;
 }
 
 aside#cards:hover{
