@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* Configuração dos Cards Para dispositivos acima de 768px */
+@media screen and (min-width: 768px){
+
+    nav#menu{
+
+    }
+
+    #home > p{
+        text-align: justify;
+        font-size: 1.25em;
+        line-height: 1.6em;
+        margin: 0 ;
+    }
+
+    #project-cards{
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    #cards{
+        text-align: left;
+        height: 125px;
+        margin-left: 46px;
+        font-size: 1.0em;
+        width: 300px;
+        max-width: 400px;
+        /* font-size: 1.0em; */
+    }
+
+    .txt{
+        padding: 15px 0px 0px 15px;
+        font-size: 1.6em;
+    }
+    
+    .descrition{
+        padding: 0px 0px 30px 15px;
+        line-height: 4.0em;
+        font-size: 1.5em; 
+    }
+    
+}

@@ -64,8 +64,6 @@ header{
     width: 100vw;
 }
 
-
-
 /* Main Principal */
 main{
     display: flex;
@@ -76,7 +74,6 @@ main{
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
 
 /* Configuração do Menu */
 nav#menu{   
@@ -99,92 +96,6 @@ nav#menu{
 #menu > hr{
     width: 40px;
 }
-
-ul#nav-list{
-    list-style: none;
-
-    position: absolute;
-    top: 8vh;
-    right: 0;
-    width: 50vw;
-    height: 60vh; 
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #202020;
-
-    transform: translateX(200%);
-    transition: transform 0.3s ease-in;
-
-    border-radius: 15px;
-}
-
-ul#nav-list.active{
-    transform: translateX(0);
-}
-
-ul#nav-list > li{
-    letter-spacing: 3px;
-    opacity: 0;
-}
-
-a#link-menu{
-    text-decoration: none;
-    color: var(--cor-main01);
-}
-
-a#link-menu:hover{
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-div.mobile-menu{
-    cursor: pointer;
-    display: absolute;
-    right: 15px;
-    top: 80px;
-    z-index: 2;
-}
-
-div.mobile-menu  div{
-    width: 32px;
-    height: 2px;
-    background-color: #fff;
-    margin: 8px;
-    transition: 0.1s;
-}
-
-.mobile-menu:hover{
-    position: fixed;
-}
-
-
-
-.mobile-menu:hover .line1{
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu:hover .line2{
-    opacity: 0;
-}
-
-.mobile-menu:hover .line3{
-    transform: rotate(45deg) translate(-4px, -6px);
-} 
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 
 /* Section Globais */
 section{
@@ -365,6 +276,8 @@ hr.hr-text{
 
 }
 
+
+
 #cards{
     /* Cards */
     font-family: monospace;
@@ -389,74 +302,6 @@ hr.hr-text{
     padding: 0px 10px 10px 10px;
     text-decoration: none;
     color: rgb(17, 224, 231);
-}
-
-
-/* Configurações de Layout Para Dispositivos Com a Tela Acima de 600px */
-@media screen and (min-width: 600px) {
-
-    body{
-        background-image: url('../imagens/Fundos/fundo_g.jpg');
-    }
-
-    section#profile{
-        float: left;
-        max-width: 25%;
-    }
-
-    section#home{
-        float: left;
-        max-width: 60%;
-        margin-left: 0.5em;
-    }
-
-    p{
-        font-size: 1.0em;
-    }
-
-}
-
-
-/* Configuração dos Cards Para dispositivos acima de 768px */
-@media screen and (min-width: 768px){
-
-    nav#menu{
-
-    }
-
-    #home > p{
-        text-align: justify;
-        font-size: 1.25em;
-        line-height: 1.6em;
-        margin: 0 ;
-    }
-
-    #project-cards{
-        margin-top: 80px;
-        width: 100%;
-    }
-
-    #cards{
-        text-align: left;
-        height: 125px;
-        margin-left: 46px;
-        font-size: 1.0em;
-        width: 300px;
-        max-width: 400px;
-        /* font-size: 1.0em; */
-    }
-
-    .txt{
-        padding: 15px 0px 0px 15px;
-        font-size: 1.6em;
-    }
-    
-    .descrition{
-        padding: 0px 0px 30px 15px;
-        line-height: 4.0em;
-        font-size: 1.5em; 
-    }
-    
 }
 
 /* Aside Globais */
@@ -484,3 +329,4 @@ aside#cards-content{
 aside#cards:hover > #cards-content{
     transform: skew(-5deg) translateY(30px)
 }
+

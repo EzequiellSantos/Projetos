@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* Configurações de Layout Para Dispositivos Com a Tela Acima de 600px */
+@media screen and (min-width: 600px) {
+
+    body{
+        background-image: url('../imagens/Fundos/fundo_g.jpg');
+    }
+
+    section#profile{
+        float: left;
+        max-width: 25%;
+    }
+
+    section#home{
+        float: left;
+        max-width: 60%;
+        margin-left: 0.5em;
+    }
+
+    p{
+        font-size: 1.0em;
+    }
+
+}
