@@ -31,6 +31,10 @@ div#menu.actived{
     height: 90px;
 }
 
+ul{
+    list-style: none;
+}
+
 img#img-icon{
     display: none;
     width: 33px;
