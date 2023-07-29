@@ -42,8 +42,13 @@ img#img-icon{
 }
 
 img#img-menu{
-    max-width: 26px;
+    width: 26px;
     padding: 7px;
+}
+
+#linkMenu{
+    height: 5px;
+    width: 20px;
 }
 
 header{
