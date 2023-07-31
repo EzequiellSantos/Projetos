@@ -470,17 +470,3 @@ hr.hr-text{
     transition: all 0.1s;
 }
 
-aside#cards:hover{
-    transform: skew(5deg);
-}
-
-aside#cards-content{
-    transform: skew(-5deg);
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-}
-
-aside#cards:hover > #cards-content{
-    transform: skew(-5deg) translateY(30px)
-}
