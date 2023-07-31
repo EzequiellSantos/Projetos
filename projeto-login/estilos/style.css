@@ -33,13 +33,13 @@ main{
 
 section#login{
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
 
     background-color: var(--background02);
-    width: 250px;
+    width: 350px;
     min-height: 500px;
     border-radius: 20px;
     color: white;
