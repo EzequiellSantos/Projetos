@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+:root{
+    --color-main00: #AF17E6;
+    --background00: #915699;
+    --background01: #93009E;
+
+    --color-main01:#E6AC2E;
+    --background02:#ffe070;
+    --background03: #E5BB0B;
+}
+
+/*  Versão para tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    body{
+        background-image: linear-gradient(100deg, var(--background00),var(--background02));
+    }
+
+    section#login{
+        width: 85%;
+        height: 450px;
+        margin-top: none;
+    }
+
+    section#login div#imagem{
+        float: left;/* diz a direção do elemento quando display block */
+        background-position: left top;
+        width: 30%;
+        height: 100%;
+    }
+
+    section#login div#formulario {
+        float: right;
+        width: 70%;
+    }
+
+    div#formulario p{
+        font-size: 1.1em;
+    }
+
+    section#login a#a-botao{
+        justify-content: left;
+        margin-top: 10px;
+    }
+
+    fieldset{
+        max-width: 60%;
+        height: 10%;
+        margin: 0 0 20px 0;
+    }
+
+    form input[type=submit]{
+        height: 30px;
+        width: 30%;
+        margin: 0;
+    }
+}
+
+/* para COmputadores e telas maiores */
+@media screen and (min-width: 992px){
+
+    body{
+        background-image: linear-gradient(130deg, var(--background00),var(--background02));
+    }
+
+    section#login{
+        top: 40%;
+        text-align: center;
+        width: 80%;
+        height: 500px;
+        transition: width 0.5s, height 0.5s;
+    }
+
+    section#login  div#imagem{
+        background:  url('../imagens/fundos/fundo-cadeados.jpg') no-repeat;
+        background-size: cover;
+        background-position: center center; 
+        float: right;
+        width: 35%;
+        height: 100%;
+    }
+
+    section#login div#formulario{
+        float: left;
+        width: 65%;
+        height: 100%;
+        text-align: center;
+    }
+
+    section#login a#a-botao{
+        margin: 10px 0px;
+    }
+    
+    div#formulario p{
+        font-size: 1.3em;
+    }
+
+    fieldset{
+        max-width: 60%;
+        height: 20%;
+        text-align: center;
+    }
+
+    form input[type=submit]{
+        height: 35px;
+        width: 40%;
+        margin: auto;
+    }
+}
+
