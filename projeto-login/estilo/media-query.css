@@ -10,7 +10,8 @@
     --background03: #E5BB0B;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {/*  Versão para tablet */
+/*  Versão para tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
 
     body{
         background-image: linear-gradient(100deg, var(--background00),var(--background02));
@@ -55,6 +56,7 @@
     }
 }
 
+/* para COmputadores e telas maiores */
 @media screen and (min-width: 992px){
 
     body{
@@ -66,6 +68,7 @@
         text-align: center;
         width: 80%;
         height: 80%;
+        transition: width 0.5s, height 0.5s;
     }
 
     section#login  div#imagem{
