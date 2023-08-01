@@ -32,7 +32,7 @@
 
     section#login div#formulario {
         float: right;
-        width: 70%;
+        width: calc(70% - 5px);
     }
 
     div#formulario p{
