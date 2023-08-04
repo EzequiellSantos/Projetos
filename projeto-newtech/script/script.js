@@ -3,7 +3,6 @@ var saida = document.getElementById("date");
 var atual = new Date()
 var nameDay = atual.getDay()
 var dia = atual.getDate()
-var mes = atual.getMonth()
 var nameMonth = atual.getMonth()
 var ano = atual.getFullYear()
 
@@ -32,40 +31,40 @@ switch (nameDay){
 }
 
 switch (nameMonth){
-    case 1:
+    case 0:
         nameMonth = "Jan"
         break
-    case 2:
+    case 1:
         nameMonth = "Fev"
         break
-    case 3:
+    case 2:
         nameMonth = "Mar"
         break
-    case 4:
+    case 3:
         nameMonth = "Abr"
         break
-    case 5:
+    case 4:
         nameMonth = "Mai"
         break
-    case 6:
+    case 5:
         nameMonth = "Jun"
         break
-    case 7:
+    case 6:
         nameMonth = "Jul"
         break
-    case 8:
+    case 7:
         nameMonth = "Ago"
         break
-    case 9:
+    case 8:
         nameMonth = "Set"
         break
-    case 10:
+    case 9:
         nameMonth = "Out"
         break
-    case 11:
+    case 10:
         nameMonth = "Nov"
         break
-    case 12:
+    case 11:
         nameMonth = "Dez"
         break
 }
