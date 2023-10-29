@@ -50,7 +50,7 @@ a:active{
 
 body{
     background-color: var(--fundo02);
-    background-image: url('../imagens/Fundos/fundo_p.jpg');
+    background-image: url('https://raw.githubusercontent.com/EzequiellSantos/Projetos/main/projeto-portfolio/imagens/Fundos/fundo_p.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -68,33 +68,12 @@ header{
 main{
     display: flex;
     margin-top: 50px;
+    padding-right: 1px;
     color: var(--fundo05);
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-/* Configuração do Menu */
-nav#menu{   
-    position: absolute;
-    z-index: 1;
-    height: 8vh;
-    right: 15px;
-    top: 70px;
-    background-color: transparent;
-
-    display: flex;
-    justify-content: space-around;
-
+    flex-direction: column; /* aqui */
     align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-
-#menu > hr{
-    width: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Section Globais */
@@ -106,14 +85,13 @@ section{
     flex: 1;
 }
 
-
 /* Configuração da Section PROFILE */
 #profile{
     backdrop-filter: blur(20px);
+    width: calc(100% - 40px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 20px 10px 20px 10px;
+    padding: 10px 10px 10px 20px;
     border-radius: 25px;
-    margin-left: 0px;
 }
 
 span{
@@ -121,7 +99,6 @@ span{
     padding: 5px;
     border-radius: 7px;
 }
-
 
 #img-profile{
     display:grid;
@@ -189,6 +166,7 @@ img#img-calendar{
     width: 100%;
 }
 
+
 #p1-span{
     text-align: center;
     margin-right: 20px;
@@ -206,32 +184,32 @@ hr.hr-profile{
     color: var(--fundo05);
 }
 
-
 /* Configuração da Section HOME */
 #home{
     display: inline-block;
+    width: calc(100% - 40px);
     line-height: 1.8em;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 40px 25px 20px 25px;
+    padding: 40px 10px 10px 20px;
     border-radius: 25px;
     font-size: 0.9em;
 }
 
-
 hr.hr-text{
     width: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     border: 3.5px solid var(--cor-main03);
     border-radius: 4px;
 }
 
-#home > p{
+#home > article#article-txt{
+    margin: auto;
+    max-width: 95%;
     text-align: justify;
     font-size: 1.1em;
-    margin: 0 ;
-}
+} 
 
 #all-cards{
     /* Container Cards */
@@ -276,8 +254,6 @@ hr.hr-text{
 
 }
 
-
-
 #cards{
     /* Cards */
     font-family: monospace;
@@ -314,19 +290,3 @@ hr.hr-text{
     position: relative;
     transition: all 0.1s;
 }
-
-aside#cards:hover{
-    transform: skew(5deg);
-}
-
-aside#cards-content{
-    transform: skew(-5deg);
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-}
-
-aside#cards:hover > #cards-content{
-    transform: skew(-5deg) translateY(30px)
-}
-
