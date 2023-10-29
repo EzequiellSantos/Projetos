@@ -22,7 +22,7 @@
 
 /* configuração da Scrollbar body */
 body::-webkit-scrollbar{
-    width: 13px;
+    width: 12px;
 }
 
 body::-webkit-scrollbar-track-y{
@@ -33,7 +33,7 @@ body::-webkit-scrollbar-track-y{
 body::-webkit-scrollbar-thumb{
     border-radius: 35px;
     border: 0.5px solid rgb(58, 58, 58);
-    background-image: linear-gradient(to bottom, rgb(212, 97, 97), rgb(68, 68, 68));
+    background-image: linear-gradient(to bottom, rgb(209, 83, 83), rgb(68, 68, 68));
 }
 
 /* links */
@@ -92,7 +92,7 @@ section{
     -webkit-backdrop-filter: blur(20px);
     padding: 10px 10px 10px 20px;
     border-radius: 25px;
-    transition: all 0.4s ease-out;
+    transition: Width, 0.5s ease-out;
 }
 
 span{
@@ -191,8 +191,11 @@ hr.hr-profile{
     display: inline-block;
     width: calc(100% - 40px);
     line-height: 1.8em;
+
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: Width, 0.5s ease-out;
+
     padding: 40px 10px 10px 20px;
     border-radius: 25px;
     font-size: 0.9em;
@@ -263,6 +266,14 @@ hr.hr-text{
     height: 120px;
     width: 200px;
     margin-left: 20px;
+
+    background-color: var(--fundo02);
+    box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
+    border-radius: 10px;
+    border: 0.7px solid var(--cor-main04);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.1s;
 }
 
 .txt{
@@ -280,15 +291,4 @@ hr.hr-text{
     padding: 0px 10px 10px 10px;
     text-decoration: none;
     color: rgb(17, 224, 231);
-}
-
-/* Aside Globais */
-#cards{
-    background-color: var(--fundo02);
-    box-shadow: 0.3em 0.5em 1.0em rgba(10, 10, 10, 0.562);
-    border-radius: 10px;
-    border: 0.7px solid var(--cor-main04);
-    overflow: hidden;
-    position: relative;
-    transition: all 0.1s;
 }
