@@ -1,25 +1,55 @@
 @charset "UTF-8";
 
 /* Configurações de Layout Para Dispositivos Com a Tela Acima de 600px */
-@media screen and (min-width: 600px) {
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
 
     body{
         background-image: url('https://raw.githubusercontent.com/EzequiellSantos/Projetos/main/projeto-portfolio/imagens/Fundos/fundo_g.jpg');
     }
 
     section#profile{
-        float: left;
-        max-width: 25%;
+        max-width: 70vw;
+    }
+
+    .hr-profile{
+        margin-bottom: 40px;
+    }
+
+    section#all-datas{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: space-between;
+    }
+
+    section#all-datas aside.aside-profile{
+        margin: 10px 0 0 80px;
     }
 
     section#home{
-        float: left;
-        max-width: 60%;
-        margin-left: 0.5em;
+        max-width: 70vw;
     }
 
     p{
-        font-size: 1.0em;
+        font-size: 1.1em;
+    }
+
+    #cards{
+        height: 130px;
+        width: 230px;
+    }
+
+    .txt{
+        margin-top: 15px;
+        font-size: 1.35em;
+        padding: 10px 15px 10px 15px;
+    }
+
+    .descrition{
+        font-size: 1.2em;
+        padding: 0px 15px 20px 15px;
     }
 
 }
