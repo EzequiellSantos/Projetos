@@ -3,6 +3,10 @@
 /* Configuração dos Cards Para dispositivos acima de 768px */
 @media screen and (min-width: 992px){
 
+    body{
+        background-image: url('https://raw.githubusercontent.com/EzequiellSantos/Projetos/main/projeto-portfolio/imagens/Fundos/fundo_g.jpg');
+    }
+
     main{
         display: flex;
         flex-direction: row;
