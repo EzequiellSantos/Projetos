@@ -230,30 +230,48 @@ hr.hr-links{
     margin: 0px 0px 0px 2px;
     z-index: 1;
     animation: reset 0.8s reverse ease-in-out;
-}   
+}  
 
-div:hover > hr.hr-links{
-    transition: all 1s;
-    animation: move 1.5s both cubic-bezier(.26, 1.02, 1, -0.62);
+div.image > p::after{
+    content: "";
+    position:absolute;
+    left: 25px;
+    bottom: 20px;
+    width: 70%;
+    height: 2px;
+    border-radius: 2px;
+    background: #f7f7f7;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: 0.4s;
 }
 
-@keyframes reset{
+.image:hover > p::after{
+    transform: scaleX(1);
+}
+
+/* div:hover > hr.hr-links{
+    transition: all 1s;
+    animation: ;
+} */
+
+/* @keyframes reset{
     100%{
         width: 300px;
     }
     0%{
         width: 20px;
     }
-}
+} */
 
-@keyframes move{
+/* @keyframes move{
    0%{
         width: 20px;
     }
     100%{
         width: 300px;
     }
-}
+} */
 
 
 @media screen and (max-width: 500px) {
