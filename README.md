@@ -2,12 +2,11 @@
 
 # Projeto-Portfólio
 
-<p>Repositório que reune meus projetos. </p>
+__Projetos pessoais de autoria própria__
 <!-- <p>Acesse todos os meus projetos através do meu portfólio online</p>-->
 
-.
 
-<p>Veja meus principais <a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/" target="_blank">projetos</a></p>
+>Veja meus principais [projetos](https://ezequiellsantos.github.io/Projetos/projeto-portfolio/)
 
  
 
