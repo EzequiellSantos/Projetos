@@ -7,7 +7,7 @@
 
 .
 
-<a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/">Acessar Meu Portfólio online </a> -->
+<p>Veja meus principais <a href="https://ezequiellsantos.github.io/Projetos/projeto-portfolio/">projetos</a></p>
 
  
 
