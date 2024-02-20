@@ -1,12 +1,11 @@
-
-
 # Projeto-Portfólio
 
 __Projetos pessoais de autoria própria__
-<!-- <p>Acesse todos os meus projetos através do meu portfólio online</p>-->
 
+## Projeto Math de Cada dia
+> Projeto de Intuito de Disponibilizar Ferramentas para resoluções ed problemas matemáticos de maneira mais rápida e confiável
+* [Acessar](https://ezequiellsantos.github.io/Projetos/projeto-math/math.html)
 
->Veja meus principais [projetos](https://ezequiellsantos.github.io/Projetos/projeto-portfolio/)
-
- 
-
+## Projeto New Tech
+> Projeto feito para trazer curiosidades sobre o mundo tecnológico e social
+* [Acessar](https://ezequiellsantos.github.io/Projetos/projeto-newtech/index.html)
