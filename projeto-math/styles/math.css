@@ -13,105 +13,45 @@ body{
     padding: 0px 10px 0px 10px;
     background-image: linear-gradient(-40deg, #1E2025, #5a8aa1);
     color: white;
+    height: 100vh;
 }
 
-div#menu{
-    cursor: pointer;
-    position: absolute;
+nav#nav-menu{
+    position: relative;
+    bottom: 0;
+    background-color: #c1e5ff6b;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 5px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    top: 7vh;
-    width: 40px;
-    height: 40px;
-    border-radius: 9px;
-    transition: all .6s;
+    margin: auto;
 
-    background-color: #92d1ff48;
 }
 
-#setas-icons{
-    position: absolute;
-    top: 6px;
+nav #menu{
+    position: sticky;
+    bottom: 0px;
+    left: 10px;
+
+    backdrop-filter: blur(20px);
 }
 
-.setas{
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    margin: 5px 0px;
-    border-radius: 3px; 
-    background-color: white;
-    transition: all 0.4s;
-}
-
-#seta01{
-    background-color: #fff;
-    top: 0px;
-    right: -15px;
-}
-
-#seta02{
-    top: 8px;
-    right: -15px;
-}
-
-#seta03{
-    background-color: #fff;
-    top: 16px;
-    right: -15px;
-}
-
-
-/* #seta01.actived{
-   transition: all .6s;
-}
-
-#seta02.actived{
-    opacity: 0;
-}
-
-#seta03.actived{
-    animation: pika ease;
-    transition: all .6s;
-} */
-
-
-#link-menu{
-    margin-top: 35px;
-    display: none;
-}
-
-#link-menu.mostrar{
-    display: block;
-}
-
-#casa-icon{
-    max-width: 35px;
+#toBack{
+    width: 35px;
     transition: all .4s;
-    opacity: 0;
-}
-
-#casa-icon.mostrar{
     transition: opacity .4s;
     opacity: 1;
+    user-select: none;
 }
 
-
-div#menu.actived{
-    width: 40px;
-    height: 90px;
-    transition: all .6s;
+a{
+    user-select: none;  
 }
 
-
-@media screen and (max-width:500px){
-    #linkMenu{
-    height: 5px;
-    width: 20px;
-    }
-}
 
 header{
     display: flex;
@@ -131,10 +71,9 @@ nav{
     margin-top: 10px;
 }
 
-nav > a{
+#menu a{
     color: white;
     font-family: 'Josefin Slab', serif; 
-    letter-spacing: 3px;
 }
 
 #articleOF-section{
@@ -157,7 +96,7 @@ section.fixed-section{
 }
 
 section.fixed-section.fixed{
-    position: fixed;
+    position: fixed; 
     top: 10px;
 
     width: 80%;
