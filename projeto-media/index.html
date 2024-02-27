@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/EzequiellSantos/html-css/main/desafios/modulo%2001/Favicon.EZ/Icons8-Ios7-Animals-Duck.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styletst_2.css">
-    <title>Calculadora de média de notas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon"
+    href="https://raw.githubusercontent.com/EzequiellSantos/html-css/main/desafios/modulo%2001/Favicon.EZ/Icons8-Ios7-Animals-Duck.ico"
+    type="image/x-icon">
+  <link rel="stylesheet" href="styles/styletst_2.css">
+  <title>Calculadora de média de notas</title>
 </head>
+
 <body class="body">
+
   <header>
+
     <h1>Média de Notas</h1>
+
   </header>
-  
+
   <nav>
+
     <div id="menu">
+
       <p>&#9776;</p>
+
       <div class="theme-toggler">
+
         <i class="toggler-icon"></i>
-        <a href="https://ezequiellsantos.github.io/Projetos/projeto-math/math.html"><img src="https://raw.githubusercontent.com/EzequiellSantos/Projetos/main/projeto-math/Icons-Math/icons8-casa-48.png" alt="" id="img-home"></a>
+
+        <a href="../projeto-math/math.html">
+
+          <img
+            src="https://raw.githubusercontent.com/EzequiellSantos/Projetos/main/projeto-math/Icons-Math/icons8-casa-48.png"
+            alt="imagem-casa" id="img-home">
+
+        </a>
+
       </div>
+
     </div>
+
   </nav>
 
   <section class="calculadora">
 
     <form>
+
       <input type="number" id="noteInput" placeholder="Digite a nota aqui">
+
       <button type="button" id="addNote">Adicionar nota</button>
+
     </form>
 
     <ul id="notes"></ul>
 
     <div class="text">
+
       <p>Média: <span id="average"></span></p>
+
     </div>
 
   </section>
 
   <div id="reload">
+
     <button class="edit" id="reset" onclick="reload ()">Limpar</button>
+
   </div>
 
   <footer>
-    <p>&copy; Redes de Computadores
-</p>
+
+    <p>&copy; Redes de Computadores</p>
+
   </footer>
 
   <script src="script.js"></script>
-</body>
-</html>
 
+</body>
+
+</html>

@@ -58,7 +58,7 @@ function renderNotes() {
 
     const editButton = document.createElement("button");
     editButton.setAttribute('class', 'edit')
-    editButton.innerHTML ='<img src="editar.png">' ;
+    editButton.innerHTML ='<img src="imagens/editar.png">' ;
     //criação do botão de editas
     
     editButton.addEventListener("click", () => {
@@ -71,7 +71,7 @@ function renderNotes() {
 
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute('class', 'delet')
-    deleteButton.innerHTML= '<img src="excluir.png">';
+    deleteButton.innerHTML= '<img src="imagens/excluir.png">';
     //criação do botão de deletar
 
     deleteButton.addEventListener("click", () => {
