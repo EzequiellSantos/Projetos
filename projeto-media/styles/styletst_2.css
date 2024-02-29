@@ -6,20 +6,22 @@
     margin: 0;
 }
 
+* .light{
+    color: #000;
+}
+
 #menu::selection{
     background-color: transparent;
 }
 
 body{
+    height: 100vh;
     background-color: #303030;
     color: white;
     font-family: 'Nunito', sans-serif;
     margin: 0 10px 0 10px;
 
-    background-image: url('https://i.pinimg.com/564x/45/9d/6c/459d6c31240f92be6998b2982fc57b66.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    /* background-image: url('https://i.pinimg.com/564x/45/9d/6c/459d6c31240f92be6998b2982fc57b66.jpg'); */
     
 }
 
@@ -28,14 +30,16 @@ body img{
 }
 
 .body.light{
-    background-image: url('https://i.pinimg.com/564x/d9/4c/ce/d94ccec65977f51e6e02e20061f76f3b.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+/*     background-image: url('https://i.pinimg.com/564x/d9/4c/ce/d94ccec65977f51e6e02e20061f76f3b.jpg'); */
+    background-image: linear-gradient(120deg, #f5f7fa, #d6d6d6);
 }
 
 .body.light > header{
     border: 1px solid rgba(228, 228, 228, 0.836);
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.11);
+    transition: all 0.5s ease-in-out;
+    backdrop-filter: blur(12px);
+    color: black;
 }
 
 .body.light > footer{
@@ -55,10 +59,12 @@ header{
     border-radius: 30px;
     margin-bottom: 50px;
     margin-top: 15px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(68, 68, 68, 0.863);
+    border: 1px solid #747474;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
-
 
 input{
     display: block;
@@ -83,8 +89,7 @@ form{
 .calculadora{
     margin-top: 80px;
     margin: auto;
-    display: block;
-    border: 1px solid #444;
+    border: 1px solid #747474;
     max-width: 600px;
     padding: 50px;
     border-radius: 15px;
@@ -93,7 +98,6 @@ form{
 
 }
 .calculadora.light {
-    /* background-color: #ffffffdb; */
     border: 1px solid rgba(228, 228, 228, 0.836);
     box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.212);
     transition: all 0.5s ease-in-out;
@@ -102,7 +106,7 @@ form{
 }
 
 .calculadora.light div.text{
-    background-color: rgba(243, 243, 243, 0.726);
+    background-color: rgba(255, 255, 255, 0.726);
     transition: all 0.6s ease-in;
 }
 
@@ -117,8 +121,11 @@ form{
 }
 
 .calculadora.light ul#notes{
-    color: white;
-    text-shadow: 1.5px 2px 3px rgba(0, 0, 0, 0.692);
+    color: #000;
+}
+
+.calculadora.light header{
+    border: 0.05em solid black;
 }
 
 #menu{
@@ -132,13 +139,19 @@ form{
     /*background-color: #444444cc;*/
     padding: 1px 1px 5px 15px;
     border-radius: 10px 10px;
+    border: 0.05em solid #44444459;
     transition: all 0.5s ease-in;
-    cursor: pointer;
     backdrop-filter: blur(15px);
+}
+
+#menu .light{
+    border: 0.05em solid #eeeeeecc;
 }
 
 #menu p{
     width: 30px;
+    margin-bottom: 2px;
+    margin-right: -3px;
 }
 
 #menu:active .theme-toggler{
@@ -150,7 +163,6 @@ form{
     top: 30px;
     right: 30px; 
     color: #fff;
-    cursor: pointer;
     z-index: 1;
     transition: all 0.5s ease-in;
     display: none;
@@ -209,7 +221,7 @@ img#img-home{
     background-color: rgb(122, 155, 197);
     border: 1px solid rgb(122, 155, 197);
     border-radius: 7px;
-    margin: 30px 3px 20px 7px;
+    margin: 30px 3px 20px 0px;
     color: white;
 }
 
@@ -272,7 +284,7 @@ img#img-home{
     border-radius: 10px;
     padding: 1px 3px 8px 7px;
     margin: 15px 0px 7px 0px;
-    max-width: 100px;
+    max-width: 110px;
     background-color: rgba(240, 248, 255, 0.158);
 }
 

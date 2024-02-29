@@ -1,6 +1,6 @@
-window.addEventListener('scroll', function () {
+/* window.addEventListener('scroll', function () {
   
-  /* section fixada no topo */
+   section fixada no topo 
   var section = document.querySelector('.fixed-section');
   var sectionOffset = section.offsetTop;
   var scrollPosition = window.scrollY;
@@ -15,7 +15,7 @@ window.addEventListener('scroll', function () {
 
   }
 
-});
+}); */
 
 
 /* Configurações Menu */
