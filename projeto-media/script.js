@@ -105,7 +105,7 @@ menu.onclick = () =>{
 }
 
 
-//ocultando o dark theme
+//ocultando o toggle theme
 document.addEventListener('click', function(evento) {
   const clicadoDentroDoElemento = menu.contains(evento.target)
 
@@ -120,13 +120,37 @@ document.addEventListener('click', function(evento) {
 //mudando o tema da calculadora
 let isLight = true
 
-themeToggleBtn.onclick = () => {
-  bodyy.classList.toggle("light")
-  calculadora.classList.toggle("light")
-  themeToggleBtn.classList.toggle("active")
-  toggleIcon.classList.toggle("active")
-  isLight = !isLight  
-}
+//pre configurando o tema escolhido pelo usuário
+document.addEventListener('DOMContentLoaded', function(){
+
+  const temaPreferido = localStorage.getItem('tema-preferido') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+
+  aplicarTema(temaPreferido)
+
+  themeToggleBtn.onclick = () => {
+
+    let novoTema = bodyy.dataset.tema === 'dark'? 'light': 'dark'
+    aplicarTema(novoTema)
+    localStorage.setItem('tema-preferido', novoTema)
+  
+
+  
+  }
+
+  function aplicarTema(tema){
+
+    bodyy.classList.remove('1dark','light')
+
+    bodyy.classList.add(`${tema}`)
+    calculadora.classList.add(`${tema}`)
+    themeToggleBtn.classList.toggle("active")
+    toggleIcon.classList.toggle("active")
+
+    bodyy.dataset.tema = tema
+
+  }
+
+})
 
 //botão limpar
 function reload(){
