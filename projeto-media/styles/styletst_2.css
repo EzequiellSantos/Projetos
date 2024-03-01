@@ -152,7 +152,7 @@ input:focus{
     display: none;
 }
 
-.theme-toggler::before{
+.body.dark .theme-toggler::before{
     content: "";
     height: 10px;
     width: 22px;
@@ -167,7 +167,7 @@ input:focus{
     transition: all 0.5s;
 }
 
-.toggler-icon::after{
+.body.dark .toggler-icon::after{
     content: "";
     position: absolute;
     height: 11.4px;
@@ -181,13 +181,32 @@ input:focus{
     transition: all 0.5s;
 }
 
-.theme-toggler.active::before{
+.body.light .theme-toggler::before{
+    content: "";
+    height: 10px;
+    width: 22px;
+    position: absolute; 
+    top: 21px;
+    right: -24px;
+    transform: rotate(-40deg);
+    border-radius: 0 0 100px 100px;
+    overflow: hidden;
     background-color: rgb(255, 255, 255);
+    z-index: 1;
     transition: all 0.5s;
 }
 
-.toggler-icon.active::after{
+.body.light .toggler-icon::after{
+    content: "";
+    position: absolute;
+    height: 11.4px;
+    width: 22px;
+    top: 13px;
+    right: -18px;
+    transform: rotate(140deg);
+    border-radius: 0 0 100px 100px;
     background-color: rgba(97, 123, 145, 0.877);
+    z-index: 1;
     transition: all 0.5s;
 }
 

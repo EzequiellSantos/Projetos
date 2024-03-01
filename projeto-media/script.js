@@ -132,19 +132,16 @@ document.addEventListener('DOMContentLoaded', function(){
     let novoTema = bodyy.dataset.tema === 'dark'? 'light': 'dark'
     aplicarTema(novoTema)
     localStorage.setItem('tema-preferido', novoTema)
-  
 
   
   }
 
   function aplicarTema(tema){
 
-    bodyy.classList.remove('1dark','light')
+    bodyy.classList.remove('dark','light')
 
     bodyy.classList.add(`${tema}`)
     calculadora.classList.add(`${tema}`)
-    themeToggleBtn.classList.toggle("active")
-    toggleIcon.classList.toggle("active")
 
     bodyy.dataset.tema = tema
 
