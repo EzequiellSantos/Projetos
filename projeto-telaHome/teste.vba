@@ -38,22 +38,22 @@ Sub TransferirDadosParaEquipes()
     
     ' Transferir os dados para a Equipe 2
     For i = 12 To 112
-        If Not IsEmpty(wsEquipes.Cells(i, 8).Value) Then
-            wsEquipes.Cells(DestRowEquipe2, 8).Value = wsEquipes.Cells(i, 8).Value ' ID
-            wsEquipes.Cells(DestRowEquipe2, 9).Value = wsEquipes.Cells(i, 9).Value ' Nome
-            wsEquipes.Cells(DestRowEquipe2, 10).Value = wsEquipes.Cells(i, 10).Value ' Quantidade
-            wsEquipes.Cells(DestRowEquipe2, 11).Value = wsEquipes.Cells(i, 11).Value ' Data
+        If Not IsEmpty(wsEquipes.Cells(i, 9).Value) Then
+            wsEquipes.Cells(DestRowEquipe2, 9).Value = wsEquipes.Cells(i, 9).Value ' ID
+            wsEquipes.Cells(DestRowEquipe2, 10).Value = wsEquipes.Cells(i, 10).Value ' Nome
+            wsEquipes.Cells(DestRowEquipe2, 11).Value = wsEquipes.Cells(i, 11).Value ' Quantidade
+            wsEquipes.Cells(DestRowEquipe2, 12).Value = wsEquipes.Cells(i, 12).Value ' Data
             
             ' Calcular a porcentagem de Uso
-            If wsEquipes.Cells(i, 10).Value <> 0 Then
-                UsoPercent = (wsEquipes.Cells(i, 12).Value / wsEquipes.Cells(i, 10).Value) * 100
+            If wsEquipes.Cells(i, 11).Value <> 0 Then
+                UsoPercent = (wsEquipes.Cells(i, 13).Value / wsEquipes.Cells(i, 11).Value) * 100
                 If UsoPercent = 0 Then
-                    wsEquipes.Cells(DestRowEquipe2, 12).ClearContents
+                    wsEquipes.Cells(DestRowEquipe2, 13).ClearContents
                 Else
-                    wsEquipes.Cells(DestRowEquipe2, 12).Value = UsoPercent
+                    wsEquipes.Cells(DestRowEquipe2, 13).Value = UsoPercent
                 End If
             Else
-                wsEquipes.Cells(DestRowEquipe2, 12).ClearContents
+                wsEquipes.Cells(DestRowEquipe2, 13).ClearContents
             End If
             
             DestRowEquipe2 = DestRowEquipe2 + 1
