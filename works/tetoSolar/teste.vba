@@ -178,10 +178,14 @@ Sub TransferirDadosParaEquipes()
     Next i
 
     'Limpar os dados originais da Equipe 1 e Equipe 2
-    'For i = 12 To 112
-    '    wsEquipes.Range("A" & i & ":F" & i).ClearContents
-    '    wsEquipes.Range("H" & i & ":N" & i).ClearContents
-    'Next i
+    For i = 12 To 112
+        wsEquipes.Range("A" & i & ":F" & i).ClearContents
+        wsEquipes.Range("I" & i & ":N" & i).ClearContents
+        wsEquipes.Range("Q" & i & ":V" & i).ClearContents
+        wsEquipes.Range("Y" & i & ":AD" & i).ClearContents
+        wsEquipes.Range("AG" & i & ":AL" & i).ClearContents
+        wsEquipes.Range("AO" & i & ":AT" & i).ClearContents
+    Next i
 
 End Sub
 
