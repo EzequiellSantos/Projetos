@@ -14,10 +14,7 @@ Set wsBackEnd = ThisWorkbook.Sheets("Back-end")
 Sub FinalizarSemanaEntradas()
 
     coletarCompras
-    coletarCaminhaoVerm
-    coletarCaminhaoAzul
-    coletarCatalogoMarc
-    coletarCatalogoClev
+    LimparIntervalos
 
 
 End Sub
@@ -42,7 +39,7 @@ Sub coletarCompras()
 
             End If
 
-            ThisWorkbook.Sheets("Entradas").Cells(e, 1).ClearContents
+            
 
         Next e
 
@@ -71,7 +68,7 @@ Sub coletarCaminhaoVerm()
 
             End If
 
-            ThisWorkbook.Sheets("Entradas").Cells(e, 1).ClearContents
+            
 
         Next e
 
@@ -100,7 +97,7 @@ Sub coletarCaminhaoAzul()
 
             End If
 
-            ThisWorkbook.Sheets("Entradas").Cells(e, 1).ClearContents
+            
 
         Next e
 
@@ -129,7 +126,7 @@ Sub coletarCatalogoClev()
 
             End If
 
-            ThisWorkbook.Sheets("Entradas").Cells(e, 1).ClearContents
+            
 
         Next e
 
@@ -158,11 +155,25 @@ Sub coletarCatalogoMarc()
 
             End If
 
-            ThisWorkbook.Sheets("Entradas").Cells(e, 1).ClearContents
+            
 
         Next e
 
             
     Next i
 
+End Sub
+
+Sub LimparIntervalos()
+    Dim rng1 As Range, rgn2 As Range
+    
+
+    ' Define os intervalos especificados na planilha Saidas
+    Set rng1 = Sheets("Entradas").Range("A9:A109,A115:A215,A221:A321,A327:A427,A433:A533") ' coluna A
+    Set rng2 = Sheets("Entradas").Range("C9:C109,C115:C215,C221:C321,C327:C427,C433:C533") ' coluna C
+
+    ' Limpa os intervalos
+    rng1.ClearContents
+    rng2.ClearContents
+  
 End Sub
