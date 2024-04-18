@@ -1,11 +1,8 @@
+
+
 'Busca de produtos da tabela de entrada
 Sub BuscarProdutoPorNomeEntradas()
-    Dim Nome As String
-    Dim LastRow As Long
-    Dim i As Long
-    Dim h As Long
-    Dim Quant As Double
-    Dim Valor As Double
+
     
     ' Limpar a tabela de busca na aba "Entradas"
     ThisWorkbook.Sheets("Entradas").Range("H9:K109").ClearContents
@@ -17,18 +14,18 @@ Sub BuscarProdutoPorNomeEntradas()
         Nome = "#GT$"
     End If
     
-    ' Buscar os produtos com o mesmo nome na tabela "Estoque"
-    LastRow = ThisWorkbook.Sheets("Estoque").Cells(ThisWorkbook.Sheets("Estoque").Rows.Count, "B").End(xlUp).Row
+    ' Buscar os produtos com o mesmo nome na tabela "Back-end"
+    LastRow = 1022
     
     h = 9 ' Linha inicial na tabela "Entradas"
     
-    For i = 9 To LastRow ' Começar a busca a partir da célula H9
-        If InStr(1, ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
+    For i = 822 To LastRow ' Começar a busca a partir da célula H9
+        If InStr(1, ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Entradas
-            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 1).Value ' Código
-            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value ' Nome
-            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 3).Value ' fornecedor
-            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 4).Value ' quantidade
+            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 28).Value ' Código
+            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value ' Nome
+            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 31).Value ' fornecedor
+            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 34).Value ' quantidade
             
             If h <= 109 Then
                 h = h + 1
@@ -52,14 +49,7 @@ Sub BuscarProdutoPorNomeEntradas()
 End Sub
 
 Sub BuscarProdutoPorNomeEntradasTwo()
-    Dim Nome As String
-    Dim LastRow As Long
-    Dim i As Long
-    Dim h As Long
-    Dim Quant As Double
-    Dim Valor As Double
-    Dim ProdutoEncontrado As Boolean
-    
+
     ' Limpar a tabela de busca na aba "Entradas"
     ThisWorkbook.Sheets("Entradas").Range("H115:K215").ClearContents
     
@@ -70,19 +60,19 @@ Sub BuscarProdutoPorNomeEntradasTwo()
         Nome = "#GT$"
     End If
     
-    ' Buscar os produtos com o mesmo nome na tabela "Estoque"
-    LastRow = ThisWorkbook.Sheets("Estoque").Cells(ThisWorkbook.Sheets("Estoque").Rows.Count, "B").End(xlUp).Row
+    ' Buscar os produtos com o mesmo nome na tabela "Back-end"
+    LastRow = 1022
     
     h = 115 ' Linha inicial na tabela "Entradas"
     ProdutoEncontrado = False ' Flag para verificar se o produto foi encontrado
     
-    For i = 1 To LastRow ' Começar a busca a partir da primeira linha da tabela "Estoque"
-        If InStr(1, ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
+    For i = 822 To LastRow ' Começar a busca a partir da primeira linha da tabela "Back-end"
+        If InStr(1, ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Entradas"
-            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 1).Value ' Código
-            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value ' Nome
-            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 3).Value ' fornecedor
-            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 4).Value ' quantidade
+            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 28).Value ' Código
+            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value ' Nome
+            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 31).Value ' fornecedor
+            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 34).Value ' quantidade
             
             ProdutoEncontrado = True ' Define a flag como verdadeira
             
@@ -101,13 +91,6 @@ Sub BuscarProdutoPorNomeEntradasTwo()
 End Sub
 
 Sub BuscarProdutoPorNomeEntradasThre()
-    Dim Nome As String
-    Dim LastRow As Long
-    Dim i As Long
-    Dim h As Long
-    Dim Quant As Double
-    Dim Valor As Double
-    Dim ProdutoEncontrado As Boolean
     
     ' Limpar a tabela de busca na aba "Entradas"
     ThisWorkbook.Sheets("Entradas").Range("H221:K321").ClearContents
@@ -119,19 +102,19 @@ Sub BuscarProdutoPorNomeEntradasThre()
         Nome = "#GT$"
     End If
     
-    ' Buscar os produtos com o mesmo nome na tabela "Estoque"
-    LastRow = ThisWorkbook.Sheets("Estoque").Cells(ThisWorkbook.Sheets("Estoque").Rows.Count, "B").End(xlUp).Row
+    ' Buscar os produtos com o mesmo nome na tabela "Back-end"
+    LastRow = 1022
     
     h = 221 ' Linha inicial na tabela "Entradas"
     ProdutoEncontrado = False ' Flag para verificar se o produto foi encontrado
     
-    For i = 1 To LastRow ' Começar a busca a partir da primeira linha da tabela "Estoque"
-        If InStr(1, ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
+    For i = 822 To LastRow ' Começar a busca a partir da primeira linha da tabela "Back-end"
+        If InStr(1, ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Entradas"
-            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 1).Value ' Código
-            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value ' Nome
-            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 3).Value ' fornecedor
-            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 4).Value ' quantidade
+            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 28).Value ' Código
+            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value ' Nome
+            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 31).Value ' fornecedor
+            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 34).Value ' quantidade
             
             ProdutoEncontrado = True ' Define a flag como verdadeira
             
@@ -150,13 +133,6 @@ Sub BuscarProdutoPorNomeEntradasThre()
 End Sub
 
 Sub BuscarProdutoPorNomeEntradasFour()
-    Dim Nome As String
-    Dim LastRow As Long
-    Dim i As Long
-    Dim h As Long
-    Dim Quant As Double
-    Dim Valor As Double
-    Dim ProdutoEncontrado As Boolean
     
     ' Limpar a tabela de busca na aba "Entradas"
     ThisWorkbook.Sheets("Entradas").Range("H327:K427").ClearContents
@@ -168,19 +144,19 @@ Sub BuscarProdutoPorNomeEntradasFour()
         Nome = "#GT$"
     End If
     
-    ' Buscar os produtos com o mesmo nome na tabela "Estoque"
-    LastRow = ThisWorkbook.Sheets("Estoque").Cells(ThisWorkbook.Sheets("Estoque").Rows.Count, "B").End(xlUp).Row
+    ' Buscar os produtos com o mesmo nome na tabela "Back-end"
+    LastRow = 1022
     
     h = 327 ' Linha inicial na tabela "Entradas"
     ProdutoEncontrado = False ' Flag para verificar se o produto foi encontrado
     
-    For i = 1 To LastRow ' Começar a busca a partir da primeira linha da tabela "Estoque"
-        If InStr(1, ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
+    For i = 822 To LastRow ' Começar a busca a partir da primeira linha da tabela "Back-end"
+        If InStr(1, ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Entradas"
-            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 1).Value ' Código
-            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value ' Nome
-            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 3).Value ' fornecedor
-            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 4).Value ' quantidade
+            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 28).Value ' Código
+            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value ' Nome
+            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 31).Value ' fornecedor
+            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 34).Value ' quantidade
             
             ProdutoEncontrado = True ' Define a flag como verdadeira
             
@@ -199,13 +175,6 @@ Sub BuscarProdutoPorNomeEntradasFour()
 End Sub
 
 Sub BuscarProdutoPorNomeEntradasFive()
-    Dim Nome As String
-    Dim LastRow As Long
-    Dim i As Long
-    Dim h As Long
-    Dim Quant As Double
-    Dim Valor As Double
-    Dim ProdutoEncontrado As Boolean
     
     ' Limpar a tabela de busca na aba "Entradas"
     ThisWorkbook.Sheets("Entradas").Range("H433:K533").ClearContents
@@ -217,19 +186,19 @@ Sub BuscarProdutoPorNomeEntradasFive()
         Nome = "#GT$"
     End If
     
-    ' Buscar os produtos com o mesmo nome na tabela "Estoque"
-    LastRow = ThisWorkbook.Sheets("Estoque").Cells(ThisWorkbook.Sheets("Estoque").Rows.Count, "B").End(xlUp).Row
+    ' Buscar os produtos com o mesmo nome na tabela "Back-end"
+    LastRow = 1022
     
     h = 433 ' Linha inicial na tabela "Entradas"
     ProdutoEncontrado = False ' Flag para verificar se o produto foi encontrado
     
-    For i = 1 To LastRow ' Começar a busca a partir da primeira linha da tabela "Estoque"
-        If InStr(1, ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
+    For i = 822 To LastRow ' Começar a busca a partir da primeira linha da tabela "Back-end"
+        If InStr(1, ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Entradas"
-            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 1).Value ' Código
-            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 2).Value ' Nome
-            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 3).Value ' fornecedor
-            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Estoque").Cells(i, 4).Value ' quantidade
+            ThisWorkbook.Sheets("Entradas").Cells(h, 8).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 28).Value ' Código
+            ThisWorkbook.Sheets("Entradas").Cells(h, 9).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 29).Value ' Nome
+            ThisWorkbook.Sheets("Entradas").Cells(h, 10).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 31).Value ' fornecedor
+            ThisWorkbook.Sheets("Entradas").Cells(h, 11).Value = ThisWorkbook.Sheets("Back-end").Cells(i, 34).Value ' quantidade
             
             ProdutoEncontrado = True ' Define a flag como verdadeira
             
