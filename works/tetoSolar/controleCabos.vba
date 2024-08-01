@@ -23,14 +23,18 @@ Sub EnviarDados()
     LastRow = ThisWorkbook.Sheets("Cabos").Cells(ThisWorkbook.Sheets("Cabos").Rows.Count, "A").End(xlUp).Row
     
     ProdutoEncontrado = False
+
+    ' SETTINGS FOR CALC
     
-    For i = 1 To LastRow
-        If ThisWorkbook.Sheets("Cabos").Cells(i, 1).Value = Cod And ThisWorkbook.Sheets("Cabos").Cells(i, 2).Value = Nome Then
-            ThisWorkbook.Sheets("Cabos").Cells(i, 4).Value = ThisWorkbook.Sheets("Cabos").Cells(i, 4).Value - Quant ' remover a nova quantidade à quantidade atual
-            ProdutoEncontrado = True
-            Exit For
-        End If
-    Next i
+    'For i = 1 To LastRow
+    '    If ThisWorkbook.Sheets("Cabos").Cells(i, 1).Value = Cod And ThisWorkbook.Sheets("Cabos").Cells(i, 2).Value = Nome 'Then
+    '        ThisWorkbook.Sheets("Cabos").Cells(i, 3).Value = ThisWorkbook.Sheets("Cabos").Cells(i, 3).Value - Quant ' remover a nova quantidade à quantidade atual
+    '        ProdutoEncontrado = True
+    '        Exit For
+    '    End If
+    'Next i
+
+    ' SETTINGS FOR REGISTER
     
     '      Adicionar o registro na tabela "Registros"
     'LastRow = ThisWorkbook.Sheets("Registros").Cells(ThisWorkbook.Sheets("Registros").Rows.Count, "G").End(xlUp).Row + 1
@@ -149,7 +153,7 @@ Sub BuscarProdutoPorNome()
     
     a = 14 ' Linha inicial na tabela "Movimentos"
     
-    For i = 14 To LastRow ' Começar a busca a partir da célula B4
+    For i = 2 To LastRow ' Começar a busca a partir da célula B4
         If InStr(1, ThisWorkbook.Sheets("Cabos").Cells(i, 2).Value, Nome, vbTextCompare) > 0 Then
             ' Preencher os dados na tabela "Movimentos"
             ThisWorkbook.Sheets("Movimentos").Cells(a, 1).Value = ThisWorkbook.Sheets("Cabos").Cells(i, 1).Value ' Código
