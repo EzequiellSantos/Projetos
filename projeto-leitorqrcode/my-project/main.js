@@ -3,6 +3,8 @@ import { Html5QrcodeScanner } from "html5-qrcode";
 document.getElementById('startButton').addEventListener('click', function() {
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         document.getElementById('qrResult').value = decodedText;
+        console.log("Lido :))")
+        document.getElementById("codeSaved").innerHTML += ` code:${decodedText} `
     };
 
     const qrCodeErrorCallback = (errorMessage) => {
@@ -10,8 +12,8 @@ document.getElementById('startButton').addEventListener('click', function() {
     };
 
     const config = { 
-        fps: 10, 
-        qrbox: { width: 250, height: 250 },
+        fps: 1, 
+        qrbox: { width: window.innerWidth / 100 * 40, height: 150 },
         experimentalFeatures: {
             useBarCodeDetectorIfSupported: true
         },

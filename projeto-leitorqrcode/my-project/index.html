@@ -1,19 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Scanner</title>
     <style>
-        input{
-            margin-top: 100px;
+
+        button#startButton{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
         }
+
+        input{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            margin: auto;
+        }
+
+        p{
+            display: block;
+            margin: auto;
+            text-align: center;
+            max-width: 100px;
+            margin-top: 143px;
+        }
+
+        div#reader{
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            min-width: 300px;
+        }
+        
+        video{
+            width: 88%;
+            
+        }
+
+        div > button {
+            border: none;
+            background-color: aquamarine;
+        }
+
     </style>
 </head>
 <body>
     <button id="startButton">Ler QR Code</button>
-    <div id="reader" style="width:300px; height:300px;"></div>
+    <div id="reader"></div>
     <input type="text" id="qrResult" readonly>
+    <p id="codeSaved">teste</p>
 
     <script defer type="module" src="./main.js"></script>
 </body>
