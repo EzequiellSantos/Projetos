@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Scanner</title>
+    <style>
+        input{
+            margin-top: 100px;
+        }
+    </style>
 </head>
 <body>
     <button id="startButton">Ler QR Code</button>
-    <video id="video" width="640" height="480" autoplay></video>
     <div id="reader" style="width:300px; height:300px;"></div>
     <input type="text" id="qrResult" readonly>
 
     <script defer type="module" src="./main.js"></script>
 </body>
 </html>
-
