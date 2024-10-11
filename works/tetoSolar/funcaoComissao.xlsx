@@ -1,0 +1,16 @@
+// função para calcular a soma da venda de 3 vendedores com base em suas taxas de lucros em 1 mês
+
+= (SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Luiz"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO") +
+
+SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Luiz"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO 50%")) *
+PROCV("Luiz"; DADOS!$M$2:$N$700; 2; FALSO) +
+
+(SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Andreza"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO") +
+
+SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Andreza"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO 50%")) *
+0,015 +
+
+(SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Ítalo"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO") +
+
+SOMASES('A receber'!$D$2:$D$700; 'A receber'!$L$2:$L$700; "Ítalo"; 'A receber'!$B$2:$B$700; ">=" & $A2; 'A receber'!$B$2:$B$700; "<" & DATA(ANO($A2); MÊS($A2) + 1; 1); 'A receber'!$M$2:$M$700; "PAGO 50%")) *
+0,015
