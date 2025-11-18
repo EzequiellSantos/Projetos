@@ -1,13 +1,12 @@
-alert("Script carregado com sucesso!");
-
-google.charts.load("current", { packages: ["timeline"] });
-google.charts.setOnLoadCallback(loadData);
+// ============================
+// LEITURA DO CSV
+// ============================
 
 async function loadData() {
     const response = await fetch("./dados.csv");
     const text = await response.text();
 
-    console.log("Dados CSV carregados:", text);
+    console.log("CSV carregado:", text);
 
     const rows = text
         .trim()
@@ -15,7 +14,9 @@ async function loadData() {
         .slice(1) // remove header
         .map(line => {
             const [id, nome, resp, inicio, fim, status, categoria, prioridade] = line.split(";");
+
             return {
+                id,
                 nome,
                 resp,
                 inicio: parseDateBR(inicio),
@@ -26,30 +27,84 @@ async function loadData() {
             };
         });
 
-    drawTimeline(rows);
+    createGantt(rows);
 }
+
+
+// ============================
+// CONVERSÃO DE DATA BR
+// ============================
 
 function parseDateBR(dateStr) {
-    const [dia, mes, ano] = dateStr.split("/");
-    return new Date(`${ano}-${mes}-${dia}`);
+    const [dia, mes, ano] = dateStr.trim().split("/");
+    return `${ano}-${mes}-${dia}`;
+    // Frappe Gantt aceita string yyyy-mm-dd 👍
 }
 
-function drawTimeline(data) {
-    const container = document.getElementById("timeline");
-    const chart = new google.visualization.Timeline(container);
-    const chartData = new google.visualization.DataTable();
 
-    chartData.addColumn({ type: 'string', id: 'Responsavel' });
-    chartData.addColumn({ type: 'string', id: 'Projeto' });
-    chartData.addColumn({ type: 'date', id: 'Start' });
-    chartData.addColumn({ type: 'date', id: 'End' });
+// ============================
+// CRIAÇÃO DO GANTT (FRAPPE GANTT)
+// ============================
 
-    data.forEach(p => {
-        chartData.addRow([p.resp, `${p.nome} (${p.status})`, p.inicio, p.fim]);
-    });
+function createGantt(data) {
 
-    chart.draw(chartData, {
-        timeline: { showRowLabels: true },
-        height: data.length * 60,
+    // Converter seus dados em tarefas do Frappe Gantt
+    const tasks = data.map((p, index) => ({
+        id: `task-${index}`,
+        name: `${p.nome} (${p.status})`,
+        start: p.inicio,
+        end: p.fim,
+        progress: getProgressByStatus(p.status),
+        custom_class: getClassByStatus(p.status)
+    }));
+
+    console.log("Tasks para o Frappe Gantt:", tasks);
+
+    new Gantt("#gantt", tasks, {
+        view_mode: "Month",
+        bar_height: 25,
+        padding: 18,
+        bar_corner_radius: 7,
+        custom_popup_html: task => {
+            return `
+                <div class="details-popup">
+                    <h4>${task.name}</h4>
+                    <p><strong>Início:</strong> ${task.start}</p>
+                    <p><strong>Fim:</strong> ${task.end}</p>
+                </div>
+            `;
+        }
     });
 }
+
+
+// ============================
+// DEFINIR CORES POR STATUS
+// ============================
+
+function getClassByStatus(status) {
+    status = status.toLowerCase();
+
+    if (status.includes("concl")) return "task-status-concluido";
+    if (status.includes("andamento")) return "task-status-andamento";
+    if (status.includes("planejado")) return "task-status-planejado";
+    if (status.includes("risco")) return "task-status-risco";
+    if (status.includes("atrasado")) return "task-status-atrasado";
+
+    return "task-status-outros";
+}
+
+// Progresso visual opcional
+function getProgressByStatus(status) {
+    status = status.toLowerCase();
+    if (status.includes("concl")) return 100;
+    if (status.includes("andamento")) return 50;
+    return 20;
+}
+
+
+// ============================
+// INICIAR
+// ============================
+
+loadData();

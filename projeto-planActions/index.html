@@ -7,9 +7,8 @@
     <title>Project Timeline Hub</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/frappe-gantt/dist/frappe-gantt.css">
 
-    <!-- Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -19,10 +18,11 @@
     </header>
 
     <main>
-        <section id="timeline"></section>
+        <div id="gantt"></div>
     </main>
 
-    <script src="script.js"></script>
+    <script defer src="https://unpkg.com/frappe-gantt/dist/frappe-gantt.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
 
 </html>
