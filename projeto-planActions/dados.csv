@@ -3,4 +3,3 @@ id;nome;resp;inicio;fim;status;categoria;prioridade
 2;Projeto B;Joao;30/05/2025;14/12/2025;Em Andamento;organizacional;critico
 3;Projeto C;Maria;30/05/2025;12/12/2026;Pendente;tecnologica;baixa
 4;Projeto D;Carlos;30/12/2025;01/01/2026;A iniciar;risco;media
-;;;;;;;

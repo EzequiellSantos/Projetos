@@ -2,6 +2,7 @@
 // LEITURA DO CSV
 // ============================
 
+
 async function loadData() {
     const response = await fetch("./dados.csv");
     const text = await response.text();
