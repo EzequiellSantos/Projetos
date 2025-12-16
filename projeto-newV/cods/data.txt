@@ -1,0 +1,5 @@
+C U(çí u): vida=50, vitorias=0, distancia=548, dano=0
+Cool: vida=0, vitorias=0, distancia=154, dano=0
+Jeboia: vida=50, vitorias=1, distancia=293, dano=110
+Killer: vida=0, vitorias=1, distancia=184, dano=100
+Mambira: vida=0, vitorias=0, distancia=138, dano=60
