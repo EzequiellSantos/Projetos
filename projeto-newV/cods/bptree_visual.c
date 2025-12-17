@@ -33,6 +33,30 @@ typedef struct {
     int screen_height;
 } TreeVisualizer;
 
+// DECLARAÇÕES DE FUNÇÕES (tudo no início do arquivo)
+static TreeVisualizer* visualizer_create(int screen_width, int screen_height);
+static void visualizer_add_node(TreeVisualizer *tv, VisualNode *node);
+static void visualizer_free(TreeVisualizer *tv);
+static int calculate_tree_depth(BPTreeNode *node, int current_depth);
+static int calculate_node_width(BPTreeNode *node);
+static int calculate_node_height(BPTreeNode *node);
+static void draw_char(int y, int x, int ch);
+static void draw_tree_node(VisualNode *vn, RankingCriterio criterio, int ranking_position);
+static void draw_tree_connections(TreeVisualizer *tv);
+static int find_ranking_position(const char *name, RankingEntry *ranking, int count, RankingCriterio criterio);
+static void collect_nodes(BPTreeNode *node, VisualNode *parent, int child_idx, 
+                          int level, TreeVisualizer *tv, int x, int y, int x_spacing, 
+                          int max_screen_width);
+static void layout_tree_nodes(BPTreeNode *node, VisualNode *parent, int child_idx,
+                             int level, TreeVisualizer *tv, int screen_width, int screen_height);
+static bool tree_fits_screen(TreeVisualizer *tv, int screen_width, int screen_height);
+static int contar_nos_arvore(BPTreeNode *node);
+static int contar_folhas(BPTreeNode *node);
+void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio);
+void mostrar_arvore_com_scroll(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio);
+void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio);
+void mostrar_menu_arvore_ranking(BPTree *tree);
+
 // Funções auxiliares para a visualização
 static TreeVisualizer* visualizer_create(int screen_width, int screen_height) {
     TreeVisualizer *tv = malloc(sizeof(TreeVisualizer));
@@ -80,7 +104,33 @@ static int calculate_tree_depth(BPTreeNode *node, int current_depth) {
     return max_depth;
 }
 
-// Coletar nós para visualização
+// Função auxiliar para calcular a largura necessária para um nó
+static int calculate_node_width(BPTreeNode *node) {
+    if (!node) return 20;
+    
+    // Calcular largura baseada no conteúdo
+    int max_key_len = 0;
+    for (int i = 0; i < node->num_keys; i++) {
+        if (node->keys[i]) {
+            int len = strlen(node->keys[i]);
+            if (len > max_key_len) max_key_len = len;
+        }
+    }
+    
+    // Largura mínima para bordas e espaçamento
+    int min_width = 15;
+    int calculated_width = 15 + (max_key_len * 2);
+    
+    return (calculated_width > min_width) ? calculated_width : min_width;
+}
+
+// Função auxiliar para calcular a altura necessária para um nó
+static int calculate_node_height(BPTreeNode *node) {
+    if (!node) return 4;
+    return 3 + node->num_keys; // Linha do título + 1 linha por chave
+}
+
+// Coletar nós para visualização COM LAYOUT MELHORADO
 static void collect_nodes(BPTreeNode *node, VisualNode *parent, int child_idx, 
                           int level, TreeVisualizer *tv, int x, int y, int x_spacing, 
                           int max_screen_width) {
@@ -167,32 +217,6 @@ static void collect_nodes(BPTreeNode *node, VisualNode *parent, int child_idx,
             }
         }
     }
-}
-
-// Função auxiliar para calcular a altura necessária para um nó
-static int calculate_node_height(BPTreeNode *node) {
-    if (!node) return 4;
-    return 3 + node->num_keys; // Linha do título + 1 linha por chave
-}
-
-// Função auxiliar para calcular a largura necessária para um nó
-static int calculate_node_width(BPTreeNode *node) {
-    if (!node) return 20;
-    
-    // Calcular largura baseada no conteúdo
-    int max_key_len = 0;
-    for (int i = 0; i < node->num_keys; i++) {
-        if (node->keys[i]) {
-            int len = strlen(node->keys[i]);
-            if (len > max_key_len) max_key_len = len;
-        }
-    }
-    
-    // Largura mínima para bordas e espaçamento
-    int min_width = 15;
-    int calculated_width = 15 + (max_key_len * 2);
-    
-    return (calculated_width > min_width) ? calculated_width : min_width;
 }
 
 // Funções auxiliares para desenhar caracteres ASCII art
@@ -359,7 +383,108 @@ static int find_ranking_position(const char *name, RankingEntry *ranking, int co
     return -1;
 }
 
-// Função principal para mostrar a árvore B+ real
+// NOVA FUNÇÃO: Layout mais inteligente para árvores pequenas
+static void layout_tree_nodes(BPTreeNode *node, VisualNode *parent, int child_idx,
+                             int level, TreeVisualizer *tv, int screen_width, int screen_height) {
+    if (!node) return;
+    
+    // Calcular dimensões para todos os nós primeiro
+    int total_levels = calculate_tree_depth(node, 0);
+    
+    // Calcular espaçamento vertical
+    int vertical_spacing;
+    if (total_levels <= 3) {
+        vertical_spacing = 12; // Mais espaço para árvores pequenas
+    } else {
+        vertical_spacing = 8;
+    }
+    
+    // Altura máxima baseada na profundidade
+    int max_height_needed = total_levels * vertical_spacing;
+    int start_y;
+    
+    if (max_height_needed < screen_height - 20) {
+        // Árvore cabe confortavelmente
+        start_y = 10;
+    } else {
+        // Árvore muito profunda, começar mais no topo
+        start_y = 5;
+    }
+    
+    // Calcular espaçamento horizontal baseado no nível
+    int root_x = screen_width / 2;
+    
+    // Para árvores pequenas, usar espaçamento mais amplo
+    int base_spacing;
+    if (total_levels <= 2) {
+        base_spacing = screen_width / 3;
+    } else if (total_levels <= 4) {
+        base_spacing = screen_width / 4;
+    } else {
+        base_spacing = screen_width / 6;
+    }
+    
+    // Chamar collect_nodes com parâmetros ajustados
+    collect_nodes(node, parent, child_idx, level, tv, root_x, start_y, 
+                 base_spacing, screen_width);
+}
+
+// Função auxiliar adicional para detectar se a árvore cabe na tela
+static bool tree_fits_screen(TreeVisualizer *tv, int screen_width, int screen_height) {
+    int min_x = screen_width;
+    int max_x = 0;
+    int min_y = screen_height;
+    int max_y = 0;
+    
+    for (int i = 0; i < tv->count; i++) {
+        VisualNode *vn = tv->nodes[i];
+        if (vn->coords.x < min_x) min_x = vn->coords.x;
+        if (vn->coords.x + vn->coords.width > max_x) max_x = vn->coords.x + vn->coords.width;
+        if (vn->coords.y < min_y) min_y = vn->coords.y;
+        if (vn->coords.y + vn->coords.height > max_y) max_y = vn->coords.y + vn->coords.height;
+    }
+    
+    int required_width = max_x - min_x + 20; // +20 para margens
+    int required_height = max_y - min_y + 15; // +15 para margens e título
+    
+    return (required_width <= screen_width && required_height <= screen_height);
+}
+
+// Funções auxiliares para contar nós
+static int contar_nos_arvore(BPTreeNode *node) {
+    if (!node) return 0;
+    
+    int count = 1; // Contar este nó
+    
+    if (!node->is_leaf) {
+        for (int i = 0; i <= node->num_keys; i++) {
+            if (node->children[i]) {
+                count += contar_nos_arvore(node->children[i]);
+            }
+        }
+    }
+    
+    return count;
+}
+
+static int contar_folhas(BPTreeNode *node) {
+    if (!node) return 0;
+    
+    if (node->is_leaf) {
+        return 1;
+    }
+    
+    int count = 0;
+    for (int i = 0; i <= node->num_keys; i++) {
+        if (node->children[i]) {
+            count += contar_folhas(node->children[i]);
+        }
+    }
+    
+    return count;
+}
+
+// Função principal para mostrar a árvore B+ real - VERSÃO CORRIGIDA
 void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio) {
     if (!tree || !tree->root) {
         // Mostrar mensagem se não houver árvore
@@ -494,216 +619,7 @@ void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_
     attrset(A_NORMAL);
 }
 
-
-// Nova função para mostrar menu de visualização da árvore - VERSÃO ATUALIZADA
-void mostrar_menu_arvore_ranking(BPTree *tree) {
-    if (!tree) return;
-    
-    // Carregar dados para ranking
-    RankingEntry *ranking_array = NULL;
-    int count = 0;
-    bool dados_carregados = ler_dados_arquivo("data.txt", &ranking_array, &count);
-    
-    if (!dados_carregados || count == 0) {
-        clear();
-        attrset(A_NORMAL);
-        attron(A_BOLD | COLOR_PAIR(3));
-        mvprintw(10, 20, "Nenhum dado de ranking disponivel!");
-        mvprintw(11, 15, "Jogue algumas partidas para gerar estatisticas");
-        mvprintw(13, 20, "Pressione qualquer tecla para voltar...");
-        attroff(A_BOLD | COLOR_PAIR(3));
-        refresh();
-        getch();
-        return;
-    }
-    
-    RankingCriterio criterio_atual = RANKING_DANO;
-    ordenar_ranking(ranking_array, count, criterio_atual);
-    
-    int sair = 0;
-    
-    while (!sair) {
-        clear();
-        
-        // Verificar tamanho da tela antes de mostrar
-        int screen_height = getmaxy(stdscr);
-        int screen_width = getmaxx(stdscr);
-        
-        if (screen_width < 80 || screen_height < 24) {
-            // Tela muito pequena
-            attron(A_BOLD | COLOR_PAIR(3));
-            mvprintw(5, 10, "Tela muito pequena para visualizar a arvore!");
-            mvprintw(6, 10, "Largura atual: %d (minimo 80)", screen_width);
-            mvprintw(7, 10, "Altura atual: %d (minimo 24)", screen_height);
-            mvprintw(9, 10, "Aumente o tamanho do terminal e tente novamente");
-            attroff(A_BOLD | COLOR_PAIR(3));
-            
-            attron(COLOR_PAIR(5));
-            mvprintw(12, 10, "Pressione ESC para voltar ou R para recarregar...");
-            attroff(COLOR_PAIR(5));
-            
-            refresh();
-            
-            int ch = getch();
-            if (ch == 27) {
-                sair = 1;
-            }
-            // 'r' ou 'R' faz recarregar
-            continue;
-        }
-        
-        // Mostrar a árvore B+ real com verificação de tamanho
-        mostrar_arvore_com_scroll(tree, ranking_array, count, criterio_atual);
-        
-        // Menu de controle na parte superior
-        attrset(A_NORMAL);
-        attron(A_BOLD | COLOR_PAIR(5));
-        mvprintw(0, 2, "+------------------------------------------------------+");
-        mvprintw(1, 2, "|               CONTROLES DA ARVORE B+                |");
-        mvprintw(2, 2, "+------------------------------------------------------+");
-        attroff(A_BOLD | COLOR_PAIR(5));
-        
-        // Opções de critério
-        attrset(A_NORMAL);
-        if (criterio_atual == RANKING_DANO) {
-            attron(COLOR_PAIR(1) | A_REVERSE);
-        } else {
-            attron(COLOR_PAIR(1));
-        }
-        mvprintw(3, 4, " [1] Por Dano ");
-        attroff(COLOR_PAIR(1) | A_REVERSE);
-        
-        attrset(A_NORMAL);
-        if (criterio_atual == RANKING_VITORIAS) {
-            attron(COLOR_PAIR(4) | A_REVERSE);
-        } else {
-            attron(COLOR_PAIR(4));
-        }
-        mvprintw(3, 20, " [2] Por Vitorias ");
-        attroff(COLOR_PAIR(4) | A_REVERSE);
-        
-        attrset(A_NORMAL);
-        if (criterio_atual == RANKING_DISTANCIA) {
-            attron(COLOR_PAIR(2) | A_REVERSE);
-        } else {
-            attron(COLOR_PAIR(2));
-        }
-        mvprintw(3, 40, " [3] Por Distancia ");
-        attroff(COLOR_PAIR(2) | A_REVERSE);
-        
-        attrset(A_NORMAL);
-        attron(COLOR_PAIR(3));
-        mvprintw(3, 60, " [ESC] Voltar ");
-        attroff(COLOR_PAIR(3));
-        
-        attron(COLOR_PAIR(5));
-        mvprintw(4, 2, "+------------------------------------------------------+");
-        attroff(COLOR_PAIR(5));
-        
-        refresh();
-        
-        // Processar input
-        int ch = getch();
-        switch (ch) {
-            case '1':
-                criterio_atual = RANKING_DANO;
-                ordenar_ranking(ranking_array, count, criterio_atual);
-                break;
-                
-            case '2':
-                criterio_atual = RANKING_VITORIAS;
-                ordenar_ranking(ranking_array, count, criterio_atual);
-                break;
-                
-            case '3':
-                criterio_atual = RANKING_DISTANCIA;
-                ordenar_ranking(ranking_array, count, criterio_atual);
-                break;
-                
-            case 27: // ESC
-                sair = 1;
-                break;
-                
-            case 'r':
-            case 'R':
-                // Recarregar (nada a fazer, loop continua)
-                break;
-        }
-    }
-    
-    // Liberar memória
-    liberar_array_ranking(ranking_array);
-    
-    // Resetar atributos ao sair
-    attrset(A_NORMAL);
-}
-
-static void layout_tree_nodes(BPTreeNode *node, VisualNode *parent, int child_idx,
-                             int level, TreeVisualizer *tv, int screen_width, int screen_height) {
-    if (!node) return;
-    
-    // Calcular dimensões para todos os nós primeiro
-    int total_levels = calculate_tree_depth(node, 0);
-    
-    // Calcular espaçamento vertical
-    int vertical_spacing;
-    if (total_levels <= 3) {
-        vertical_spacing = 12; // Mais espaço para árvores pequenas
-    } else {
-        vertical_spacing = 8;
-    }
-    
-    // Altura máxima baseada na profundidade
-    int max_height_needed = total_levels * vertical_spacing;
-    int start_y;
-    
-    if (max_height_needed < screen_height - 20) {
-        // Árvore cabe confortavelmente
-        start_y = 10;
-    } else {
-        // Árvore muito profunda, começar mais no topo
-        start_y = 5;
-    }
-    
-    // Calcular espaçamento horizontal baseado no nível
-    int root_x = screen_width / 2;
-    
-    // Para árvores pequenas, usar espaçamento mais amplo
-    int base_spacing;
-    if (total_levels <= 2) {
-        base_spacing = screen_width / 3;
-    } else if (total_levels <= 4) {
-        base_spacing = screen_width / 4;
-    } else {
-        base_spacing = screen_width / 6;
-    }
-    
-    // Chamar collect_nodes com parâmetros ajustados
-    collect_nodes(node, parent, child_idx, level, tv, root_x, start_y, 
-                 base_spacing, screen_width);
-}
-
-// Função auxiliar adicional para detectar se a árvore cabe na tela
-static bool tree_fits_screen(TreeVisualizer *tv, int screen_width, int screen_height) {
-    int min_x = screen_width;
-    int max_x = 0;
-    int min_y = screen_height;
-    int max_y = 0;
-    
-    for (int i = 0; i < tv->count; i++) {
-        VisualNode *vn = tv->nodes[i];
-        if (vn->coords.x < min_x) min_x = vn->coords.x;
-        if (vn->coords.x + vn->coords.width > max_x) max_x = vn->coords.x + vn->coords.width;
-        if (vn->coords.y < min_y) min_y = vn->coords.y;
-        if (vn->coords.y + vn->coords.height > max_y) max_y = vn->coords.y + vn->coords.height;
-    }
-    
-    int required_width = max_x - min_x + 20; // +20 para margens
-    int required_height = max_y - min_y + 15; // +15 para margens e título
-    
-    return (required_width <= screen_width && required_height <= screen_height);
-}
-
+// Versão alternativa para mostrar árvore com scroll se necessário
 void mostrar_arvore_com_scroll(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio) {
     if (!tree || !tree->root) {
         attrset(A_NORMAL);
@@ -864,36 +780,145 @@ void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int rankin
     getch();
 }
 
-// Funções auxiliares para contar nós
-static int contar_nos_arvore(BPTreeNode *node) {
-    if (!node) return 0;
+// Nova função para mostrar menu de visualização da árvore - VERSÃO ATUALIZADA
+void mostrar_menu_arvore_ranking(BPTree *tree) {
+    if (!tree) return;
     
-    int count = 1; // Contar este nó
-    
-    if (!node->is_leaf) {
-        for (int i = 0; i <= node->num_keys; i++) {
-            if (node->children[i]) {
-                count += contar_nos_arvore(node->children[i]);
-            }
-        }
-    }
-    
-    return count;
-}
-
-static int contar_folhas(BPTreeNode *node) {
-    if (!node) return 0;
-    
-    if (node->is_leaf) {
-        return 1;
-    }
-    
+    // Carregar dados para ranking
+    RankingEntry *ranking_array = NULL;
     int count = 0;
-    for (int i = 0; i <= node->num_keys; i++) {
-        if (node->children[i]) {
-            count += contar_folhas(node->children[i]);
+    bool dados_carregados = ler_dados_arquivo("data.txt", &ranking_array, &count);
+    
+    if (!dados_carregados || count == 0) {
+        clear();
+        attrset(A_NORMAL);
+        attron(A_BOLD | COLOR_PAIR(3));
+        mvprintw(10, 20, "Nenhum dado de ranking disponivel!");
+        mvprintw(11, 15, "Jogue algumas partidas para gerar estatisticas");
+        mvprintw(13, 20, "Pressione qualquer tecla para voltar...");
+        attroff(A_BOLD | COLOR_PAIR(3));
+        refresh();
+        getch();
+        return;
+    }
+    
+    RankingCriterio criterio_atual = RANKING_DANO;
+    ordenar_ranking(ranking_array, count, criterio_atual);
+    
+    int sair = 0;
+    
+    while (!sair) {
+        clear();
+        
+        // Verificar tamanho da tela antes de mostrar
+        int screen_height = getmaxy(stdscr);
+        int screen_width = getmaxx(stdscr);
+        
+        if (screen_width < 80 || screen_height < 24) {
+            // Tela muito pequena
+            attron(A_BOLD | COLOR_PAIR(3));
+            mvprintw(5, 10, "Tela muito pequena para visualizar a arvore!");
+            mvprintw(6, 10, "Largura atual: %d (minimo 80)", screen_width);
+            mvprintw(7, 10, "Altura atual: %d (minimo 24)", screen_height);
+            mvprintw(9, 10, "Aumente o tamanho do terminal e tente novamente");
+            attroff(A_BOLD | COLOR_PAIR(3));
+            
+            attron(COLOR_PAIR(5));
+            mvprintw(12, 10, "Pressione ESC para voltar ou R para recarregar...");
+            attroff(COLOR_PAIR(5));
+            
+            refresh();
+            
+            int ch = getch();
+            if (ch == 27) {
+                sair = 1;
+            }
+            // 'r' ou 'R' faz recarregar
+            continue;
+        }
+        
+        // Mostrar a árvore B+ real com verificação de tamanho
+        mostrar_arvore_com_scroll(tree, ranking_array, count, criterio_atual);
+        
+        // Menu de controle na parte superior
+        attrset(A_NORMAL);
+        attron(A_BOLD | COLOR_PAIR(5));
+        mvprintw(0, 2, "+------------------------------------------------------+");
+        mvprintw(1, 2, "|               CONTROLES DA ARVORE B+                |");
+        mvprintw(2, 2, "+------------------------------------------------------+");
+        attroff(A_BOLD | COLOR_PAIR(5));
+        
+        // Opções de critério
+        attrset(A_NORMAL);
+        if (criterio_atual == RANKING_DANO) {
+            attron(COLOR_PAIR(1) | A_REVERSE);
+        } else {
+            attron(COLOR_PAIR(1));
+        }
+        mvprintw(3, 4, " [1] Por Dano ");
+        attroff(COLOR_PAIR(1) | A_REVERSE);
+        
+        attrset(A_NORMAL);
+        if (criterio_atual == RANKING_VITORIAS) {
+            attron(COLOR_PAIR(4) | A_REVERSE);
+        } else {
+            attron(COLOR_PAIR(4));
+        }
+        mvprintw(3, 20, " [2] Por Vitorias ");
+        attroff(COLOR_PAIR(4) | A_REVERSE);
+        
+        attrset(A_NORMAL);
+        if (criterio_atual == RANKING_DISTANCIA) {
+            attron(COLOR_PAIR(2) | A_REVERSE);
+        } else {
+            attron(COLOR_PAIR(2));
+        }
+        mvprintw(3, 40, " [3] Por Distancia ");
+        attroff(COLOR_PAIR(2) | A_REVERSE);
+        
+        attrset(A_NORMAL);
+        attron(COLOR_PAIR(3));
+        mvprintw(3, 60, " [ESC] Voltar ");
+        attroff(COLOR_PAIR(3));
+        
+        attron(COLOR_PAIR(5));
+        mvprintw(4, 2, "+------------------------------------------------------+");
+        attroff(COLOR_PAIR(5));
+        
+        refresh();
+        
+        // Processar input
+        int ch = getch();
+        switch (ch) {
+            case '1':
+                criterio_atual = RANKING_DANO;
+                ordenar_ranking(ranking_array, count, criterio_atual);
+                break;
+                
+            case '2':
+                criterio_atual = RANKING_VITORIAS;
+                ordenar_ranking(ranking_array, count, criterio_atual);
+                break;
+                
+            case '3':
+                criterio_atual = RANKING_DISTANCIA;
+                ordenar_ranking(ranking_array, count, criterio_atual);
+                break;
+                
+            case 27: // ESC
+                sair = 1;
+                break;
+                
+            case 'r':
+            case 'R':
+                // Recarregar (nada a fazer, loop continua)
+                break;
         }
     }
     
-    return count;
+    // Liberar memória
+    liberar_array_ranking(ranking_array);
+    
+    // Resetar atributos ao sair
+    attrset(A_NORMAL);
 }
