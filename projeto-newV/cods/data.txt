@@ -1,5 +1,6 @@
 C U(çí u): vida=50, vitorias=0, distancia=548, dano=0
-Cool: vida=0, vitorias=0, distancia=318, dano=0
+Cool: vida=0, vitorias=0, distancia=810, dano=90
+GPT: vida=0, vitorias=0, distancia=133, dano=30
 Garfield: vida=10, vitorias=1, distancia=170, dano=120
 Jeboia: vida=50, vitorias=1, distancia=293, dano=110
 Killer: vida=0, vitorias=1, distancia=273, dano=100

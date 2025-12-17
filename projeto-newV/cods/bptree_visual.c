@@ -226,21 +226,29 @@ static void draw_char(int y, int x, int ch) {
     }
 }
 
-// Desenhar um nó da árvore
+// Desenhar um nó da árvore - VERSÃO COM CORRESPONDÊNCIA DE CORES
 static void draw_tree_node(VisualNode *vn, RankingCriterio criterio, int ranking_position) {
     BPTreeNode *node = vn->node;
     DrawCoords *c = &vn->coords;
     
     // Determinar cor baseado na posição no ranking (se for folha)
-    int color_pair = 2; // Azul padrão para nós internos
+    // NOTA IMPORTANTE: As cores devem corresponder EXATAMENTE com a legenda!
+    int color_pair = 2; // AZUL para nós internos (mas na verdade usamos 5 - CIANO)
     
     if (node->is_leaf && ranking_position >= 0) {
-        if (ranking_position == 0) color_pair = 3; // Ouro
-        else if (ranking_position == 1) color_pair = 5; // Prata
-        else if (ranking_position == 2) color_pair = 1; // Bronze
-        else color_pair = 4; // Verde para outros
+        if (ranking_position == 0) {
+            color_pair = 3; // AMARELO/DOURADO para 1º lugar
+        } else if (ranking_position == 1) {
+            color_pair = 5; // CIANO/PRATA para 2º lugar
+        } else if (ranking_position == 2) {
+            color_pair = 1; // VERMELHO/BRONZE para 3º lugar
+        } else {
+            color_pair = 4; // VERDE para outras posições
+        }
     } else if (!node->is_leaf) {
-        color_pair = 5; // Ciano para nós internos
+        // IMPORTANTE: Nós internos usam color pair 5 (CIANO) para ficar azul/ciano
+        // Isso está correto para corresponder com "Nos internos - Cor Azul/Ciano" na legenda
+        color_pair = 5; // CIANO para nós internos
     }
     
     // Desenhar borda do nó usando caracteres ASCII simples
@@ -270,7 +278,6 @@ static void draw_tree_node(VisualNode *vn, RankingCriterio criterio, int ranking
             
             // Aplicar atributos para o texto dentro do nó
             attron(A_BOLD);
-            // Temporariamente mudar a cor para melhor contraste no texto
             attron(COLOR_PAIR(color_pair));
             mvprintw(c->y + row, text_x, "%s", node_type);
             attroff(COLOR_PAIR(color_pair));
@@ -485,6 +492,7 @@ static int contar_folhas(BPTreeNode *node) {
 }
 
 // Função principal para mostrar a árvore B+ real - VERSÃO CORRIGIDA
+// Função principal para mostrar a árvore B+ real - VERSÃO CORRIGIDA
 void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio) {
     if (!tree || !tree->root) {
         // Mostrar mensagem se não houver árvore
@@ -544,35 +552,43 @@ void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_
             criterio == RANKING_VITORIAS ? "Mais Vitorias" : "Maior Distancia");
     attroff(COLOR_PAIR(4));
     
-    // Legenda - posicionar de forma adaptável
+    // CORREÇÃO DA LEGENDA - CORRESPONDÊNCIA EXATA COM AS CORES DOS NÓS
     int legend_y = screen_height - 9;
     if (tv->max_depth <= 2) {
         legend_y = screen_height - 7;
     }
     
     attron(COLOR_PAIR(5) | A_BOLD);
-    mvprintw(legend_y, 2, "Legenda de Cores:");
+    mvprintw(legend_y, 2, "LEGENDA DE CORES:");
     attroff(COLOR_PAIR(5) | A_BOLD);
     
+    // 1º lugar - AMARELO (color pair 3) - correspondente à cor usada nos nós
     attron(COLOR_PAIR(3) | A_BOLD);
-    mvprintw(legend_y + 1, 4, "1o Dourado - 1 lugar");
+    mvprintw(legend_y + 1, 4, "🥇 1º Lugar - Cor Dourada");
     attroff(COLOR_PAIR(3) | A_BOLD);
     
+    // 2º lugar - CIANO (color pair 5) - correspondente à cor usada nos nós
     attron(COLOR_PAIR(5) | A_BOLD);
-    mvprintw(legend_y + 2, 4, "2o Prata - 2 lugar");
+    mvprintw(legend_y + 2, 4, "🥈 2º Lugar - Cor Prateada");
     attroff(COLOR_PAIR(5) | A_BOLD);
     
+    // 3º lugar - VERMELHO (color pair 1) - correspondente à cor usada nos nós
     attron(COLOR_PAIR(1) | A_BOLD);
-    mvprintw(legend_y + 3, 4, "3o Bronze - 3 lugar");
+    mvprintw(legend_y + 3, 4, "🥉 3º Lugar - Cor Bronze");
     attroff(COLOR_PAIR(1) | A_BOLD);
     
-    attron(COLOR_PAIR(4));
-    mvprintw(legend_y + 4, 4, "Verde - Outras posicoes");
-    attroff(COLOR_PAIR(4));
+    // Outras posições - VERDE (color pair 4) - correspondente à cor usada nos nós
+    attron(COLOR_PAIR(4) | A_BOLD);
+    mvprintw(legend_y + 4, 4, "📊 Outras posicoes - Cor Verde");
+    attroff(COLOR_PAIR(4) | A_BOLD);
     
-    attron(COLOR_PAIR(5));
-    mvprintw(legend_y + 5, 4, "Ciano - Nos internos");
-    attroff(COLOR_PAIR(5));
+    // Nós internos - AZUL (color pair 2) - correspondente à cor usada nos nós
+    // NOTA: Nos nós internos usamos color pair 5 (ciano), mas na função
+    // draw_tree_node, nós internos usam color_pair = 5 (ciano)
+    // Para consistência, vamos manter como CIANO também na legenda
+    attron(COLOR_PAIR(5) | A_BOLD);
+    mvprintw(legend_y + 5, 4, "🌳 Nos internos - Cor Azul/Ciano");
+    attroff(COLOR_PAIR(5) | A_BOLD);
     
     // Instruções
     attron(COLOR_PAIR(2) | A_BOLD);
@@ -681,6 +697,7 @@ void mostrar_arvore_com_scroll(BPTree *tree, RankingEntry *ranking, int ranking_
 }
 
 // Visualização simplificada para árvores que não cabem na tela
+// Visualização simplificada para árvores que não cabem na tela
 void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio) {
     if (!tree || !tree->root) return;
     
@@ -715,9 +732,9 @@ void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int rankin
             criterio == RANKING_VITORIAS ? "Mais Vitorias" : "Maior Distancia");
     attroff(COLOR_PAIR(4));
     
-    // Mostrar os top 5 do ranking
+    // Mostrar os top 5 do ranking COM CORRESPONDÊNCIA DE CORES
     attron(COLOR_PAIR(5) | A_BOLD);
-    mvprintw(12, 4, "TOP 5 - RANKING ATUAL:");
+    mvprintw(12, 4, "TOP 5 - RANKING ATUAL (correspondente as cores da arvore):");
     attroff(COLOR_PAIR(5) | A_BOLD);
     
     if (ranking_count > 0) {
@@ -731,12 +748,17 @@ void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int rankin
                 default: stat_value = 0;
             }
             
-            // Escolher cor baseado na posição
+            // Escolher cor baseado na posição - CORRESPONDÊNCIA EXATA COM AS CORES DA ÁRVORE
             int color;
-            if (i == 0) color = 3; // Ouro
-            else if (i == 1) color = 5; // Prata
-            else if (i == 2) color = 1; // Bronze
-            else color = 4; // Verde
+            if (i == 0) {
+                color = 3; // AMARELO/DOURADO para 1º lugar
+            } else if (i == 1) {
+                color = 5; // CIANO/PRATA para 2º lugar
+            } else if (i == 2) {
+                color = 1; // VERMELHO/BRONZE para 3º lugar
+            } else {
+                color = 4; // VERDE para outras posições
+            }
             
             attron(COLOR_PAIR(color) | A_BOLD);
             char medal[10];
@@ -750,30 +772,60 @@ void mostrar_arvore_simplificada(BPTree *tree, RankingEntry *ranking, int rankin
         }
     }
     
+    // Legenda de cores simplificada
+    attron(COLOR_PAIR(5) | A_BOLD);
+    mvprintw(19, 4, "LEGENDA DE CORES (correspondente aos nos da arvore):");
+    attroff(COLOR_PAIR(5) | A_BOLD);
+    
+    // 1º lugar
+    attron(COLOR_PAIR(3) | A_BOLD);
+    mvprintw(20, 6, "🥇 1º Lugar - Cor Dourada");
+    attroff(COLOR_PAIR(3) | A_BOLD);
+    
+    // 2º lugar
+    attron(COLOR_PAIR(5) | A_BOLD);
+    mvprintw(21, 6, "🥈 2º Lugar - Cor Prateada");
+    attroff(COLOR_PAIR(5) | A_BOLD);
+    
+    // 3º lugar
+    attron(COLOR_PAIR(1) | A_BOLD);
+    mvprintw(22, 6, "🥉 3º Lugar - Cor Bronze");
+    attroff(COLOR_PAIR(1) | A_BOLD);
+    
+    // Outras posições
+    attron(COLOR_PAIR(4) | A_BOLD);
+    mvprintw(23, 6, "📊 Outras posicoes - Cor Verde");
+    attroff(COLOR_PAIR(4) | A_BOLD);
+    
+    // Nós internos
+    attron(COLOR_PAIR(5) | A_BOLD);
+    mvprintw(24, 6, "🌳 Nos internos - Cor Azul/Ciano");
+    attroff(COLOR_PAIR(5) | A_BOLD);
+    
     // Informação sobre estrutura
     attron(COLOR_PAIR(3) | A_BOLD);
-    mvprintw(19, 4, "ESTRUTURA DA ARVORE B+:");
+    mvprintw(26, 4, "ESTRUTURA DA ARVORE B+:");
     attroff(COLOR_PAIR(3) | A_BOLD);
     
     attron(COLOR_PAIR(2));
-    mvprintw(20, 6, "- Todos os dados estao nas folhas");
-    mvprintw(21, 6, "- Folhas estao todas no mesmo nivel");
-    mvprintw(22, 6, "- Nos internos contem apenas chaves de roteamento");
-    mvprintw(23, 6, "- Balanceamento automatico garantido");
+    mvprintw(27, 6, "- Todos os dados estao nas folhas");
+    mvprintw(28, 6, "- Folhas estao todas no mesmo nivel");
+    mvprintw(29, 6, "- Nos internos contem apenas chaves de roteamento");
+    mvprintw(30, 6, "- Balanceamento automatico garantido");
     attroff(COLOR_PAIR(2));
     
     // Instruções
     attron(COLOR_PAIR(5) | A_BOLD);
-    mvprintw(25, 4, "INSTRUCOES:");
+    mvprintw(32, 4, "INSTRUCOES:");
     attroff(COLOR_PAIR(5) | A_BOLD);
     
     attron(COLOR_PAIR(4));
-    mvprintw(26, 6, "Para ver a arvore completa, aumente o tamanho do terminal");
-    mvprintw(27, 6, "ou reduza a quantidade de dados na arvore");
+    mvprintw(33, 6, "Para ver a arvore completa, aumente o tamanho do terminal");
+    mvprintw(34, 6, "ou reduza a quantidade de dados na arvore");
     attroff(COLOR_PAIR(4));
     
     attron(COLOR_PAIR(1) | A_BOLD);
-    mvprintw(29, 10, "Pressione qualquer tecla para voltar...");
+    mvprintw(36, 10, "Pressione qualquer tecla para voltar...");
     attroff(COLOR_PAIR(1) | A_BOLD);
     
     refresh();
