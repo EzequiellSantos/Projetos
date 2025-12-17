@@ -394,3 +394,92 @@ void mostrar_tela_ranking(void) {
         liberar_array_ranking(ranking_array);
     }
 }
+
+
+void mostrar_arvore_bplus(RankingEntry *ranking_array, int count, RankingCriterio criterio) {
+    int sair = 0;
+    
+    while (!sair) {
+        clear();
+        
+        // Título
+        attron(A_BOLD | COLOR_PAIR(5));
+        mvprintw(2, 2, "+==============================================================+");
+        mvprintw(3, 2, "|           ARVORE B+ DIDATICA - VISUALIZACAO SIMPLES         |");
+        mvprintw(4, 2, "+==============================================================+");
+        attroff(A_BOLD | COLOR_PAIR(5));
+        
+        // Ordenar os dados
+        RankingEntry *ordenado = malloc(count * sizeof(RankingEntry));
+        memcpy(ordenado, ranking_array, count * sizeof(RankingEntry));
+        ordenar_ranking(ordenado, count, criterio);
+        
+        // Explicação
+        attron(COLOR_PAIR(3));
+        mvprintw(6, 4, "Esta e uma visualizacao didatica da estrutura B+.");
+        mvprintw(7, 4, "Os dados estao organizados em folhas ordenadas:");
+        
+        // Mostrar folhas (top 10)
+        int mostrar = count > 10 ? 10 : count;
+        int start_y = 10;
+        
+        for (int i = 0; i < mostrar; i++) {
+            int y = start_y + i;
+            
+            // Destacar top 3
+            if (i == 0) {
+                attron(COLOR_PAIR(3) | A_BOLD); // Ouro
+            } else if (i == 1) {
+                attron(COLOR_PAIR(5) | A_BOLD); // Prata
+            } else if (i == 2) {
+                attron(COLOR_PAIR(1) | A_BOLD); // Bronze
+            } else {
+                attron(COLOR_PAIR(2));
+            }
+            
+            // Mostrar dados
+            int valor;
+            switch (criterio) {
+                case RANKING_DANO: valor = ordenado[i].stats.cont_dano; break;
+                case RANKING_VITORIAS: valor = ordenado[i].stats.cont_vitorias; break;
+                case RANKING_DISTANCIA: valor = ordenado[i].stats.distancia_percorrida; break;
+            }
+            
+            mvprintw(y, 10, "Folha %d: %-15s = %d", i + 1, ordenado[i].nome, valor);
+            
+            if (i < 3) {
+                attroff(COLOR_PAIR(3) | COLOR_PAIR(5) | COLOR_PAIR(1) | A_BOLD);
+            } else {
+                attroff(COLOR_PAIR(2));
+            }
+        }
+        
+        free(ordenado);
+        
+        // Legenda
+        attron(COLOR_PAIR(4));
+        mvprintw(start_y + mostrar + 2, 4, "Legenda:");
+        attron(COLOR_PAIR(3));
+        mvprintw(start_y + mostrar + 3, 6, "🥇 Ouro - 1o lugar");
+        attron(COLOR_PAIR(5));
+        mvprintw(start_y + mostrar + 4, 6, "🥈 Prata - 2o lugar");
+        attron(COLOR_PAIR(1));
+        mvprintw(start_y + mostrar + 5, 6, "🥉 Bronze - 3o lugar");
+        
+        // Instruções
+        attron(COLOR_PAIR(5) | A_BOLD);
+        mvprintw(start_y + mostrar + 7, 4, "ESC: Voltar | 1-3: Mudar criterio");
+        
+        refresh();
+        
+        int ch = getch();
+        if (ch == 27) { // ESC
+            sair = 1;
+        } else if (ch == '1' || ch == '2' || ch == '3') {
+            // Mudar critério (será tratado no menu principal)
+            sair = 1;
+        }
+    }
+    
+    clear();
+}

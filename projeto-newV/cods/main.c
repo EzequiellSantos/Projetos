@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
+
 #include "../includes/game_over.h"
 #include "../includes/player.h"
 #include "../includes/menu.h"
@@ -14,7 +16,7 @@
 #include "../includes/bomb.h"
 #include "../includes/bomb_types.h"
 #include "../includes/ranking.h"
-#include "../includes/database.h"
+#include "../includes/ranking_menu.h"
 
 // Funções do menu de autenticação (já declaradas em auth_menu.h)
 int mostrar_menu_login(void);
@@ -65,7 +67,6 @@ int main() {
         }
         
         // Tela de boas-vindas
-        mostrar_tela_boas_vindas(user_id);
         clear();
         refresh();
         
@@ -77,20 +78,14 @@ int main() {
             opcao_menu_principal = mostrar_menu_principal();
             
             switch (opcao_menu_principal) {
-                case 1: // Jogar
+                case 1: 
+                    mostrar_tela_boas_vindas(user_id);
+                    // Jogar
                     executar_jogo();
                     break;
                     
                 case 2: // Ver Ranking
-                    clear();
-                    start_color();
-                    init_pair(1, COLOR_RED, COLOR_BLACK);
-                    init_pair(2, COLOR_BLUE, COLOR_BLACK);
-                    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
-                    init_pair(4, COLOR_GREEN, COLOR_BLACK);
-                    init_pair(5, COLOR_CYAN, COLOR_BLACK);
-                    mostrar_tela_ranking();
-                    clear();
+                    mostrar_menu_ranking_completo();
                     break;
                     
                 case 3: // Sair
@@ -108,25 +103,88 @@ int main() {
 
 // Mostra o menu principal e retorna a opção selecionada (1-3).
 int mostrar_menu_principal(void) {
-    int opcao = 0;
+     int opcao = 0;
     int ch;
     
     nodelay(stdscr, FALSE);
+    
+    // Inicializar cores se não estiverem inicializadas
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_BLUE, COLOR_BLACK);
+    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(4, COLOR_GREEN, COLOR_BLACK);
+    init_pair(5, COLOR_CYAN, COLOR_BLACK);
+    init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
+    init_pair(7, COLOR_WHITE, COLOR_BLACK);
     
     while (1) {
         clear();
         
         // Título
-        mvprintw(2, 2, "=== BOMBERMAN - MENU PRINCIPAL ===");
+        attron(A_BOLD | COLOR_PAIR(5));
+        mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+        mvprintw(3, 2, "║            🎮 BOMBERMAN - MENU PRINCIPAL 🎮         ║");
+        mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+        attroff(A_BOLD | COLOR_PAIR(5));
         
-        // Opções
-        mvprintw(4, 4, "1. Jogar");
-        mvprintw(5, 4, "2. Ver Ranking");
-        mvprintw(6, 4, "3. Sair");
-        mvprintw(8, 4, "Escolha uma opcao: ");
+        // Instrução
+        attron(COLOR_PAIR(3) | A_BOLD);
+        mvprintw(12, 4, "Escolha uma opção: ");
+        attroff(COLOR_PAIR(3) | A_BOLD);
         
-        // Destacar opção selecionada
-        mvprintw(4 + opcao, 3, ">");
+        // Destacar opção selecionada COM MELHOR CONTRASTE
+        for (int i = 0; i < 3; i++) {
+            if (i == opcao) {
+                // Opção selecionada - destaque forte
+                attron(A_BOLD | A_REVERSE | COLOR_PAIR(4)); // VERDE INVERTIDO para destaque máximo
+                mvprintw(7 + i, 2, "▶"); // Usa seta maior
+                attroff(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            } else {
+                // Opção não selecionada - aparência normal
+                attron(COLOR_PAIR(1));
+                mvprintw(7 + i, 2, " ");
+                attroff(COLOR_PAIR(1));
+            }
+        }
+        
+        // Texto das opções com destaque adequado
+        if (opcao == 0) {
+            attron(A_BOLD | COLOR_PAIR(5)); // CIANO em negrito para selecionado
+        } else {
+            attron(COLOR_PAIR(5)); // CIANO normal
+        }
+        mvprintw(7, 4, "1. 🎯 Jogar");
+        if (opcao == 0) attroff(A_BOLD | COLOR_PAIR(5));
+        else attroff(COLOR_PAIR(5));
+        
+        if (opcao == 1) {
+            attron(A_BOLD | COLOR_PAIR(3)); // AMARELO em negrito para selecionado
+        } else {
+            attron(COLOR_PAIR(3)); // AMARELO normal
+        }
+        mvprintw(8, 4, "2. 📊 Ver Ranking");
+        if (opcao == 1) attroff(A_BOLD | COLOR_PAIR(3));
+        else attroff(COLOR_PAIR(3));
+        
+        if (opcao == 2) {
+            attron(A_BOLD | COLOR_PAIR(1)); // VERMELHO em negrito para selecionado
+        } else {
+            attron(COLOR_PAIR(1)); // VERMELHO normal
+        }
+        mvprintw(9, 4, "3. 🚪 Sair");
+        if (opcao == 2) attroff(A_BOLD | COLOR_PAIR(1));
+        else attroff(COLOR_PAIR(1));
+        
+        // Informações adicionais
+        attron(COLOR_PAIR(4) | A_BOLD);
+        mvprintw(15, 4, "📝 Dica:");
+        attroff(COLOR_PAIR(4) | A_BOLD);
+        
+        attron(COLOR_PAIR(2));
+        mvprintw(16, 6, "Use ↑↓ para navegar, ENTER para selecionar");
+        mvprintw(17, 6, "Ou pressione 1, 2, 3 diretamente");
+        attroff(COLOR_PAIR(2));
         
         ch = getch();
         
@@ -144,13 +202,227 @@ int mostrar_menu_principal(void) {
             case '2': return 2;
             case '3': return 3;
             case 'q': return 3;
+            case 27: // ESC também sai
+                return 3;
         }
+    }
+}
+
+// Menu completo de ranking com múltiplas opções de visualização
+void mostrar_menu_ranking_completo(void) {
+    // Inicializar cores se não estiverem inicializadas
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_BLUE, COLOR_BLACK);
+    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(4, COLOR_GREEN, COLOR_BLACK);
+    init_pair(5, COLOR_CYAN, COLOR_BLACK);
+    init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
+    
+    // Carregar dados do arquivo
+    RankingEntry *ranking_array = NULL;
+    int count = 0;
+    bool dados_carregados = ler_dados_arquivo("data.txt", &ranking_array, &count);
+    
+    if (dados_carregados && count > 0) {
+        // Menu para escolher tipo de visualização
+        int opcao_visualizacao = 0;
+        int sair_ranking = 0;
+        
+        while (!sair_ranking) {
+            clear();
+            
+            // Título do menu de visualização
+            attron(A_BOLD | COLOR_PAIR(5));
+            mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+            mvprintw(3, 2, "║              📊 TIPO DE VISUALIZAÇÃO 📊            ║");
+            mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+            attroff(A_BOLD | COLOR_PAIR(5));
+            
+            // Instrução
+            attron(COLOR_PAIR(3) | A_BOLD);
+            mvprintw(13, 4, "Selecione uma visualização: ");
+            attroff(COLOR_PAIR(3) | A_BOLD);
+            
+            // Destacar opção selecionada COM MELHOR CONTRASTE
+            for (int i = 0; i < 4; i++) {
+                if (i == opcao_visualizacao) {
+                    // Opção selecionada - destaque forte
+                    attron(A_BOLD | A_REVERSE | COLOR_PAIR(4)); // VERDE INVERTIDO para destaque máximo
+                    mvprintw(7 + i, 2, "▶"); // Usa seta maior
+                    attroff(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+                } else {
+                    // Opção não selecionada - aparência normal
+                    attron(COLOR_PAIR(1));
+                    mvprintw(7 + i, 2, " ");
+                    attroff(COLOR_PAIR(1));
+                }
+            }
+            
+            // Texto das opções com destaque adequado
+            if (opcao_visualizacao == 0) {
+                attron(A_BOLD | COLOR_PAIR(5));
+            } else {
+                attron(COLOR_PAIR(5));
+            }
+            mvprintw(7, 4, "1. 📋 Tabela tradicional");
+            if (opcao_visualizacao == 0) attroff(A_BOLD | COLOR_PAIR(5));
+            else attroff(COLOR_PAIR(5));
+            
+            if (opcao_visualizacao == 1) {
+                attron(A_BOLD | COLOR_PAIR(3));
+            } else {
+                attron(COLOR_PAIR(3));
+            }
+            mvprintw(8, 4, "2. 🌳 Árvore B+ (Visualização didática)");
+            if (opcao_visualizacao == 1) attroff(A_BOLD | COLOR_PAIR(3));
+            else attroff(COLOR_PAIR(3));
+            
+            if (opcao_visualizacao == 2) {
+                attron(A_BOLD | COLOR_PAIR(2));
+            } else {
+                attron(COLOR_PAIR(2));
+            }
+            mvprintw(9, 4, "3. 🏗️  Árvore B+ Real (Estrutura interna)");
+            if (opcao_visualizacao == 2) attroff(A_BOLD | COLOR_PAIR(2));
+            else attroff(COLOR_PAIR(2));
+            
+            if (opcao_visualizacao == 3) {
+                attron(A_BOLD | COLOR_PAIR(1));
+            } else {
+                attron(COLOR_PAIR(1));
+            }
+            mvprintw(10, 4, "4. 🔙 Voltar ao Menu Principal");
+            if (opcao_visualizacao == 3) attroff(A_BOLD | COLOR_PAIR(1));
+            else attroff(COLOR_PAIR(1));
+            
+            // Informação sobre os dados
+            attron(COLOR_PAIR(4));
+            mvprintw(16, 4, "📈 Dados carregados: %d jogadores", count);
+            attroff(COLOR_PAIR(4));
+            
+            // Exemplos dos top 3
+            if (count >= 3) {
+                ordenar_ranking(ranking_array, count, RANKING_DANO);
+                attron(COLOR_PAIR(5));
+                mvprintw(18, 4, "🏆 Top 3 em dano:");
+                attron(COLOR_PAIR(3) | A_BOLD);
+                mvprintw(19, 6, "🥇 %s: %d dano", ranking_array[0].nome, ranking_array[0].stats.cont_dano);
+                attron(COLOR_PAIR(5) | A_BOLD);
+                mvprintw(20, 6, "🥈 %s: %d dano", ranking_array[1].nome, ranking_array[1].stats.cont_dano);
+                attron(COLOR_PAIR(1) | A_BOLD);
+                mvprintw(21, 6, "🥉 %s: %d dano", ranking_array[2].nome, ranking_array[2].stats.cont_dano);
+            }
+            
+            refresh();
+            
+            int ch = getch();
+            switch (ch) {
+                case KEY_UP:
+                    opcao_visualizacao = (opcao_visualizacao - 1 + 4) % 4;
+                    break;
+                case KEY_DOWN:
+                    opcao_visualizacao = (opcao_visualizacao + 1) % 4;
+                    break;
+                case '\n':
+                case KEY_ENTER:
+                    processar_opcao_ranking(opcao_visualizacao, ranking_array, count);
+                    if (opcao_visualizacao == 3) { // Se escolheu "Voltar"
+                        sair_ranking = 1;
+                    }
+                    break;
+                case '1':
+                    processar_opcao_ranking(0, ranking_array, count);
+                    break;
+                case '2':
+                    processar_opcao_ranking(1, ranking_array, count);
+                    break;
+                case '3':
+                    processar_opcao_ranking(2, ranking_array, count);
+                    break;
+                case '4':
+                    sair_ranking = 1;
+                    break;
+                case 27: // ESC - volta ao menu principal
+                    sair_ranking = 1;
+                    break;
+            }
+        }
+        
+        liberar_array_ranking(ranking_array);
+    } else {
+        // Se não houver dados, mostrar mensagem e opção de voltar
+        clear();
+        attron(A_BOLD | COLOR_PAIR(3));
+        mvprintw(10, 20, "📭 Nenhum dado de ranking disponível!");
+        mvprintw(11, 15, "Jogue algumas partidas para gerar estatísticas");
+        attroff(A_BOLD | COLOR_PAIR(3));
+        
+        attron(COLOR_PAIR(5));
+        mvprintw(15, 20, "Pressione qualquer tecla para voltar...");
+        attroff(COLOR_PAIR(5));
+        
+        refresh();
+        getch(); // Espera qualquer tecla
+    }
+    
+    clear();
+}
+
+// Processa a opção selecionada no menu de ranking
+void processar_opcao_ranking(int opcao, RankingEntry *ranking_array, int count) {
+    switch (opcao) {
+        case 0: // Tabela tradicional
+            mostrar_tela_ranking();
+            break;
+            
+        case 1: // Árvore B+ didática
+            mostrar_arvore_bplus(ranking_array, count, RANKING_DANO);
+            break;
+            
+        case 2: // Árvore B+ real
+            {
+                // Criar árvore B+ real com os dados
+                BPTree *arvore_real = bptree_create();
+                
+                if (arvore_real) {
+                    // Inserir todos os dados na árvore
+                    for (int i = 0; i < count; i++) {
+                        Stats stats = {
+                            ranking_array[i].stats.vida,
+                            ranking_array[i].stats.cont_vitorias,
+                            ranking_array[i].stats.distancia_percorrida,
+                            ranking_array[i].stats.cont_dano
+                        };
+                        bptree_insert(arvore_real, ranking_array[i].nome, stats);
+                    }
+                    
+                    // Mostrar menu da árvore real
+                    mostrar_menu_arvore_ranking(arvore_real);
+                    
+                    // Liberar memória da árvore
+                    bptree_free(arvore_real);
+                } else {
+                    // Se falhar ao criar árvore
+                    clear();
+                    attron(A_BOLD | COLOR_PAIR(3));
+                    mvprintw(10, 20, "❌ Erro ao criar árvore B+!");
+                    mvprintw(12, 20, "Pressione qualquer tecla para voltar...");
+                    attroff(A_BOLD | COLOR_PAIR(3));
+                    refresh();
+                    getch();
+                }
+            }
+            break;
+            
+        case 3: // Voltar - nada a fazer, será tratado no menu
+            break;
     }
 }
 
 // Executa o loop principal do jogo: atualiza lógica, processa input e desenha a tela.
 void executar_jogo(void) {
-    // Configurar para modo não bloqueante
+ // Configurar para modo não bloqueante
     nodelay(stdscr, TRUE);
     start_color();
     
@@ -446,6 +718,7 @@ void executar_jogo(void) {
     // Limpar a tela
     clear();
 }
+
 
 // Desenha o jogador `p` junto com seu nome, cooldown e efeitos visuais.
 void desenhar_jogador_com_nome(Player *p) {

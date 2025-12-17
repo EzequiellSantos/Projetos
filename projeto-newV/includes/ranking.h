@@ -1,8 +1,8 @@
 #ifndef RANKING_H
 #define RANKING_H
 
-#include "bptree.h"
 #include <stdbool.h>
+#include "bptree.h"
 
 // Opções de ordenação
 typedef enum {
@@ -24,5 +24,10 @@ int carregar_ranking_para_array(BPTree *tree, RankingEntry **array);
 void ordenar_ranking(RankingEntry *array, int n, RankingCriterio criterio);
 void liberar_array_ranking(RankingEntry *array);
 bool ler_dados_arquivo(const char *filename, RankingEntry **array, int *count);
+
+void mostrar_arvore_bplus(RankingEntry *ranking_array, int count, RankingCriterio criterio);
+// Novas funções para visualização de árvore
+void mostrar_arvore_bplus_real(BPTree *tree, RankingEntry *ranking, int ranking_count, RankingCriterio criterio);
+void mostrar_menu_arvore_ranking(BPTree *tree);
 
 #endif

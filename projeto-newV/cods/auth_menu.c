@@ -11,18 +11,76 @@ int mostrar_menu_login(void) {
     // Desabilitar nodelay temporariamente para o menu
     nodelay(stdscr, FALSE);
     
+    // Inicializar cores
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_BLUE, COLOR_BLACK);
+    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(4, COLOR_GREEN, COLOR_BLACK);
+    init_pair(5, COLOR_CYAN, COLOR_BLACK);
+    init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
+    init_pair(7, COLOR_WHITE, COLOR_BLACK);
+    
     while (1) {
         clear();
         
-        // Título
-        mvprintw(2, 2, "=== BOMBERMAN - LOGIN ===");
-        mvprintw(4, 4, "1. Login");
-        mvprintw(5, 4, "2. Registrar");
-        mvprintw(6, 4, "3. Sair");
-        mvprintw(8, 4, "Escolha uma opcao: ");
+        // Título com design consistente
+        attron(A_BOLD | COLOR_PAIR(5));
+        mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+        mvprintw(3, 2, "║               🔐 BOMBERMAN - LOGIN 🔐               ║");
+        mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+        attroff(A_BOLD | COLOR_PAIR(5));
         
-        // Destacar opção selecionada
-        mvprintw(4 + opcao, 3, ">");
+        // Opções com emojis
+        attron(COLOR_PAIR(2));
+        mvprintw(7, 4, "1. 🔑 Login");
+        mvprintw(8, 4, "2. 📝 Registrar");
+        mvprintw(9, 4, "3. 🚪 Sair");
+        
+        // Instrução
+        attron(COLOR_PAIR(3) | A_BOLD);
+        mvprintw(12, 4, "Escolha uma opção: ");
+        attroff(COLOR_PAIR(3) | A_BOLD);
+        
+        // Destacar opção selecionada com design consistente
+        if (opcao == 0) {
+            attron(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            mvprintw(7, 2, "▶");
+            attroff(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            attron(A_BOLD | COLOR_PAIR(5));
+            mvprintw(7, 4, "1. 🔑 Login");
+            attroff(A_BOLD | COLOR_PAIR(5));
+        } else {
+            attron(COLOR_PAIR(1));
+            mvprintw(7, 2, " ");
+            attroff(COLOR_PAIR(1));
+        }
+        
+        if (opcao == 1) {
+            attron(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            mvprintw(8, 2, "▶");
+            attroff(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            attron(A_BOLD | COLOR_PAIR(3));
+            mvprintw(8, 4, "2. 📝 Registrar");
+            attroff(A_BOLD | COLOR_PAIR(3));
+        } else {
+            attron(COLOR_PAIR(1));
+            mvprintw(8, 2, " ");
+            attroff(COLOR_PAIR(1));
+        }
+        
+        if (opcao == 2) {
+            attron(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            mvprintw(9, 2, "▶");
+            attroff(A_BOLD | A_REVERSE | COLOR_PAIR(4));
+            attron(A_BOLD | COLOR_PAIR(1));
+            mvprintw(9, 4, "3. 🚪 Sair");
+            attroff(A_BOLD | COLOR_PAIR(1));
+        } else {
+            attron(COLOR_PAIR(1));
+            mvprintw(9, 2, " ");
+            attroff(COLOR_PAIR(1));
+        }
         
         ch = getch();
         
@@ -40,6 +98,8 @@ int mostrar_menu_login(void) {
             case '2': return 2;
             case '3': return 3;
             case 'q': return 3;
+            case 27: // ESC também sai
+                return 3;
         }
     }
 }
@@ -51,13 +111,21 @@ int realizar_login(void) {
     char password[AUTH_PASSWORD_MAX];
     
     clear();
-    mvprintw(2, 2, "=== LOGIN ===");
     
-    mvprintw(4, 4, "Usuario: ");
+    // Título com design
+    attron(A_BOLD | COLOR_PAIR(5));
+    mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+    mvprintw(3, 2, "║                   🔑 LOGIN 🔑                     ║");
+    mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+    attroff(A_BOLD | COLOR_PAIR(5));
+    
+    attron(COLOR_PAIR(3));
+    mvprintw(6, 4, "Usuario: ");
     getnstr(username, AUTH_USERNAME_MAX - 1);
     
-    mvprintw(5, 4, "Senha: ");
+    mvprintw(7, 4, "Senha: ");
     getnstr(password, AUTH_PASSWORD_MAX - 1);
+    attroff(COLOR_PAIR(3));
     
     noecho();
     
@@ -65,17 +133,38 @@ int realizar_login(void) {
     
     if (user_id >= 0) {
         clear();
-        mvprintw(2, 2, "Login realizado com sucesso!");
-        mvprintw(4, 4, "Bem-vindo, %s!", username);
-        mvprintw(6, 4, "ID do usuario: %d", user_id);
-        mvprintw(8, 4, "Pressione qualquer tecla para continuar...");
+        attron(A_BOLD | COLOR_PAIR(4));
+        mvprintw(4, 10, "✅ Login realizado com sucesso!");
+        attroff(A_BOLD | COLOR_PAIR(4));
+        
+        attron(COLOR_PAIR(5));
+        mvprintw(6, 10, "👤 Bem-vindo, %s!", username);
+        attroff(COLOR_PAIR(5));
+        
+        attron(COLOR_PAIR(2));
+        mvprintw(7, 10, "🔢 ID do usuario: %d", user_id);
+        attroff(COLOR_PAIR(2));
+        
+        attron(COLOR_PAIR(3) | A_BOLD);
+        mvprintw(10, 10, "Pressione qualquer tecla para continuar...");
+        attroff(COLOR_PAIR(3) | A_BOLD);
+        
         getch();
         return user_id;
     } else {
         clear();
-        mvprintw(2, 2, "ERRO: Login falhou!");
-        mvprintw(4, 4, "Usuario ou senha incorretos.");
-        mvprintw(6, 4, "Pressione qualquer tecla para tentar novamente...");
+        attron(A_BOLD | COLOR_PAIR(1));
+        mvprintw(4, 10, "❌ ERRO: Login falhou!");
+        attroff(A_BOLD | COLOR_PAIR(1));
+        
+        attron(COLOR_PAIR(3));
+        mvprintw(6, 10, "Usuario ou senha incorretos.");
+        attroff(COLOR_PAIR(3));
+        
+        attron(COLOR_PAIR(5) | A_BOLD);
+        mvprintw(8, 10, "Pressione qualquer tecla para tentar novamente...");
+        attroff(COLOR_PAIR(5) | A_BOLD);
+        
         getch();
         return -1;
     }
@@ -88,13 +177,21 @@ int realizar_registro(void) {
     char password[AUTH_PASSWORD_MAX];
     
     clear();
-    mvprintw(2, 2, "=== REGISTRO ===");
     
-    mvprintw(4, 4, "Novo usuario: ");
+    // Título com design
+    attron(A_BOLD | COLOR_PAIR(5));
+    mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+    mvprintw(3, 2, "║                 📝 REGISTRO 📝                    ║");
+    mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+    attroff(A_BOLD | COLOR_PAIR(5));
+    
+    attron(COLOR_PAIR(3));
+    mvprintw(6, 4, "📝 Novo usuario: ");
     getnstr(username, AUTH_USERNAME_MAX - 1);
     
-    mvprintw(5, 4, "Nova senha: ");
+    mvprintw(7, 4, "🔒 Nova senha: ");
     getnstr(password, AUTH_PASSWORD_MAX - 1);
+    attroff(COLOR_PAIR(3));
     
     noecho();
     
@@ -102,17 +199,35 @@ int realizar_registro(void) {
     
     if (user_id >= 0) {
         clear();
-        mvprintw(2, 2, "Registro realizado com sucesso!");
-        mvprintw(4, 4, "Usuario: %s", username);
-        mvprintw(5, 4, "ID: %d", user_id);
-        mvprintw(7, 4, "Pressione qualquer tecla para continuar...");
+        attron(A_BOLD | COLOR_PAIR(4));
+        mvprintw(4, 10, "✅ Registro realizado com sucesso!");
+        attroff(A_BOLD | COLOR_PAIR(4));
+        
+        attron(COLOR_PAIR(5));
+        mvprintw(6, 10, "👤 Usuario: %s", username);
+        mvprintw(7, 10, "🔢 ID: %d", user_id);
+        attroff(COLOR_PAIR(5));
+        
+        attron(COLOR_PAIR(3) | A_BOLD);
+        mvprintw(10, 10, "Pressione qualquer tecla para continuar...");
+        attroff(COLOR_PAIR(3) | A_BOLD);
+        
         getch();
         return user_id;
     } else {
         clear();
-        mvprintw(2, 2, "ERRO: Registro falhou!");
-        mvprintw(4, 4, "Usuario ja existe ou dados invalidos.");
-        mvprintw(6, 4, "Pressione qualquer tecla para tentar novamente...");
+        attron(A_BOLD | COLOR_PAIR(1));
+        mvprintw(4, 10, "❌ ERRO: Registro falhou!");
+        attroff(A_BOLD | COLOR_PAIR(1));
+        
+        attron(COLOR_PAIR(3));
+        mvprintw(6, 10, "Usuario ja existe ou dados invalidos.");
+        attroff(COLOR_PAIR(3));
+        
+        attron(COLOR_PAIR(5) | A_BOLD);
+        mvprintw(8, 10, "Pressione qualquer tecla para tentar novamente...");
+        attroff(COLOR_PAIR(5) | A_BOLD);
+        
         getch();
         return -1;
     }
@@ -121,22 +236,64 @@ int realizar_registro(void) {
 void mostrar_tela_boas_vindas(int user_id) {
     clear();
     
-    // Arte ASCII do Bomberman
-    mvprintw(2, 2, "  ____                         __  __            ");
-    mvprintw(3, 2, " |  _ \\                       |  \\/  |           ");
-    mvprintw(4, 2, " | |_) | ___  _ __ ___   ___  | \\  / | __ _ _ __ ");
-    mvprintw(5, 2, " |  _ < / _ \\| '_ ` _ \\ / _ \\ | |\\/| |/ _` | '__|");
-    mvprintw(6, 2, " | |_) | (_) | | | | | |  __/ | |  | | (_| | |   ");
-    mvprintw(7, 2, " |____/ \\___/|_| |_| |_|\\___| |_|  |_|\\__,_|_|   ");
+    // Inicializar cores
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_BLUE, COLOR_BLACK);
+    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(4, COLOR_GREEN, COLOR_BLACK);
+    init_pair(5, COLOR_CYAN, COLOR_BLACK);
+    init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
+    init_pair(7, COLOR_WHITE, COLOR_BLACK);
     
-    mvprintw(10, 2, "================================================");
-    mvprintw(12, 2, "Bem-vindo ao Bomberman!");
-    mvprintw(13, 2, "Usuario ID: %d", user_id);
-    mvprintw(15, 2, "Controles:");
-    mvprintw(16, 2, "  Jogador 1: W A S D");
-    mvprintw(17, 2, "  Jogador 2: SETAS");
-    mvprintw(18, 2, "  Sair: Q");
-    mvprintw(20, 2, "Pressione qualquer tecla para selecionar personagens...");
+    // Título com design
+    attron(A_BOLD | COLOR_PAIR(5));
+    mvprintw(2, 2, "╔═══════════════════════════════════════════════════╗");
+    mvprintw(3, 2, "║            🎮 BEM-VINDO AO BOMBERMAN 🎮            ║");
+    mvprintw(4, 2, "╚═══════════════════════════════════════════════════╝");
+    attroff(A_BOLD | COLOR_PAIR(5));
+    
+    // Arte ASCII do Bomberman com cores
+    attron(COLOR_PAIR(3));
+    mvprintw(6, 20, "  ____                         __  __            ");
+    mvprintw(7, 20, " |  _ \\                       |  \\/  |           ");
+    mvprintw(8, 20, " | |_) | ___  _ __ ___   ___  | \\  / | __ _ _ __ ");
+    mvprintw(9, 20, " |  _ < / _ \\| '_ ` _ \\ / _ \\ | |\\/| |/ _` | '__|");
+    mvprintw(10, 20, " | |_) | (_) | | | | | |  __/ | |  | | (_| | |   ");
+    mvprintw(11, 20, " |____/ \\___/|_| |_| |_|\\___| |_|  |_|\\__,_|_|   ");
+    attroff(COLOR_PAIR(3));
+    
+    // Separador
+    attron(COLOR_PAIR(2));
+    mvprintw(13, 2, "═════════════════════════════════════════════════════");
+    attroff(COLOR_PAIR(2));
+    
+    // Informações
+    attron(COLOR_PAIR(4));
+    mvprintw(15, 4, "👤 Usuario ID: %d", user_id);
+    attroff(COLOR_PAIR(4));
+    
+    // Controles
+    attron(A_BOLD | COLOR_PAIR(5));
+    mvprintw(17, 4, "🎮 Controles:");
+    attroff(A_BOLD | COLOR_PAIR(5));
+    
+    attron(COLOR_PAIR(1));
+    mvprintw(18, 6, "Jogador 1: W A S D + ESPAÇO (bomba)");
+    attroff(COLOR_PAIR(1));
+    
+    attron(COLOR_PAIR(2));
+    mvprintw(19, 6, "Jogador 2: SETAS + / (bomba)");
+    attroff(COLOR_PAIR(2));
+    
+    attron(COLOR_PAIR(3));
+    mvprintw(20, 6, "Sair: Q ou ESC");
+    attroff(COLOR_PAIR(3));
+    
+    // Mensagem final
+    attron(A_BOLD | COLOR_PAIR(4));
+    mvprintw(23, 10, "🎯 Pressione qualquer tecla para selecionar personagens...");
+    attroff(A_BOLD | COLOR_PAIR(4));
     
     getch();
 }

@@ -4,23 +4,6 @@
 #include <stdbool.h>
 #include "../includes/bptree.h"
 
-#define ORDER BPTREE_ORDER
-#define MAX_KEYS (ORDER - 1)
-#define MIN_KEYS ((ORDER/2) - 1)
-
-typedef struct BPTreeNode {
-    bool is_leaf;
-    int num_keys;
-    char *keys[MAX_KEYS + 1]; // +1 for temporary splits
-    struct BPTreeNode *children[ORDER + 1];
-    Stats *values[MAX_KEYS + 1]; // used only in leaves
-    struct BPTreeNode *parent;
-    struct BPTreeNode *next; // leaf linkage
-} BPTreeNode;
-
-struct BPTree {
-    BPTreeNode *root;
-};
 
 static BPTreeNode *node_create(bool leaf) {
     BPTreeNode *n = calloc(1, sizeof(BPTreeNode));
