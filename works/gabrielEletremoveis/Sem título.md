@@ -304,7 +304,85 @@ essas informaçõe serão registras e logo servirão de base para gerar os segui
 
 - Emissão de notas fiscais caso necessário para a venda de produtos
 - monitoramento de transações no bradesco
+- - ### COM PIX DINAMICO
+  - Opção 1 – Pix Dinâmico (RECOMENDADO)
+    
+    Esse é o melhor caminho hoje no Brasil.
+    
+    Como funciona:
+
+    Seu sistema gera a cobrança Pix via API do Bradesco
+    
+    O Pix já nasce com:
+
+    valor
+    
+    identificador único (txid)
+    
+    vínculo com o cliente/parcela
+
+
+    O cliente paga
+    
+    O Bradesco notifica sua aplicação
+    
+    Você dá baixa automaticamente na parcela correta
+
+  - Opção 2 – Boleto registrado (também funciona)
+
+    Cada parcela = um boleto
+    
+    O boleto tem nosso número
+    
+    O banco informa liquidação
+    
+    Baixa automática
+    
+    Funciona bem, mas é:
+    
+    mais lento
+    
+    menos moderno
+    
+    depende de convênio ativo
+- - ### COM BOLETO DINAMICO
+    Seu sistema
+    
+       ↓
+    
+    API Bradesco — gera boleto
+    
+       ↓
+    
+    Cliente paga
+    
+       ↓
+    
+    Bradesco confirma pagamento
+    
+       ↓
+    
+    API/Webhook/Retorno CNAB
+    
+       ↓
+    
+    Você dá baixa na parcela correta
+    
+- - ### As principais funcionalidades da API de Cobrança do Bradesco incluem:
+
+      Emissão de boletos (à vista ou parcelado)
+  
+      Consulta de boletos
+  
+      Consulta de liquidação
+  
+      Código de barras + linha digitável
+  
+      Boleto híbrido (boleto + Pix)
+  
+      Integração com extrato
+    
 - consulta no serasa integrado ao site
 - controle de rotas de embarques
 
-  _Última atualização: 2026-04-23_
+  _Última atualização: 2026-04-24_
