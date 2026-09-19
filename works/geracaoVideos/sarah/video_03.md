@@ -1,253 +1,320 @@
-CRIAR VÍDEO 03 DE 06.
+# VÍDEO 03 DE 06 — VERSÃO ATUALIZADA
 
-Duração aproximada: 10 segundos.
-Formato: vertical 9:16.
+## CONFIGURAÇÃO
 
-Começar EXATAMENTE a partir do FRAME-V02-FINAL.
+- Duração aproximada: 10 segundos.
+- Formato: vertical 9:16.
+- Este vídeo continua diretamente o VÍDEO 02.
+- O VÍDEO 04 SERÁ PULADO.
+- O próximo vídeo será o VÍDEO 05.
+- O último frame deste vídeo será usado como `FRAME-V03-FINAL` e será o primeiro frame do VÍDEO 05.
 
-O FRAME-V02-FINAL é a referência principal para o primeiro
-frame deste vídeo.
+## REFERÊNCIA DE CONTINUIDADE
 
-Não modificar a aparência da cena inicial.
+Começar EXATAMENTE no `FRAME-V02-FINAL`.
 
-==================================================
-NARRAÇÃO
-==================================================
+A primeira imagem deste vídeo deve ser visualmente idêntica ao último frame aprovado do VÍDEO 02.
 
-A frase do vídeo anterior:
+Não alterar a aparência de Sarah.
 
-"Uma pequena princesa chegou para transformar nossos dias em um verdadeiro conto de fadas."
+Não redesenhar a personagem.
 
-JÁ FOI CONCLUÍDA NO VÍDEO 02.
+Não trocar cabelo, laço, vestido, sapatos, acessórios, rosto ou proporções.
 
-NÃO repetir.
+Não alterar os animais, o livro ou a estética já estabelecida.
 
-NÃO continuar.
+---
 
-NÃO criar nova narração.
+# OBJETIVO DA CENA
 
-Este vídeo NÃO possui narração.
+A câmera deve avançar lentamente para dentro da ilustração do bosque encantado.
 
-O vídeo deve permanecer completamente sem voz.
+A sensação deve ser de que a câmera está fisicamente entrando na página do livro e entrando no bosque.
 
-==================================================
-TRANSIÇÃO
-==================================================
+A transição precisa ser contínua, elegante e natural.
 
-Começar mostrando a página dos 6 meses.
+## PROIBIDO NA TRANSIÇÃO
 
-Depois, a câmera começa a AVANÇAR LENTAMENTE EM DIREÇÃO À
-ILUSTRAÇÃO DO BOSQUE PRESENTE NA PÁGINA.
+NÃO fazer:
 
-A câmera deve entrar gradualmente na própria ilustração.
+- árvores voando;
+- árvores crescendo rapidamente;
+- árvores sendo arremessadas;
+- galhos voando em direção à câmera;
+- folhas explodindo;
+- objetos atravessando a câmera;
+- cenário sendo desmontado;
+- elementos aparecendo do nada;
+- transformação brusca;
+- corte seco;
+- fade;
+- flash;
+- explosão de partículas;
+- mudança repentina de cenário.
 
-A sensação desejada é:
+As árvores permanecem naturalmente posicionadas.
 
-"A câmera está entrando fisicamente no mundo que existe
-dentro do livro."
+A câmera é que se movimenta para dentro do cenário.
 
-O movimento principal deve ser DA CÂMERA.
+A transição deve parecer uma continuação física da ilustração anterior.
 
-A transição deve ser contínua, elegante e cinematográfica,
-sem parecer uma troca de imagens.
+---
 
-==================================================
-TEXTO DURANTE A TRANSIÇÃO
-==================================================
+# TEXTO NA TELA
 
-Durante a passagem da página para o bosque, inserir na tela
-o seguinte texto EXATAMENTE como escrito abaixo:
-
-"Em meio aos animais e encantos do bosque Ana Sarah vai comemorar seu primeiro aninho e convida você para participar desse momento especial."
-
-NÃO alterar nenhuma palavra.
-
-NÃO substituir palavras.
-
-NÃO resumir.
-
-NÃO adicionar palavras.
-
-NÃO remover palavras.
-
-NÃO alterar a pontuação.
-
-NÃO corrigir ou reinterpretar o texto.
-
-O texto deve ser exatamente:
+Durante a transição para o bosque, exibir EXATAMENTE este texto:
 
 Em meio aos animais e encantos do bosque Ana Sarah vai comemorar seu primeiro aninho e convida você para participar desse momento especial.
 
-==================================================
-ESTILO DO TEXTO
-==================================================
+## REGRA ABSOLUTA DO TEXTO
 
-O texto deve seguir o MESMO ESTILO VISUAL DOS TEXTOS
-APRESENTADOS NOS VÍDEOS ANTERIORES.
+O texto acima deve aparecer **UMA ÚNICA VEZ**.
 
-Manter:
+O nome deve ser escrito EXATAMENTE:
 
-- mesma estética;
-- mesma tipografia ou estilo tipográfico;
-- mesma aparência de conto de fadas;
-- mesma delicadeza;
-- mesma harmonia visual;
-- mesma sensação de texto pertencente ao livro.
+Ana Sarah
 
-O texto pode aparecer SOBRE A FLORESTA.
+Não escrever:
 
-Posicionar o texto em uma área visualmente limpa da floresta,
-com contraste suficiente para que seja facilmente legível.
+- Anasara;
+- AnaSara;
+- Ana Sarrah;
+- Ana Sara;
+- AnaSarah;
+- qualquer outra variação.
 
-O texto NÃO deve cobrir o rosto de Ana Sarah.
+NÃO repetir "Ana Sarah".
 
-O texto NÃO deve cobrir os animais.
+NÃO repetir nenhuma palavra.
 
-O texto NÃO deve ficar sobre elementos visualmente confusos.
+NÃO repetir nenhuma linha.
 
-Utilizar uma área da composição onde exista contraste
-natural suficiente.
+NÃO duplicar o parágrafo.
 
-Se necessário, utilizar uma sombra ou leve contorno discreto
-para melhorar a leitura, mantendo o mesmo estilo visual dos
-textos anteriores.
+NÃO criar uma segunda cópia do texto.
 
-NÃO utilizar uma caixa pesada ou um fundo que destoe da estética.
+NÃO adicionar título.
 
-==================================================
-FORMATAÇÃO DO TEXTO
-==================================================
+NÃO adicionar legenda.
 
-Como o texto é relativamente longo, distribuí-lo em linhas
-equilibradas e bem espaçadas.
+NÃO adicionar créditos.
 
-NÃO sobrepor linhas.
+NÃO adicionar nenhuma palavra que não esteja no texto fornecido.
 
-NÃO deixar palavras cortadas.
+NÃO remover nenhuma palavra.
 
-NÃO deixar palavras escondidas.
+NÃO alterar a ordem das palavras.
 
-NÃO deformar as letras.
+NÃO substituir palavras.
 
-NÃO diminuir excessivamente o tamanho da fonte.
+NÃO corrigir o texto para outra frase.
 
-O texto inteiro deve permanecer dentro da área segura da tela.
+O texto completo deve existir somente uma vez na composição.
 
-O texto deve estar completamente legível.
+---
 
-Não criar nenhum outro texto.
+# RENDERIZAÇÃO DO TEXTO
 
-==================================================
-MOMENTO DA EXIBIÇÃO
-==================================================
+O texto deve ter o mesmo estilo visual delicado dos textos anteriores do vídeo.
 
-O texto deve surgir suavemente durante a transição do livro
-para a floresta.
+Usar tipografia elegante de conto de fadas, com aparência manuscrita/serifada delicada, coerente com o livro.
 
-A entrada do texto deve ser discreta e elegante.
+O texto deve ficar sobre uma área do bosque com contraste suficiente para leitura.
 
-Enquanto a câmera entra no bosque, o texto permanece legível
-sobre a cena.
+Pode usar uma sombra ou contorno extremamente discreto apenas para aumentar a legibilidade.
 
-Não fazer o texto tremer.
+NÃO usar caixa pesada atrás do texto.
 
-Não fazer as palavras se movimentarem excessivamente.
+NÃO usar balão.
 
-Não fazer as letras desaparecerem individualmente.
+NÃO usar painel moderno.
 
-O texto deve permanecer estável o suficiente para ser lido.
+NÃO usar letras grandes demais.
 
-==================================================
-PROIBIDO — TRANSIÇÃO
-==================================================
+NÃO cobrir o rosto de Sarah.
 
-NÃO fazer árvores voarem.
+NÃO cobrir Sarah.
 
-NÃO fazer árvores saírem da página.
+NÃO cobrir os animais importantes.
 
-NÃO fazer árvores crescerem rapidamente.
+Organizar o texto em várias linhas equilibradas.
 
-NÃO fazer árvores serem lançadas para frente.
+Todas as linhas devem estar perfeitamente separadas.
 
-NÃO fazer galhos voarem.
+Nenhuma linha pode encostar ou sobrepor outra.
 
-NÃO fazer objetos atravessarem a câmera.
+Nenhuma palavra pode ser cortada.
 
-NÃO explodir folhas.
+Nenhuma letra pode ser deformada.
 
-NÃO fazer transformação brusca.
+O texto deve permanecer legível durante toda a sua exibição.
 
-NÃO fazer corte.
+Depois que o texto aparecer, ele deve permanecer estável.
 
-NÃO fazer fade para outra imagem.
+Não fazer o texto se reorganizar, duplicar ou trocar de posição.
 
-As árvores devem permanecer no lugar.
+---
 
-A floresta deve parecer ganhar profundidade enquanto
-a câmera entra nela.
+# NARRAÇÃO
 
-A transição deve acontecer através do MOVIMENTO DA CÂMERA,
-e não através de objetos voando ou sendo deslocados.
+A narração feminina é OBRIGATÓRIA.
 
-==================================================
-FINAL
-==================================================
+Usar uma voz feminina suave, delicada, carinhosa e natural, no MESMO ESTILO DAS NARRAÇÕES DOS VÍDEOS ANTERIORES.
 
-Ao final, a câmera deve estar completamente dentro do bosque.
+A narração deve falar EXATAMENTE:
 
-Ana Sarah aparece sentada na parte inferior central.
+"Em meio aos animais e encantos do bosque Ana Sarah vai comemorar seu primeiro aninho e convida você para participar desse momento especial."
 
-Ela deve usar EXATAMENTE o figurino das referências.
+## REGRAS DA NARRAÇÃO
 
-Não alterar o vestido.
+- Voz feminina.
+- Mesmo estilo da narradora dos vídeos anteriores.
+- Tom de conto de fadas infantil.
+- Voz suave e natural.
+- Pronunciar "Ana Sarah" claramente.
+- "Ana Sarah" deve ser falado UMA ÚNICA VEZ.
+- Não repetir o nome.
+- Não repetir palavras.
+- Não repetir frases.
+- Não criar eco.
+- Não duplicar sílabas.
+- Não gaguejar.
+- Não adicionar palavras.
+- Não remover palavras.
+- Não alterar a frase.
 
-Não alterar o cabelo.
+A narração deve corresponder exatamente ao texto mostrado na tela.
 
-Não alterar o laço.
+---
 
-Não alterar a aparência da personagem.
+# ÁUDIO — IMPORTANTE
 
-Ela permanece sentada.
+**NÃO ADICIONAR MÚSICA DE FUNDO.**
 
-Não andar.
+Não criar trilha sonora.
 
-Não correr.
+Não adicionar piano.
 
-Não ficar em pé.
+Não adicionar música instrumental.
 
-Os animais podem estar próximos dela.
+Não adicionar melodia.
 
-A personagem deve apresentar movimentos naturais e sutis,
-sem ficar completamente estática.
+Não adicionar efeitos musicais.
 
-O texto deve continuar legível durante a composição final.
+Não adicionar qualquer música nova.
 
-Finalizar com um frame estável da floresta.
+O áudio deste vídeo deve conter SOMENTE:
 
-O último frame será utilizado como PRIMEIRO FRAME DO VÍDEO 04.
+1. a narração feminina;
+2. som ambiente natural do bosque, se necessário.
+
+Se houver áudio ambiente já presente na referência, preservá-lo de forma discreta.
+
+A voz feminina deve ser o único elemento de fala.
+
+---
+
+# MOVIMENTO DE SARAH
+
+Sarah deve permanecer naturalmente animada.
+
+Não deixar Sarah completamente parada.
+
+Durante a cena, permitir movimentos pequenos e naturais:
+
+- movimento suave da cabeça;
+- movimentos naturais dos olhos;
+- piscadas ocasionais;
+- pequenos movimentos das mãos;
+- pequenas mudanças de expressão;
+- sorriso natural;
+- movimento corporal sutil;
+- respiração visual discreta.
+
+Não fazer movimentos robóticos.
+
+Não repetir o mesmo movimento em loop.
+
+Não fazer dança.
+
+Não fazer movimentos exagerados.
+
+Não deformar o rosto ou o corpo.
+
+Não alterar a identidade visual de Sarah.
+
+---
+
+# CENA FINAL DO VÍDEO 03
+
+Ao final da transição, a câmera deve estar completamente dentro do bosque encantado.
+
+Sarah deve estar na parte inferior central da composição.
+
+Os animais devem estar próximos dela.
+
+O bosque deve estar totalmente estabelecido.
+
+O texto deve continuar perfeitamente legível.
+
+Sarah deve continuar naturalmente animada.
+
+## ÚLTIMO SEGUNDO
 
 Nos últimos aproximadamente 1 segundo:
 
-- reduzir suavemente os movimentos;
-- manter a composição estável;
-- manter Sarah naturalmente posicionada;
-- não iniciar nenhuma nova ação;
-- não adicionar nenhum novo elemento.
+- reduzir gradualmente os movimentos;
+- não congelar o vídeo inteiro antes disso;
+- não criar nenhuma nova ação;
+- não iniciar nova transição;
+- não adicionar novo texto;
+- não adicionar nova fala.
 
-Não existe narração neste vídeo.
+A narração deve terminar ANTES do último segundo.
 
-==================================================
-ÚLTIMO FRAME
-==================================================
+O último aproximadamente 1 segundo deve ficar SEM FALA.
 
 O último frame deve mostrar:
 
-- floresta encantada;
-- Ana Sarah sentada na parte inferior central;
+- Sarah com os olhos abertos;
+- expressão natural e agradável;
+- rosto visível;
+- composição estável;
+- bosque encantado;
 - animais próximos;
-- texto ainda legível;
-- composição equilibrada;
-- câmera estável.
+- texto completo e legível.
 
-Esse frame será usado diretamente como primeiro frame
-do VÍDEO 04.
+Este frame será salvo como:
+
+`FRAME-V03-FINAL`
+
+E será usado como início do VÍDEO 05.
+
+---
+
+# VERIFICAÇÃO OBRIGATÓRIA ANTES DE FINALIZAR
+
+Antes de gerar o resultado final, verificar:
+
+1. O nome escrito é exatamente `Ana Sarah`.
+2. `Ana Sarah` aparece somente UMA VEZ.
+3. O texto completo aparece somente UMA VEZ.
+4. Nenhuma palavra está duplicada.
+5. Nenhuma linha está duplicada.
+6. Não existem palavras inventadas.
+7. Não existem letras deformadas.
+8. A narração feminina é única e não é repetida.
+9. A narração termina antes do último segundo.
+10. NÃO existe música de fundo.
+11. NÃO existe trilha sonora.
+12. A personagem não foi redesenhada.
+13. A transição não possui árvores voando ou crescimento artificial.
+14. O último frame está estável e com os olhos de Sarah abertos.
+
+## REGRA MAIS IMPORTANTE
+
+O vídeo deve preservar a cena visual já aprovada sempre que possível.
+
+Apenas corrigir o texto e manter a narração feminina correta.
+
+Não fazer uma nova interpretação artística da cena.

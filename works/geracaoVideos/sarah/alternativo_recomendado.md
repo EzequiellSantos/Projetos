@@ -129,115 +129,191 @@ O ÚLTIMO FRAME deve ser estável, mas os frames anteriores
 devem possuir movimento natural.
 
 
+# VÍDEO 06 DE 06 — AJUSTE DE ESPAÇAMENTO DO TEXTO
 
+## Configuração
 
+- Duração aproximada: 10 segundos.
+- Formato: vertical 9:16.
+- Começar EXATAMENTE no `FRAME-V05-FINAL` anexado.
+- **ESTA É A CENA FINAL DO CONVITE.**
 
+## REGRA PRINCIPAL
 
+O vídeo atual está **APROVADO**.
 
-CRIAR VÍDEO 03 DE 06.
+A personagem, o cenário, os animais, a animação, a iluminação, a composição, o enquadramento e o áudio estão corretos.
 
-Duração aproximada: 10 segundos.
-Formato: vertical 9:16.
+**A ÚNICA ALTERAÇÃO SOLICITADA É AUMENTAR O ESPAÇAMENTO VERTICAL ENTRE AS LINHAS DOS TEXTOS DO CONVITE.**
 
-Começar EXATAMENTE a partir do FRAME-V02-FINAL.
+Não fazer nenhuma outra alteração.
 
-==================================================
-NARRAÇÃO
-==================================================
+## ALTERAÇÃO EXATA SOLICITADA
 
-A frase do vídeo anterior:
+Manter EXATAMENTE os mesmos textos que já existem no `FRAME-V05-FINAL`.
 
-"Uma pequena princesa chegou para transformar nossos dias em um verdadeiro conto de fadas."
+Não alterar nenhuma palavra.
+Não adicionar nenhuma palavra.
+Não remover nenhuma palavra.
+Não duplicar nenhum texto.
+Não recriar o conteúdo textual.
 
-JÁ FOI CONCLUÍDA NO VÍDEO 02.
+**Somente aumentar o espaço vertical entre cada linha do texto.**
 
-NÃO repetir.
+O espaçamento atual está muito apertado.
 
-NÃO continuar.
+Aumentar o espaçamento entre linhas em aproximadamente **30% a 40%**, deixando cada informação visualmente mais separada e respirada.
 
-NÃO criar nova narração.
+O texto deve continuar formando um único bloco central, elegante e equilibrado.
 
-Este vídeo NÃO possui narração.
+### Não alterar
 
-O início deve permanecer sem voz.
+- tamanho da fonte;
+- fonte;
+- cor;
+- estilo da tipografia;
+- alinhamento central;
+- conteúdo;
+- ordem das informações;
+- posição geral do bloco;
+- personagem;
+- cenário;
+- câmera;
+- iluminação;
+- animais;
+- áudio.
 
-==================================================
-TRANSIÇÃO
-==================================================
+**Apenas aumentar o espaçamento vertical entre as linhas.**
 
-Começar mostrando a página dos 6 meses.
+## TEXTOS EXISTENTES
 
-Depois, a câmera começa a AVANÇAR LENTAMENTE EM DIREÇÃO À
-ILUSTRAÇÃO DO BOSQUE PRESENTE NA PÁGINA.
+Preservar exatamente o texto que já está presente no `FRAME-V05-FINAL`, sem redigitar ou reinterpretar.
 
-A câmera deve entrar na ilustração.
+Não gerar uma nova versão do texto.
+Não criar uma segunda cópia.
+Não duplicar palavras ou linhas.
 
-A sensação desejada é:
+## COMPOSIÇÃO
 
-"A câmera está entrando fisicamente no mundo que existe
-dentro do livro."
+Manter exatamente:
 
-O movimento principal deve ser DA CÂMERA.
+- Ana Sarah na parte inferior central;
+- vestido exatamente igual;
+- cabelo e laço exatamente iguais;
+- animais próximos;
+- bosque encantado;
+- iluminação;
+- partículas e elementos do cenário;
+- ornamentos decorativos;
+- estética de conto de fadas;
+- enquadramento vertical 9:16.
 
-==================================================
-PROIBIDO
-==================================================
+Sarah deve continuar completamente visível na parte inferior.
 
-NÃO fazer árvores voarem.
+## POSICIONAMENTO DO TEXTO
 
-NÃO fazer árvores saírem da página.
+O bloco continua centralizado na região superior/central do vídeo.
 
-NÃO fazer árvores crescerem rapidamente.
+Aumentar apenas o espaço vertical entre as linhas.
 
-NÃO fazer árvores serem lançadas para frente.
+As linhas devem ficar claramente separadas, sem parecerem coladas umas nas outras.
 
-NÃO fazer galhos voarem.
+Aplicar o espaçamento de maneira uniforme entre as linhas.
 
-NÃO fazer objetos atravessarem a câmera.
+Não aumentar o tamanho da fonte para criar espaço.
 
-NÃO explodir folhas.
+Não diminuir o tamanho da fonte.
 
-NÃO fazer transformação brusca.
+Não deixar o bloco excessivamente alto.
 
-NÃO fazer corte.
+Não deixar nenhuma linha encostar em Sarah.
 
-NÃO fazer fade para outra imagem.
+Manter equilíbrio visual entre:
 
-As árvores devem permanecer no lugar.
+- ANA SARAH
+- 1 ANO
+- 16 DE OUTUBRO
+- 19:00
+- MINHA CASA, CHORA
+- CONFIRME SUA PRESENÇA COM A MAMÃE
 
-A floresta deve parecer ganhar profundidade enquanto
-a câmera entra nela.
+## ANIMAÇÃO
 
-==================================================
-FINAL
-==================================================
+Manter exatamente a animação que já está funcionando.
 
-Ao final, a câmera deve estar dentro do bosque.
+Sarah deve continuar naturalmente animada.
+Os animais continuam com movimentos sutis.
+As folhas e partículas continuam com seus movimentos delicados.
 
-Ana Sarah aparece sentada na parte inferior central.
+Não adicionar novas animações.
+Não fazer movimentos exagerados.
+Não fazer dança.
+Não deformar Sarah.
 
-Ela deve usar EXATAMENTE o figurino das referências.
+**Somente o cenário e os personagens recebem movimento. O texto permanece visualmente estável.**
 
-Não alterar o vestido.
+## ÁUDIO
 
-Não alterar a aparência.
+O áudio atual está aprovado.
 
-Ela permanece sentada.
+**Não alterar o áudio.**
 
-Não andar.
+Não adicionar narração.
+Não adicionar voz.
+Não adicionar fala.
 
-Não correr.
+**NÃO adicionar música nova ou trilha sonora.**
 
-Não ficar em pé.
+Não adicionar piano.
+Não adicionar música instrumental.
+Não adicionar efeitos musicais.
 
-Os animais podem estar próximos dela.
+Manter exatamente o áudio já existente no vídeo de referência.
 
-Finalizar com um frame estável da floresta.
+## FINAL
 
-Esse último frame será utilizado como PRIMEIRO FRAME DO VÍDEO 04.
+Nos últimos segundos, manter a composição final completa.
 
-Último aproximadamente 1 segundo sem narração.
+O texto deve continuar perfeitamente legível e agora apresentar **mais espaço vertical entre cada linha**.
 
+Não criar nenhum texto novo.
+Não duplicar nenhum texto.
+
+O último aproximadamente 1 segundo permanece completamente estável.
+
+Este continua sendo o `FRAME-FINAL` do convite.
+
+## VERIFICAÇÃO OBRIGATÓRIA
+
+Antes de finalizar, confirmar:
+
+1. A única alteração visual foi o aumento do espaçamento vertical entre as linhas.
+2. Todos os textos continuam exatamente iguais aos do frame inicial.
+3. Nenhuma palavra foi adicionada.
+4. Nenhuma palavra foi removida.
+5. Nenhuma palavra foi duplicada.
+6. Nenhuma linha foi duplicada.
+7. A fonte continua igual.
+8. O tamanho da fonte continua igual.
+9. A cor continua igual.
+10. O alinhamento continua centralizado.
+11. Sarah continua exatamente igual.
+12. O cenário continua exatamente igual.
+13. A animação continua exatamente igual.
+14. O áudio continua exatamente igual.
+15. Não foi adicionada nenhuma música.
+16. O espaço entre as linhas está aproximadamente 30%–40% maior.
+17. O texto continua sem encostar em Sarah.
+
+## REGRA MAIS IMPORTANTE
+
+**NÃO REFAZER O VÍDEO.**
+
+Preservar o vídeo aprovado e fazer somente este ajuste:
+
+**MAIS ESPAÇO VERTICAL ENTRE AS LINHAS DO TEXTO.**
+
+Nada além disso.
 
 
 
